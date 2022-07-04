@@ -1,0 +1,63 @@
+{
+  "name": "braze-api",
+  "version": "1.0.0-alpha",
+  "description": "Track users, send messages, export data, and more with Braze API.",
+  "author": "Mark <mark@remarkablemark.org>",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf coverage lib",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
+    "lint:fix": "npm run lint -- --fix",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable && npm run lint && npm run tsc && npm run test:ci && npm run clean && npm run build",
+    "test": "jest",
+    "test:ci": "jest --ci --colors --coverage",
+    "test:watch": "jest --watch",
+    "tsc": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remarkablemark/braze-api"
+  },
+  "bugs": {
+    "url": "https://github.com/remarkablemark/braze-api/issues"
+  },
+  "keywords": [
+    "braze",
+    "api",
+    "rest"
+  ],
+  "dependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-tsdoc": "0.2.16",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "pinst": "^3.0.0",
+    "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT"
+}

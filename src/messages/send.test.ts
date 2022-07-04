@@ -1,0 +1,37 @@
+import { post } from '../common/request'
+import { send } from '.'
+import type { MessagesSendObject } from './types'
+
+jest.mock('../common/request')
+const mockedPost = jest.mocked(post)
+
+describe('/messages/send', () => {
+  const apiUrl = 'https://rest.iad-01.braze.com'
+  const apiKey = 'apiKey'
+  const body: MessagesSendObject = {
+    external_user_ids: ['1234567890'],
+    messages: {
+      email: {
+        app_id: 'abcdef12-3456-7890-abcd-ef1234567890',
+        from: `Company <company@example.com>`,
+        email_template_id: 'abcdef12-3456-7890-abcd-ef1234567890',
+      },
+    },
+  }
+  const data = {}
+
+  beforeEach(() => {
+    mockedPost.mockClear().mockResolvedValueOnce(data)
+  })
+
+  it('calls request with url and body', async () => {
+    expect(await send(apiUrl, apiKey, body)).toBe(data)
+    expect(mockedPost).toBeCalledWith(`${apiUrl}/messages/send`, body, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+    expect(mockedPost).toBeCalledTimes(1)
+  })
+})
