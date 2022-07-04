@@ -153,10 +153,10 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ### Canvas
 
-- [] /canvas/data_series
-- [] /canvas/data_summary
-- [] /canvas/details
-- [] /canvas/list
+- [ ] /canvas/data_series
+- [ ] /canvas/data_summary
+- [ ] /canvas/details
+- [ ] /canvas/list
 
 ### Segments
 
