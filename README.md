@@ -13,7 +13,7 @@ Node.js library for [Braze](https://www.braze.com/) (see [demo](https://replit.c
 ```ts
 import { Braze } from 'braze-api'
 
-const braze = new Braze('YOUR_API_URL', 'YOUR_API_URL')
+const braze = new Braze('YOUR_API_URL', 'YOUR_API_KEY')
 
 await braze.messages.send({
   external_user_ids: ['your_external_user_id'],
