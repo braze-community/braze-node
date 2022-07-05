@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/remarkablemark/braze-api/compare/v1.0.1...v1.1.0) (2022-07-05)
+
+
+### Features
+
+* add Braze campaigns trigger send ([01d8e49](https://github.com/remarkablemark/braze-api/commit/01d8e4921a8157597a5c4537e4ce225205d003c4))
+
 ## [1.0.1](https://github.com/remarkablemark/braze-api/compare/v1.0.0...v1.0.1) (2022-07-04)
 
 
