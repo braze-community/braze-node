@@ -1,3 +1,4 @@
+import * as campaigns from './campaigns'
 import * as messages from './messages'
 
 export class Braze {
@@ -26,6 +27,13 @@ export class Braze {
 
     this.apiUrl = apiUrl
     this.apiKey = apiKey
+  }
+
+  campaigns = {
+    trigger: {
+      send: (body: campaigns.trigger.CampaignsTriggerSendObject) =>
+        campaigns.trigger.send(this.apiUrl, this.apiKey, body),
+    },
   }
 
   messages = {

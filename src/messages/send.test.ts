@@ -5,6 +5,10 @@ import type { MessagesSendObject } from './types'
 jest.mock('../common/request')
 const mockedPost = jest.mocked(post)
 
+beforeEach(() => {
+  jest.clearAllMocks()
+})
+
 describe('/messages/send', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
@@ -20,11 +24,8 @@ describe('/messages/send', () => {
   }
   const data = {}
 
-  beforeEach(() => {
-    mockedPost.mockClear().mockResolvedValueOnce(data)
-  })
-
   it('calls request with url and body', async () => {
+    mockedPost.mockResolvedValueOnce(data)
     expect(await send(apiUrl, apiKey, body)).toBe(data)
     expect(mockedPost).toBeCalledWith(`${apiUrl}/messages/send`, body, {
       headers: {

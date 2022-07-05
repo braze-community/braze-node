@@ -1,13 +1,16 @@
+import type { CampaignsTriggerSendObject, MessagesSendObject } from '.'
 import { Braze } from '.'
-import * as messages from './messages'
+import { request } from './common/request'
 
-jest.mock('./messages')
-const mockedMessages = jest.mocked(messages)
+jest.mock('./common/request/request')
+const mockedRequest = jest.mocked(request)
 
 const apiUrl = 'https://rest.iad-01.braze.com'
 const apiKey = 'apiKey'
-const body = {}
-const data = {}
+
+beforeEach(() => {
+  jest.clearAllMocks()
+})
 
 describe('Braze', () => {
   it('exports class', () => {
@@ -31,15 +34,27 @@ describe('Braze', () => {
   })
 })
 
-describe('messages', () => {
-  beforeEach(() => {
-    mockedMessages.send.mockClear().mockResolvedValueOnce(data)
-  })
+const braze = new Braze(apiUrl, apiKey)
+const body = {}
+const options = {
+  headers: {
+    Authorization: `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+  },
+  method: expect.stringMatching(/^GET|POST$/),
+}
+const response = {}
 
-  it('sends messages immediately via API', async () => {
-    const braze = new Braze(apiUrl, apiKey)
-    expect(await braze.messages.send(body as messages.MessagesSendObject)).toBe(data)
-    expect(mockedMessages.send).toBeCalledWith(apiUrl, apiKey, body)
-    expect(mockedMessages.send).toBeCalledTimes(1)
-  })
+it('calls messages.send()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.messages.send(body as MessagesSendObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/messages/send`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls campaigns.trigger.send()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.campaigns.trigger.send(body as CampaignsTriggerSendObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/send`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
 })
