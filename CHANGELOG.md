@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/remarkablemark/braze-api/compare/v1.1.0...v1.2.0) (2022-07-10)
+
+
+### Features
+
+* add Braze transactional campaigns send ([3346562](https://github.com/remarkablemark/braze-api/commit/33465626788bf7e24434bb6603459fb63c39014b))
+
 ## [1.1.0](https://github.com/remarkablemark/braze-api/compare/v1.0.1...v1.1.0) (2022-07-05)
 
 
