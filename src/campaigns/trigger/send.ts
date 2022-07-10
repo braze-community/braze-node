@@ -20,5 +20,9 @@ export function send(apiUrl: string, apiKey: string, body: CampaignsTriggerSendO
       Authorization: `Bearer ${apiKey}`,
     },
   }
-  return post(`${apiUrl}/campaigns/trigger/send`, body, options)
+
+  return post(`${apiUrl}/campaigns/trigger/send`, body, options) as Promise<{
+    dispatch_id: string
+    message: string
+  }>
 }

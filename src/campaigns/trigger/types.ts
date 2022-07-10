@@ -1,4 +1,9 @@
-import type { ConnectedAudienceObject } from '../../common/types'
+import type {
+  Attributes,
+  ConnectedAudienceObject,
+  TriggerProperties,
+  UserAlias,
+} from '../../common/types'
 
 /**
  * Request body for sending campaign messages via API-triggered delivery.
@@ -14,21 +19,16 @@ export interface CampaignsTriggerSendObject {
   recipients?: (RecipientWithExternalUserId | RecipientWithUserAlias)[]
 }
 
-type TriggerProperties = object
-
 interface Recipient {
   trigger_properties?: TriggerProperties
   send_to_existing_only?: boolean
-  attributes?: object
+  attributes?: Attributes
 }
 
-interface RecipientWithExternalUserId extends Recipient {
+export interface RecipientWithExternalUserId extends Recipient {
   external_user_id: string
 }
 
-interface RecipientWithUserAlias extends Recipient {
-  user_alias: {
-    alias_name: string
-    alias_label: string
-  }
+export interface RecipientWithUserAlias extends Recipient {
+  user_alias: UserAlias
 }
