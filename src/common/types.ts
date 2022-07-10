@@ -48,3 +48,12 @@ type Comparison =
   | 'less_than_x_days_in_the_future'
   | 'matches_regex'
   | 'not_equal'
+
+export type TriggerProperties = object
+
+export type Attributes = object
+
+export interface UserAlias {
+  alias_name: string
+  alias_label: string
+}

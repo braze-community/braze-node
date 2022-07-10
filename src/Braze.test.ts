@@ -1,4 +1,8 @@
-import type { CampaignsTriggerSendObject, MessagesSendObject } from '.'
+import type {
+  CampaignsTriggerSendObject,
+  MessagesSendObject,
+  TransactionalV1CampaignsSendObject,
+} from '.'
 import { Braze } from '.'
 import { request } from './common/request'
 
@@ -45,6 +49,13 @@ const options = {
 }
 const response = {}
 
+it('calls campaigns.trigger.send()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.campaigns.trigger.send(body as CampaignsTriggerSendObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/send`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
 it('calls messages.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.messages.send(body as MessagesSendObject)).toBe(response)
@@ -52,9 +63,19 @@ it('calls messages.send()', async () => {
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
-it('calls campaigns.trigger.send()', async () => {
+it('calls transactional.v1.campaigns.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
-  expect(await braze.campaigns.trigger.send(body as CampaignsTriggerSendObject)).toBe(response)
-  expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/send`, body, options)
+  const campaignId = 'YOUR_CAMPAIGN_ID_HERE'
+  expect(
+    await braze.transactional.v1.campaigns.send(
+      campaignId,
+      body as TransactionalV1CampaignsSendObject,
+    ),
+  ).toBe(response)
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/transactional/v1/campaigns/${campaignId}/send`,
+    body,
+    options,
+  )
   expect(mockedRequest).toBeCalledTimes(1)
 })

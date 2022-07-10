@@ -1,5 +1,6 @@
 import * as campaigns from './campaigns'
 import * as messages from './messages'
+import * as transactional from './transactional'
 
 export class Braze {
   /**
@@ -38,5 +39,16 @@ export class Braze {
 
   messages = {
     send: (body: messages.MessagesSendObject) => messages.send(this.apiUrl, this.apiKey, body),
+  }
+
+  transactional = {
+    v1: {
+      campaigns: {
+        send: (
+          campaignId: string,
+          body: transactional.v1.campaigns.TransactionalV1CampaignsSendObject,
+        ) => transactional.v1.campaigns.send(this.apiUrl, this.apiKey, campaignId, body),
+      },
+    },
   }
 }

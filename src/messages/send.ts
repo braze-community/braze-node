@@ -20,5 +20,9 @@ export function send(apiUrl: string, apiKey: string, body: MessagesSendObject) {
       Authorization: `Bearer ${apiKey}`,
     },
   }
-  return post(`${apiUrl}/messages/send`, body, options)
+
+  return post(`${apiUrl}/messages/send`, body, options) as Promise<{
+    dispatch_id: string
+    message: string
+  }>
 }

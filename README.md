@@ -110,7 +110,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [ ] /canvas/trigger/send
 - [x] /messages/send
 - [ ] /sends/id/create
-- [ ] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send
+- [x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send
 
 ### Schedule messages
 
