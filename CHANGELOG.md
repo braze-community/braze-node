@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/remarkablemark/braze-api/compare/v1.2.0...v1.3.0) (2022-07-21)
+
+
+### Features
+
+* add user track ([d785dc4](https://github.com/remarkablemark/braze-api/commit/d785dc40845b36db660a0c191218bd88a3850d74)), closes [#8](https://github.com/remarkablemark/braze-api/issues/8)
+
 ## [1.2.0](https://github.com/remarkablemark/braze-api/compare/v1.1.0...v1.2.0) (2022-07-10)
 
 
