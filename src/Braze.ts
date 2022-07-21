@@ -1,6 +1,7 @@
 import * as campaigns from './campaigns'
 import * as messages from './messages'
 import * as transactional from './transactional'
+import * as users from './users'
 
 export class Braze {
   /**
@@ -50,5 +51,10 @@ export class Braze {
         ) => transactional.v1.campaigns.send(this.apiUrl, this.apiKey, campaignId, body),
       },
     },
+  }
+
+  users = {
+    track: (body: users.UsersTrackObject, bulk?: boolean) =>
+      users.track(this.apiUrl, this.apiKey, body, bulk),
   }
 }

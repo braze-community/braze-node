@@ -2,6 +2,7 @@ import type {
   CampaignsTriggerSendObject,
   MessagesSendObject,
   TransactionalV1CampaignsSendObject,
+  UsersTrackObject,
 } from '.'
 import { Braze } from '.'
 import { request } from './common/request'
@@ -77,5 +78,25 @@ it('calls transactional.v1.campaigns.send()', async () => {
     body,
     options,
   )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.track()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.track(body as UsersTrackObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/track`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.track() with bulk', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.track(body as UsersTrackObject, true)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/track`, body, {
+    ...options,
+    headers: {
+      ...options.headers,
+      'X-Braze-Bulk': 'true',
+    },
+  })
   expect(mockedRequest).toBeCalledTimes(1)
 })
