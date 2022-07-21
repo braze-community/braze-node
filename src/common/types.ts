@@ -51,6 +51,8 @@ type Comparison =
 
 export type TriggerProperties = object
 
+export type Properties = object
+
 export type Attributes = object
 
 export interface UserAlias {
