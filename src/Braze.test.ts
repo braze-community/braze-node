@@ -3,6 +3,7 @@ import type {
   MessagesSendObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
+  UsersDeleteObject,
   UsersIdentifyObject,
   UsersTrackObject,
 } from '.'
@@ -87,6 +88,13 @@ it('calls users.alias.new()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.users.alias.new(body as UsersAliasObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/alias/new`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.delete()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.delete(body as UsersDeleteObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/delete`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
