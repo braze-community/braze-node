@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/remarkablemark/braze-api/compare/v1.4.0...v1.5.0) (2022-07-31)
+
+
+### Features
+
+* add users alias new ([f67af70](https://github.com/remarkablemark/braze-api/commit/f67af70e1b240eecd025b0fce8df28c29817e73c))
+
 ## [1.4.0](https://github.com/remarkablemark/braze-api/compare/v1.3.0...v1.4.0) (2022-07-31)
 
 
