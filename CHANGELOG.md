@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/remarkablemark/braze-api/compare/v1.5.0...v1.6.0) (2022-07-31)
+
+
+### Features
+
+* add users delete ([9095dd0](https://github.com/remarkablemark/braze-api/commit/9095dd0db4d8fc75e8d514f99fc85bc7005d1cab))
+
 ## [1.5.0](https://github.com/remarkablemark/braze-api/compare/v1.4.0...v1.5.0) (2022-07-31)
 
 
