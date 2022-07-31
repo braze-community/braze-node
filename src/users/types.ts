@@ -12,7 +12,7 @@ export interface UsersTrackObject {
 }
 
 /**
- * Request body for user track.
+ * Request body for user identify.
  *
  * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify/#request-body}
  */
@@ -21,6 +21,17 @@ export interface UsersIdentifyObject {
     external_id: string
     user_alias: UserAlias
   }[]
+}
+
+/**
+ * Request body for user delete.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_delete/#request-body}
+ */
+export interface UsersDeleteObject {
+  external_ids?: string[]
+  user_aliases?: UserAlias[]
+  braze_ids?: string[]
 }
 
 /**
