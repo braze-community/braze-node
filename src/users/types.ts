@@ -12,6 +12,18 @@ export interface UsersTrackObject {
 }
 
 /**
+ * Request body for user track.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify/#request-body}
+ */
+export interface UsersIdentifyObject {
+  aliases_to_identify: {
+    external_id: string
+    user_alias: UserAlias
+  }[]
+}
+
+/**
  * User attributes object specification.
  *
  * {@link https://www.braze.com/docs/api/objects_filters/user_attributes_object}
