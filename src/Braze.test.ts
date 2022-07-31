@@ -2,6 +2,7 @@ import type {
   CampaignsTriggerSendObject,
   MessagesSendObject,
   TransactionalV1CampaignsSendObject,
+  UsersAliasObject,
   UsersIdentifyObject,
   UsersTrackObject,
 } from '.'
@@ -79,6 +80,13 @@ it('calls transactional.v1.campaigns.send()', async () => {
     body,
     options,
   )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.alias.new()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.alias.new(body as UsersAliasObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/alias/new`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
