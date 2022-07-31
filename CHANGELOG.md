@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/remarkablemark/braze-api/compare/v1.3.0...v1.4.0) (2022-07-31)
+
+
+### Features
+
+* add users identify ([8b4a1f8](https://github.com/remarkablemark/braze-api/commit/8b4a1f8aa2ddc1f22212d06907df72eb52dba652))
+
 ## [1.3.0](https://github.com/remarkablemark/braze-api/compare/v1.2.0...v1.3.0) (2022-07-21)
 
 
