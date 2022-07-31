@@ -2,6 +2,7 @@ import type {
   CampaignsTriggerSendObject,
   MessagesSendObject,
   TransactionalV1CampaignsSendObject,
+  UsersIdentifyObject,
   UsersTrackObject,
 } from '.'
 import { Braze } from '.'
@@ -78,6 +79,13 @@ it('calls transactional.v1.campaigns.send()', async () => {
     body,
     options,
   )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.identify()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.identify(body as UsersIdentifyObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/identify`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
