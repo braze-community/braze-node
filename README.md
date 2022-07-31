@@ -94,7 +94,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ### User data
 
-- [ ] /users/alias/new
+- [x] /users/alias/new
 - [ ] /users/delete
 - [ ] /users/export/global_control_group
 - [ ] /users/export/ids

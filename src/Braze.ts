@@ -54,6 +54,10 @@ export class Braze {
   }
 
   users = {
+    alias: {
+      new: (body: users.alias.UsersAliasObject) => users.alias._new(this.apiUrl, this.apiKey, body),
+    },
+
     identify: (body: users.UsersIdentifyObject) => users.identify(this.apiUrl, this.apiKey, body),
 
     track: (body: users.UsersTrackObject, bulk?: boolean) =>
