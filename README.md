@@ -107,7 +107,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 ### Send messages
 
 - [x] /campaigns/trigger/send
-- [ ] /canvas/trigger/send
+- [x] /canvas/trigger/send
 - [x] /messages/send
 - [ ] /sends/id/create
 - [x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send

@@ -1,5 +1,6 @@
 import type {
   CampaignsTriggerSendObject,
+  CanvasTriggerSendObject,
   MessagesSendObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
@@ -57,6 +58,13 @@ it('calls campaigns.trigger.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.campaigns.trigger.send(body as CampaignsTriggerSendObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/send`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls canvas.trigger.send()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.canvas.trigger.send(body as CanvasTriggerSendObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/canvas/trigger/send`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
