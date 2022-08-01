@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/remarkablemark/braze-api/compare/v1.6.0...v1.7.0) (2022-08-01)
+
+
+### Features
+
+* add canvas trigger send ([3cf3725](https://github.com/remarkablemark/braze-api/commit/3cf37256a2f1a104c11a0a54041893dd7cd7d4e0))
+
 ## [1.6.0](https://github.com/remarkablemark/braze-api/compare/v1.5.0...v1.6.0) (2022-07-31)
 
 
