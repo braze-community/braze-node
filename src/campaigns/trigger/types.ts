@@ -25,10 +25,10 @@ interface Recipient {
   attributes?: Attributes
 }
 
-export interface RecipientWithExternalUserId extends Recipient {
+interface RecipientWithExternalUserId extends Recipient {
   external_user_id: string
 }
 
-export interface RecipientWithUserAlias extends Recipient {
+interface RecipientWithUserAlias extends Recipient {
   user_alias: UserAlias
 }

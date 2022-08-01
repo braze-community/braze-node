@@ -1,4 +1,5 @@
 import * as campaigns from './campaigns'
+import * as canvas from './canvas'
 import * as messages from './messages'
 import * as transactional from './transactional'
 import * as users from './users'
@@ -35,6 +36,13 @@ export class Braze {
     trigger: {
       send: (body: campaigns.trigger.CampaignsTriggerSendObject) =>
         campaigns.trigger.send(this.apiUrl, this.apiKey, body),
+    },
+  }
+
+  canvas = {
+    trigger: {
+      send: (body: canvas.trigger.CanvasTriggerSendObject) =>
+        canvas.trigger.send(this.apiUrl, this.apiKey, body),
     },
   }
 
