@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/remarkablemark/braze-api/compare/v1.7.0...v1.8.0) (2022-08-03)
+
+
+### Features
+
+* add sends id create ([73b60d6](https://github.com/remarkablemark/braze-api/commit/73b60d68f78cf245b56e55a307035fe93e61901f))
+
 ## [1.7.0](https://github.com/remarkablemark/braze-api/compare/v1.6.0...v1.7.0) (2022-08-01)
 
 
