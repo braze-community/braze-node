@@ -1,6 +1,7 @@
 import * as campaigns from './campaigns'
 import * as canvas from './canvas'
 import * as messages from './messages'
+import * as sends from './sends'
 import * as transactional from './transactional'
 import * as users from './users'
 
@@ -48,6 +49,13 @@ export class Braze {
 
   messages = {
     send: (body: messages.MessagesSendObject) => messages.send(this.apiUrl, this.apiKey, body),
+  }
+
+  sends = {
+    id: {
+      create: (body: sends.id.SendsIdCreateObject) =>
+        sends.id.create(this.apiUrl, this.apiKey, body),
+    },
   }
 
   transactional = {

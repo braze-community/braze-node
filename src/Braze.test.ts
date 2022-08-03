@@ -2,6 +2,7 @@ import type {
   CampaignsTriggerSendObject,
   CanvasTriggerSendObject,
   MessagesSendObject,
+  SendsIdCreateObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
   UsersDeleteObject,
@@ -72,6 +73,13 @@ it('calls messages.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.messages.send(body as MessagesSendObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/messages/send`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls sends.id.create()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.sends.id.create(body as SendsIdCreateObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/sends/id/create`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
