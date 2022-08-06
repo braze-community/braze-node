@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/remarkablemark/braze-api/compare/v1.8.0...v1.9.0) (2022-08-06)
+
+
+### Features
+
+* add users external_ids rename ([0341e52](https://github.com/remarkablemark/braze-api/commit/0341e52c569eaf8cd77a7db82c007ca54db1c66d))
+
 ## [1.8.0](https://github.com/remarkablemark/braze-api/compare/v1.7.0...v1.8.0) (2022-08-03)
 
 
