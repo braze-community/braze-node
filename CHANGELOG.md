@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/remarkablemark/braze-api/compare/v1.10.0...v1.11.0) (2022-08-07)
+
+
+### Features
+
+* add users export ids ([e22be59](https://github.com/remarkablemark/braze-api/commit/e22be59df186df6efc76d9c13f3c9e05b693e883))
+
 ## [1.10.0](https://github.com/remarkablemark/braze-api/compare/v1.9.0...v1.10.0) (2022-08-07)
 
 
