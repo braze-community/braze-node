@@ -1,4 +1,13 @@
 /**
+ * Request body for external ID remove.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/external_id_migration/post_external_ids_remove/#request-body}
+ */
+export interface UsersExternalIdsRemoveObject {
+  external_ids: string[]
+}
+
+/**
  * Request body for external ID rename.
  *
  * {@link https://www.braze.com/docs/api/endpoints/user_data/external_id_migration/post_external_ids_rename/#request-body}

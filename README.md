@@ -100,7 +100,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [ ] /users/export/ids
 - [ ] /users/export/segment
 - [x] /users/external_ids/rename
-- [ ] /users/external_ids/remove
+- [x] /users/external_ids/remove
 - [x] /users/identify
 - [x] /users/track
 
