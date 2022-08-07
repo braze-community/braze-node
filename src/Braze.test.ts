@@ -6,6 +6,7 @@ import type {
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
   UsersDeleteObject,
+  UsersExportsIdsObject,
   UsersExternalIdsRemoveObject,
   UsersExternalIdsRenameObject,
   UsersIdentifyObject,
@@ -113,6 +114,13 @@ it('calls users.delete()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.users.delete(body as UsersDeleteObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/delete`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.export.ids()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.export.ids(body as UsersExportsIdsObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/export/ids`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
