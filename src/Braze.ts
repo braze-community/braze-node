@@ -77,8 +77,11 @@ export class Braze {
     delete: (body: users.UsersDeleteObject) => users._delete(this.apiUrl, this.apiKey, body),
 
     export: {
-      ids: (body: users.export.UsersExportsIdsObject) =>
+      ids: (body: users.export.UsersExportIdsObject) =>
         users.export.ids(this.apiUrl, this.apiKey, body),
+
+      segment: (body: users.export.UsersExportSegmentObject) =>
+        users.export.segment(this.apiUrl, this.apiKey, body),
     },
 
     external_ids: {
