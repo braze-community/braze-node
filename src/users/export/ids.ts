@@ -1,5 +1,5 @@
 import { post } from '../../common/request'
-import type { UsersExportsIdsObject, UsersExportsIdsResponse } from './types'
+import type { UsersExportIdsObject, UsersExportIdsResponse } from './types'
 
 /**
  * Users by identifier endpoint.
@@ -13,7 +13,7 @@ import type { UsersExportsIdsObject, UsersExportsIdsResponse } from './types'
  * @param body - Request parameters.
  * @returns - Braze response.
  */
-export function ids(apiUrl: string, apiKey: string, body: UsersExportsIdsObject) {
+export function ids(apiUrl: string, apiKey: string, body: UsersExportIdsObject) {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -21,5 +21,5 @@ export function ids(apiUrl: string, apiKey: string, body: UsersExportsIdsObject)
     },
   }
 
-  return post(`${apiUrl}/users/export/ids`, body, options) as Promise<UsersExportsIdsResponse>
+  return post(`${apiUrl}/users/export/ids`, body, options) as Promise<UsersExportIdsResponse>
 }

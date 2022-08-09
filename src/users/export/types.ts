@@ -5,7 +5,7 @@ import type { UserAlias } from '../../common/types'
  *
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#request-body}
  */
-export interface UsersExportsIdsObject {
+export interface UsersExportIdsObject {
   external_ids?: string[]
   user_aliases?: UserAlias[]
   device_id?: string
@@ -20,10 +20,33 @@ export interface UsersExportsIdsObject {
  *
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#response}
  */
-export interface UsersExportsIdsResponse {
+export interface UsersExportIdsResponse {
   message: string
   users: Partial<UserExportObject>[]
   invalid_user_ids?: string[]
+}
+
+/**
+ * Request body for users by segment endpoint.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_segment/#request-body}
+ */
+export interface UsersExportSegmentObject {
+  segment_id: string
+  callback_endpoint?: string
+  fields_to_export: FieldsToExport[]
+  output_format?: 'zip' | 'gzip'
+}
+
+/**
+ * Response body for users by segment endpoint.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_segment/#response}
+ */
+export interface UsersExportSegmentResponse {
+  message: string
+  object_prefix: string
+  url?: string
 }
 
 interface UserExportObject {
@@ -42,7 +65,7 @@ interface UserExportObject {
   language: string
   time_zone: string
   last_coordinates: [number, number]
-  gender: 'M' | 'F'
+  gender: 'M' | 'F' | 'O' | 'N' | 'P' | null
   total_revenue: number
   attributed_campaign: string
   attributed_source: string
@@ -79,11 +102,11 @@ interface Purchase {
 interface Device {
   model: string
   os: string
-  carrier: string | null
+  carrier?: string | null
   device_id?: string
   idfv?: string
-  idfa?: string
-  google_ad_id?: string
+  idfa?: string | null
+  google_ad_id?: string | null
   roku_ad_id?: string
   windows_ad_id?: string
   ad_tracking_enabled: boolean
@@ -143,11 +166,12 @@ interface CanvasReceived {
  * The following is a list of valid `fields_to_export`.
  *
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#fields-to-export}
+ * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_segment/#fields-to-export}
  */
 type FieldsToExport =
   | 'apps'
   | 'attributed_campaign'
-  | 'attributed_campaign'
+  | 'attributed_source'
   | 'attributed_adgroup'
   | 'attributed_ad'
   | 'braze_id'

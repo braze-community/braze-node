@@ -1,6 +1,6 @@
 import { post } from '../../common/request'
 import { ids } from '.'
-import type { UsersExportsIdsObject, UsersExportsIdsResponse } from './types'
+import type { UsersExportIdsObject, UsersExportIdsResponse } from './types'
 
 jest.mock('../../common/request')
 const mockedPost = jest.mocked(post)
@@ -13,7 +13,7 @@ describe('/users/export/ids', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
 
-  const body: UsersExportsIdsObject = {
+  const body: UsersExportIdsObject = {
     external_ids: ['user_identifier1', 'user_identifier2'],
     user_aliases: [
       {
@@ -28,7 +28,7 @@ describe('/users/export/ids', () => {
     fields_to_export: ['first_name', 'email', 'purchases'],
   }
 
-  const data: UsersExportsIdsResponse = {
+  const data: UsersExportIdsResponse = {
     message: 'success',
     users: [
       {
