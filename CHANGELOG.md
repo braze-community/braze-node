@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/remarkablemark/braze-api/compare/v1.11.0...v1.12.0) (2022-08-09)
+
+
+### Features
+
+* add users export segment ([b1e0fd5](https://github.com/remarkablemark/braze-api/commit/b1e0fd58f81597f43082e489a55453ebf65b5780))
+
 ## [1.11.0](https://github.com/remarkablemark/braze-api/compare/v1.10.0...v1.11.0) (2022-08-07)
 
 
