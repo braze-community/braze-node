@@ -1,4 +1,5 @@
 import type {
+  CampaignsTriggerScheduleCreateObject,
   CampaignsTriggerSendObject,
   CanvasTriggerSendObject,
   MessagesSendObject,
@@ -59,6 +60,15 @@ const options = {
   method: expect.stringMatching(/^GET|POST$/),
 }
 const response = {}
+
+it('calls campaigns.trigger.schedule.create()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(
+    await braze.campaigns.trigger.schedule.create(body as CampaignsTriggerScheduleCreateObject),
+  ).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/schedule/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
 
 it('calls campaigns.trigger.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
