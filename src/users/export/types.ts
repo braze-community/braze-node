@@ -1,6 +1,28 @@
 import type { UserAlias } from '../../common/types'
 
 /**
+ * Request body for users by Global Control Group.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_global_control_group/#request-body}
+ */
+export interface UsersExportGlobalControlGroupObject {
+  callback_endpoint?: string
+  fields_to_export: FieldsToExport[]
+  output_format?: 'zip' | 'gzip'
+}
+
+/**
+ * Response body for users by Global Control Group.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_global_control_group/#response}
+ */
+export interface UsersExportGlobalControlGroupResponse {
+  message: 'success' | string
+  object_prefix: string
+  url?: string
+}
+
+/**
  * Request body for users by identifier endpoint.
  *
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#request-body}
@@ -21,7 +43,7 @@ export interface UsersExportIdsObject {
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#response}
  */
 export interface UsersExportIdsResponse {
-  message: string
+  message: 'success' | string
   users: Partial<UserExportObject>[]
   invalid_user_ids?: string[]
 }
@@ -44,7 +66,7 @@ export interface UsersExportSegmentObject {
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_segment/#response}
  */
 export interface UsersExportSegmentResponse {
-  message: string
+  message: 'success' | string
   object_prefix: string
   url?: string
 }
