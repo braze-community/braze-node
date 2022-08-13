@@ -35,6 +35,11 @@ export class Braze {
 
   campaigns = {
     trigger: {
+      schedule: {
+        create: (body: campaigns.trigger.schedule.CampaignsTriggerScheduleCreateObject) =>
+          campaigns.trigger.schedule.create(this.apiUrl, this.apiKey, body),
+      },
+
       send: (body: campaigns.trigger.CampaignsTriggerSendObject) =>
         campaigns.trigger.send(this.apiUrl, this.apiKey, body),
     },
