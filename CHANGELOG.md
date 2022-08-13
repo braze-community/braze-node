@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/remarkablemark/braze-api/compare/v1.13.0...v1.14.0) (2022-08-13)
+
+
+### Features
+
+* add campaigns trigger schedule create ([a5d3972](https://github.com/remarkablemark/braze-api/commit/a5d3972db64599922dd97ac01ab00993fe173088))
+
 ## [1.13.0](https://github.com/remarkablemark/braze-api/compare/v1.12.0...v1.13.0) (2022-08-13)
 
 
