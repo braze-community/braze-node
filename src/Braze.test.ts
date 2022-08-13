@@ -6,6 +6,7 @@ import type {
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
   UsersDeleteObject,
+  UsersExportGlobalControlGroupObject,
   UsersExportIdsObject,
   UsersExportSegmentObject,
   UsersExternalIdsRemoveObject,
@@ -115,6 +116,15 @@ it('calls users.delete()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.users.delete(body as UsersDeleteObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/delete`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.export.global_control_group()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(
+    await braze.users.export.global_control_group(body as UsersExportGlobalControlGroupObject),
+  ).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/export/global_control_group`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
