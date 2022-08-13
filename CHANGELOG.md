@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/remarkablemark/braze-api/compare/v1.12.0...v1.13.0) (2022-08-13)
+
+
+### Features
+
+* add users export Global Control Group ([cc6947b](https://github.com/remarkablemark/braze-api/commit/cc6947bd10193b45e06f90935d20aeeafbd6dc77))
+
 ## [1.12.0](https://github.com/remarkablemark/braze-api/compare/v1.11.0...v1.12.0) (2022-08-09)
 
 
