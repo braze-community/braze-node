@@ -1,5 +1,6 @@
 import type {
   CampaignsTriggerScheduleCreateObject,
+  CampaignsTriggerScheduleDeleteObject,
   CampaignsTriggerSendObject,
   CanvasTriggerSendObject,
   MessagesSendObject,
@@ -67,6 +68,15 @@ it('calls campaigns.trigger.schedule.create()', async () => {
     await braze.campaigns.trigger.schedule.create(body as CampaignsTriggerScheduleCreateObject),
   ).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/schedule/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls campaigns.trigger.schedule.delete()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(
+    await braze.campaigns.trigger.schedule.delete(body as CampaignsTriggerScheduleDeleteObject),
+  ).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/campaigns/trigger/schedule/delete`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
