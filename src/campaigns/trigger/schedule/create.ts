@@ -21,5 +21,8 @@ export function create(apiUrl: string, apiKey: string, body: CampaignsTriggerSch
     },
   }
 
-  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, options)
+  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, options) as Promise<{
+    dispatch_id: string
+    schedule_id: string
+  }>
 }
