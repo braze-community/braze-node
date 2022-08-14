@@ -59,3 +59,14 @@ export interface UserAlias {
   alias_name: string
   alias_label: string
 }
+
+/**
+ * Schedule object specification.
+ *
+ * {@link https://www.braze.com/docs/api/objects_filters/schedule_object/}
+ */
+export interface ScheduleObject {
+  time: string
+  in_local_time?: boolean
+  at_optimal_time?: boolean
+}
