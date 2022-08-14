@@ -6,11 +6,7 @@ import type { CampaignsTriggerSendObject } from '../types'
  * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_schedule_triggered_campaigns/#request-body}
  */
 export interface CampaignsTriggerScheduleCreateObject extends CampaignsTriggerSendObject {
-  schedule: {
-    time: string
-    in_local_time?: boolean
-    at_optimal_time?: boolean
-  }
+  schedule: Schedule
 }
 
 /**
@@ -21,4 +17,26 @@ export interface CampaignsTriggerScheduleCreateObject extends CampaignsTriggerSe
 export interface CampaignsTriggerScheduleDeleteObject {
   campaign_id: string
   schedule_id: string
+}
+
+/**
+ * Request body for update scheduled API-triggered campaigns.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_update_scheduled_triggered_campaigns/#request-body}
+ */
+export interface CampaignsTriggerScheduleUpdateObject {
+  campaign_id: string
+  schedule_id: string
+  schedule: Schedule
+}
+
+/**
+ * Schedule object specification.
+ *
+ * {@link https://www.braze.com/docs/api/objects_filters/schedule_object/}
+ */
+interface Schedule {
+  time: string
+  in_local_time?: boolean
+  at_optimal_time?: boolean
 }

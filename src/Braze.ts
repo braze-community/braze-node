@@ -41,6 +41,9 @@ export class Braze {
 
         delete: (body: campaigns.trigger.schedule.CampaignsTriggerScheduleDeleteObject) =>
           campaigns.trigger.schedule._delete(this.apiUrl, this.apiKey, body),
+
+        update: (body: campaigns.trigger.schedule.CampaignsTriggerScheduleUpdateObject) =>
+          campaigns.trigger.schedule.update(this.apiUrl, this.apiKey, body),
       },
 
       send: (body: campaigns.trigger.CampaignsTriggerSendObject) =>
