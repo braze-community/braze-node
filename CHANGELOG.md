@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/remarkablemark/braze-api/compare/v1.16.0...v1.17.0) (2022-08-14)
+
+
+### Features
+
+* add canvas trigger schedule create ([84585a6](https://github.com/remarkablemark/braze-api/commit/84585a6c18440478ee4cda4375c7d5f8542127e0))
+
 ## [1.16.0](https://github.com/remarkablemark/braze-api/compare/v1.15.0...v1.16.0) (2022-08-14)
 
 
