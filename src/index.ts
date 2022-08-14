@@ -1,6 +1,7 @@
 export * from './Braze'
 export * from './campaigns/trigger/schedule/types'
 export * from './campaigns/trigger/types'
+export * from './canvas/trigger/schedule/types'
 export * from './canvas/trigger/types'
 export * from './common/types'
 export * from './messages/types'

@@ -1,4 +1,9 @@
-import type { Attributes, ConnectedAudienceObject, UserAlias } from '../../common/types'
+import type {
+  Attributes,
+  ConnectedAudienceObject,
+  TriggerProperties,
+  UserAlias,
+} from '../../common/types'
 
 /**
  * Request body for sending Canvas messages via API-triggered delivery.
@@ -19,6 +24,7 @@ interface Recipient {
   canvas_entry_properties?: CanvasEntryProperties
   send_to_existing_only?: boolean
   attributes?: Attributes
+  trigger_properties?: TriggerProperties
 }
 
 interface RecipientWithExternalUserId extends Recipient {

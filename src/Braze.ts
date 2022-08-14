@@ -53,6 +53,11 @@ export class Braze {
 
   canvas = {
     trigger: {
+      schedule: {
+        create: (body: canvas.trigger.schedule.CanvasTriggerScheduleCreateObject) =>
+          canvas.trigger.schedule.create(this.apiUrl, this.apiKey, body),
+      },
+
       send: (body: canvas.trigger.CanvasTriggerSendObject) =>
         canvas.trigger.send(this.apiUrl, this.apiKey, body),
     },
