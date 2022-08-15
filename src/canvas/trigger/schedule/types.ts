@@ -9,3 +9,13 @@ import type { CanvasTriggerSendObject } from '../types'
 export interface CanvasTriggerScheduleCreateObject extends CanvasTriggerSendObject {
   schedule: ScheduleObject
 }
+
+/**
+ * Request body for delete scheduled API-triggered canvases.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_delete_scheduled_triggered_canvases/#request-body}
+ */
+export interface CanvasTriggerScheduleDeleteObject {
+  canvas_id: string
+  schedule_id: string
+}

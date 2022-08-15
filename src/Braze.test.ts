@@ -4,6 +4,7 @@ import type {
   CampaignsTriggerScheduleUpdateObject,
   CampaignsTriggerSendObject,
   CanvasTriggerScheduleCreateObject,
+  CanvasTriggerScheduleDeleteObject,
   CanvasTriggerSendObject,
   MessagesSendObject,
   SendsIdCreateObject,
@@ -104,6 +105,15 @@ it('calls canvas.trigger.schedule.create()', async () => {
     await braze.canvas.trigger.schedule.create(body as CanvasTriggerScheduleCreateObject),
   ).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/canvas/trigger/schedule/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls canvas.trigger.schedule.delete()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(
+    await braze.canvas.trigger.schedule.delete(body as CanvasTriggerScheduleDeleteObject),
+  ).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/canvas/trigger/schedule/delete`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
