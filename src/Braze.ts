@@ -56,6 +56,9 @@ export class Braze {
       schedule: {
         create: (body: canvas.trigger.schedule.CanvasTriggerScheduleCreateObject) =>
           canvas.trigger.schedule.create(this.apiUrl, this.apiKey, body),
+
+        delete: (body: canvas.trigger.schedule.CanvasTriggerScheduleDeleteObject) =>
+          canvas.trigger.schedule._delete(this.apiUrl, this.apiKey, body),
       },
 
       send: (body: canvas.trigger.CanvasTriggerSendObject) =>
