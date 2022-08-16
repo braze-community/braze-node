@@ -1,6 +1,6 @@
 {
   "name": "braze-api",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "description": "Track users, send messages, export data, and more with Braze API.",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "lib/index.js",
