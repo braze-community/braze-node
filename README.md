@@ -121,7 +121,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [x] /canvas/trigger/schedule/delete
 - [x] /canvas/trigger/schedule/update
 - [x] /messages/schedule/create
-- [ ] /messages/schedule/delete
+- [x] /messages/schedule/delete
 - [ ] /messages/schedule/update
 - [ ] /messages/scheduled_broadcasts
 
