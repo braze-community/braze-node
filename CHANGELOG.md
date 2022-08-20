@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/remarkablemark/braze-api/compare/v1.19.0...v1.20.0) (2022-08-20)
+
+
+### Features
+
+* add messages schedule create ([d3c4fd8](https://github.com/remarkablemark/braze-api/commit/d3c4fd8d386d3b917d66cab9cff4aa8b0e18e551))
+
 ## [1.19.0](https://github.com/remarkablemark/braze-api/compare/v1.18.0...v1.19.0) (2022-08-16)
 
 
