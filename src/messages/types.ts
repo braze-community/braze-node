@@ -1,4 +1,4 @@
-import type { ConnectedAudienceObject } from '../common/types'
+import type { ConnectedAudienceObject, UserAlias } from '../common/types'
 
 /**
  * Request body for sending messages immediately via API only.
@@ -8,10 +8,7 @@ import type { ConnectedAudienceObject } from '../common/types'
 export interface MessagesSendObject {
   broadcast?: boolean
   external_user_ids?: string[]
-  user_aliases?: {
-    alias_name: string
-    alias_label: string
-  }[]
+  user_aliases?: UserAlias[]
   segment_id?: string
   audience?: ConnectedAudienceObject
   campaign_id?: string

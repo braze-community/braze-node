@@ -70,6 +70,11 @@ export class Braze {
   }
 
   messages = {
+    schedule: {
+      create: (body: messages.schedule.MessagesScheduleCreateObject) =>
+        messages.schedule.create(this.apiUrl, this.apiKey, body),
+    },
+
     send: (body: messages.MessagesSendObject) => messages.send(this.apiUrl, this.apiKey, body),
   }
 
