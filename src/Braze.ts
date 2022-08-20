@@ -73,6 +73,9 @@ export class Braze {
     schedule: {
       create: (body: messages.schedule.MessagesScheduleCreateObject) =>
         messages.schedule.create(this.apiUrl, this.apiKey, body),
+
+      delete: (body: messages.schedule.MessagesScheduleDeleteObject) =>
+        messages.schedule._delete(this.apiUrl, this.apiKey, body),
     },
 
     send: (body: messages.MessagesSendObject) => messages.send(this.apiUrl, this.apiKey, body),

@@ -11,3 +11,12 @@ export interface MessagesScheduleCreateObject
   override_messaging_limits?: boolean
   schedule: ScheduleObject
 }
+
+/**
+ * Request body for delete scheduled messages.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_delete_scheduled_messages/#request-body}
+ */
+export interface MessagesScheduleDeleteObject {
+  schedule_id: string
+}
