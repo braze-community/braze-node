@@ -81,6 +81,9 @@ export class Braze {
         messages.schedule.update(this.apiUrl, this.apiKey, body),
     },
 
+    scheduled_broadcasts: (body: Parameters<typeof messages.scheduled_broadcasts>[2]) =>
+      messages.scheduled_broadcasts(this.apiUrl, this.apiKey, body),
+
     send: (body: messages.MessagesSendObject) => messages.send(this.apiUrl, this.apiKey, body),
   }
 

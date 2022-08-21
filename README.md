@@ -123,7 +123,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [x] /messages/schedule/create
 - [x] /messages/schedule/delete
 - [x] /messages/schedule/update
-- [ ] /messages/scheduled_broadcasts
+- [x] /messages/scheduled_broadcasts
 
 ### Subscription groups
 

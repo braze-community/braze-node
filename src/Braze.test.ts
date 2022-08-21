@@ -158,6 +158,17 @@ it('calls messages.schedule.update()', async () => {
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
+it('calls messages.scheduled_broadcasts()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.messages.scheduled_broadcasts({ end_time: '2022-08-21' })).toBe(response)
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/messages/scheduled_broadcasts?end_time=2022-08-21`,
+    body,
+    { headers: options.headers },
+  )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
 it('calls messages.send()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.messages.send(body as MessagesSendObject)).toBe(response)
