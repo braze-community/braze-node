@@ -127,7 +127,8 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ### Subscription groups
 
-- [ ] /subscription/status/set
+- [x] /subscription/status/set
+- [ ] /v2/subscription/status/set
 - [ ] /subscription/status/get
 - [ ] /subscription/user/status
 
