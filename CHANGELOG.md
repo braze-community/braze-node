@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/remarkablemark/braze-api/compare/v1.22.0...v1.23.0) (2022-08-21)
+
+
+### Features
+
+* add messages scheduled_broadcasts ([38eddf2](https://github.com/remarkablemark/braze-api/commit/38eddf2b07ce23d8feca7745bc6448509ffeabf1))
+
 ## [1.22.0](https://github.com/remarkablemark/braze-api/compare/v1.21.0...v1.22.0) (2022-08-21)
 
 
