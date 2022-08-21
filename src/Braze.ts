@@ -2,6 +2,7 @@ import * as campaigns from './campaigns'
 import * as canvas from './canvas'
 import * as messages from './messages'
 import * as sends from './sends'
+import * as subscription from './subscription'
 import * as transactional from './transactional'
 import * as users from './users'
 
@@ -91,6 +92,13 @@ export class Braze {
     id: {
       create: (body: sends.id.SendsIdCreateObject) =>
         sends.id.create(this.apiUrl, this.apiKey, body),
+    },
+  }
+
+  subscription = {
+    status: {
+      set: (body: subscription.status.SubscriptionStatusSetObject) =>
+        subscription.status.set(this.apiUrl, this.apiKey, body),
     },
   }
 

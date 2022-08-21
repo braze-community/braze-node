@@ -12,6 +12,7 @@ import type {
   MessagesScheduleUpdateObject,
   MessagesSendObject,
   SendsIdCreateObject,
+  SubscriptionStatusSetObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
   UsersDeleteObject,
@@ -180,6 +181,13 @@ it('calls sends.id.create()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.sends.id.create(body as SendsIdCreateObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/sends/id/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls subscription.status.set()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.subscription.status.set(body as SubscriptionStatusSetObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/subscription/status/set`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
