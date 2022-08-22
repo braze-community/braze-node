@@ -14,7 +14,7 @@ describe('/subscription/status/set', () => {
   const apiKey = 'apiKey'
   const data = {}
 
-  it('calls SMS request with url and body', async () => {
+  it('calls request for email with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     const body: SubscriptionStatusSetObject = {
       subscription_group_id: 'subscription_group_identifier',
@@ -32,7 +32,7 @@ describe('/subscription/status/set', () => {
     expect(mockedPost).toBeCalledTimes(1)
   })
 
-  it('calls email request with url and body', async () => {
+  it('calls request for SMS with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     const body: SubscriptionStatusSetObject = {
       subscription_group_id: 'subscription_group_identifier',

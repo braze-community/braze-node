@@ -23,6 +23,7 @@ import type {
   UsersExternalIdsRenameObject,
   UsersIdentifyObject,
   UsersTrackObject,
+  V2SubscriptionStatusSetObject,
 } from '.'
 import { Braze } from '.'
 import { request } from './common/request'
@@ -283,5 +284,14 @@ it('calls users.track() with bulk', async () => {
       'X-Braze-Bulk': 'true',
     },
   })
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls v2.subscription.status.set()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.v2.subscription.status.set(body as V2SubscriptionStatusSetObject)).toBe(
+    response,
+  )
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/v2/subscription/status/set`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })

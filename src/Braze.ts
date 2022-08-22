@@ -5,6 +5,7 @@ import * as sends from './sends'
 import * as subscription from './subscription'
 import * as transactional from './transactional'
 import * as users from './users'
+import * as v2 from './v2'
 
 export class Braze {
   /**
@@ -143,5 +144,14 @@ export class Braze {
 
     track: (body: users.UsersTrackObject, bulk?: boolean) =>
       users.track(this.apiUrl, this.apiKey, body, bulk),
+  }
+
+  v2 = {
+    subscription: {
+      status: {
+        set: (body: v2.subscription.status.V2SubscriptionStatusSetObject) =>
+          v2.subscription.status.set(this.apiUrl, this.apiKey, body),
+      },
+    },
   }
 }
