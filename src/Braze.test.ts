@@ -12,6 +12,7 @@ import type {
   MessagesScheduleUpdateObject,
   MessagesSendObject,
   SendsIdCreateObject,
+  SubscriptionStatusGetObject,
   SubscriptionStatusSetObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
@@ -165,7 +166,7 @@ it('calls messages.scheduled_broadcasts()', async () => {
   expect(await braze.messages.scheduled_broadcasts({ end_time: '2022-08-21' })).toBe(response)
   expect(mockedRequest).toBeCalledWith(
     `${apiUrl}/messages/scheduled_broadcasts?end_time=2022-08-21`,
-    body,
+    {},
     { headers: options.headers },
   )
   expect(mockedRequest).toBeCalledTimes(1)
@@ -182,6 +183,18 @@ it('calls sends.id.create()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.sends.id.create(body as SendsIdCreateObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/sends/id/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls subscription.status.get()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  const body: SubscriptionStatusGetObject = { subscription_group_id: 'subscription_group_id' }
+  expect(await braze.subscription.status.get(body)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/subscription/status/get?subscription_group_id=subscription_group_id`,
+    {},
+    { headers: options.headers },
+  )
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
