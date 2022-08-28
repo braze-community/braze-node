@@ -98,6 +98,9 @@ export class Braze {
 
   subscription = {
     status: {
+      get: (body: subscription.status.SubscriptionStatusGetObject) =>
+        subscription.status.get(this.apiUrl, this.apiKey, body),
+
       set: (body: subscription.status.SubscriptionStatusSetObject) =>
         subscription.status.set(this.apiUrl, this.apiKey, body),
     },
