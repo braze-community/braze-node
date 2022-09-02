@@ -12,7 +12,7 @@ export type SubscriptionStatusSetObject =
  *
  * {@link https://www.braze.com/docs/api/endpoints/subscription_groups/get_list_user_subscription_group_status/#request-parameters}
  */
-export type SubscriptionStatusGetObject = {
+export interface SubscriptionStatusGetObject {
   subscription_group_id: string
   external_id?: string | string[]
   email?: string | string[]

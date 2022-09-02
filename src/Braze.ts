@@ -104,6 +104,11 @@ export class Braze {
       set: (body: subscription.status.SubscriptionStatusSetObject) =>
         subscription.status.set(this.apiUrl, this.apiKey, body),
     },
+
+    user: {
+      status: (body: subscription.user.SubscriptionUserStatusObject) =>
+        subscription.user.status(this.apiUrl, this.apiKey, body),
+    },
   }
 
   transactional = {
