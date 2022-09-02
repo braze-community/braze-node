@@ -14,6 +14,7 @@ import type {
   SendsIdCreateObject,
   SubscriptionStatusGetObject,
   SubscriptionStatusSetObject,
+  SubscriptionUserStatusObject,
   TransactionalV1CampaignsSendObject,
   UsersAliasObject,
   UsersDeleteObject,
@@ -202,6 +203,20 @@ it('calls subscription.status.set()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.subscription.status.set(body as SubscriptionStatusSetObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/subscription/status/set`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls subscription.user.status()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  const body: SubscriptionUserStatusObject = {
+    external_id: 'external_id',
+  }
+  expect(await braze.subscription.user.status(body)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/subscription/user/status?external_id=external_id`,
+    {},
+    { headers: options.headers },
+  )
   expect(mockedRequest).toBeCalledTimes(1)
 })
 

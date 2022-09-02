@@ -130,7 +130,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [x] /subscription/status/set
 - [x] /v2/subscription/status/set
 - [x] /subscription/status/get
-- [ ] /subscription/user/status
+- [x] /subscription/user/status
 
 ### Email and email templates
 
