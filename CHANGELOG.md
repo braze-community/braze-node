@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.0](https://github.com/remarkablemark/braze-api/compare/v1.26.0...v1.27.0) (2022-09-02)
+
+
+### Features
+
+* add subscription user status ([f1c8a6a](https://github.com/remarkablemark/braze-api/commit/f1c8a6a59c045db7d167ecda6d4647636fd7d017))
+
 ## [1.26.0](https://github.com/remarkablemark/braze-api/compare/v1.25.0...v1.26.0) (2022-08-28)
 
 
