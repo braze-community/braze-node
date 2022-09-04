@@ -1,5 +1,6 @@
 import * as campaigns from './campaigns'
 import * as canvas from './canvas'
+import * as email from './email'
 import * as messages from './messages'
 import * as sends from './sends'
 import * as subscription from './subscription'
@@ -69,6 +70,11 @@ export class Braze {
       send: (body: canvas.trigger.CanvasTriggerSendObject) =>
         canvas.trigger.send(this.apiUrl, this.apiKey, body),
     },
+  }
+
+  email = {
+    blacklist: (body: email.EmailBlacklistObject) =>
+      email.blacklist(this.apiUrl, this.apiKey, body),
   }
 
   messages = {
