@@ -75,6 +75,11 @@ export class Braze {
   email = {
     blacklist: (body: email.EmailBlacklistObject) =>
       email.blacklist(this.apiUrl, this.apiKey, body),
+
+    bounce: {
+      remove: (body: email.bounce.EmailBounceRemoveObject) =>
+        email.bounce.remove(this.apiUrl, this.apiKey, body),
+    },
   }
 
   messages = {
