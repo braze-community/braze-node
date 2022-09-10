@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.0](https://github.com/remarkablemark/braze-api/compare/v1.29.0...v1.30.0) (2022-09-10)
+
+
+### Features
+
+* add email spam remove ([a53a6a9](https://github.com/remarkablemark/braze-api/commit/a53a6a96a324a9ecf36636d4342284036500aa56))
+
 ## [1.29.0](https://github.com/remarkablemark/braze-api/compare/v1.28.0...v1.29.0) (2022-09-05)
 
 
