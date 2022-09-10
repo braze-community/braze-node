@@ -80,6 +80,11 @@ export class Braze {
       remove: (body: email.bounce.EmailBounceRemoveObject) =>
         email.bounce.remove(this.apiUrl, this.apiKey, body),
     },
+
+    spam: {
+      remove: (body: email.spam.EmailSpamRemoveObject) =>
+        email.spam.remove(this.apiUrl, this.apiKey, body),
+    },
   }
 
   messages = {

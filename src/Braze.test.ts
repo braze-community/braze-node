@@ -9,6 +9,7 @@ import type {
   CanvasTriggerSendObject,
   EmailBlacklistObject,
   EmailBounceRemoveObject,
+  EmailSpamRemoveObject,
   MessagesScheduleCreateObject,
   MessagesScheduleDeleteObject,
   MessagesScheduleUpdateObject,
@@ -154,6 +155,13 @@ it('calls email.bounce.remove()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.email.bounce.remove(body as EmailBounceRemoveObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/email/bounce/remove`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls email.spam.remove()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.email.spam.remove(body as EmailSpamRemoveObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/email/spam/remove`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 

@@ -136,7 +136,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 - [x] /email/blacklist
 - [x] /email/bounce/remove
-- [ ] /email/spam/remove
+- [x] /email/spam/remove
 - [ ] /email/status
 - [ ] /templates/email/create
 - [ ] /templates/email/update
