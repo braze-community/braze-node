@@ -21,7 +21,7 @@ jobs:
         run: npm run lint
 
       - name: Check type
-        run: npm run tsc
+        run: npm run lint:tsc
 
       - name: Build package
         run: npm run build
