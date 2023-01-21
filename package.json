@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf coverage lib",
+    "clean": "rm -rf coverage docs lib",
+    "docs": "typedoc",
+    "docs:watch": "npm run docs -- --watch",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
     "lint:fix": "npm run lint -- --fix",
     "lint:tsc": "tsc",
