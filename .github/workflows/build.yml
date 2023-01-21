@@ -37,3 +37,15 @@ jobs:
 
       - name: Codecov
         uses: codecov/codecov-action@v3
+
+      - name: Build docs
+        run: scripts/docs.sh
+        env:
+          BASE_URL: /${{ github.event.repository.name }}/
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs

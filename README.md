@@ -1,3 +1,7 @@
+<!-- readme-start -->
+
+<!-- readme-content-start -->
+
 # braze-api
 
 [![NPM](https://nodei.co/npm/braze-api.png)](https://nodei.co/npm/braze-api/)
@@ -207,3 +211,9 @@ Release is automated with [Release Please](https://github.com/googleapis/release
 ## License
 
 [MIT](https://github.com/remarkablemark/braze-api/blob/master/LICENSE)
+
+<!-- readme-content-end -->
+
+<!-- readme-content-placeholder -->
+
+<!-- readme-end -->
