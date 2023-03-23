@@ -35,6 +35,7 @@ class ResponseError extends Error {
  */
 export async function request<Response extends ServerResponse = ServerResponse>(
   url: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body?: Record<string, any>,
   options?: RequestInit,
 ): Promise<Response> {

@@ -1,5 +1,6 @@
 import { URLSearchParams } from 'url'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function buildParams(body: Record<string, any>): URLSearchParams {
   return Object.entries(body).reduce((params, [key, value]) => {
     if (typeof value === 'boolean') {

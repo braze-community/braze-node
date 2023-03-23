@@ -13,6 +13,7 @@
   "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "tsdoc"],
   "rules": {
     "@typescript-eslint/no-extra-semi": "off",
+    "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "no-console": "error",
     "no-debugger": "error",
