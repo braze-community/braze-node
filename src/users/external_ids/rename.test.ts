@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { rename } from '.'
 import type { UsersExternalIdsRenameObject } from './types'
 
@@ -20,7 +20,7 @@ describe('/users/external_ids/rename', () => {
       },
     ],
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

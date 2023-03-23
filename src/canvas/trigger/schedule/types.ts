@@ -1,3 +1,4 @@
+import { ServerResponse } from '../../../common/request'
 import type { ScheduleObject } from '../../../common/types'
 import type { CanvasTriggerSendObject } from '../types'
 
@@ -8,6 +9,16 @@ import type { CanvasTriggerSendObject } from '../types'
  */
 export interface CanvasTriggerScheduleCreateObject extends CanvasTriggerSendObject {
   schedule: ScheduleObject
+}
+
+/**
+ * Response body for schedule API-triggered canvases.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_schedule_triggered_canvases/#request-body}
+ */
+export interface CanvasTriggerScheduleCreatResponse extends ServerResponse {
+  dispatch_id: string
+  schedule_id: string
 }
 
 /**

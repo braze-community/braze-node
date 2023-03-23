@@ -1,28 +1,5 @@
 import { post } from '../../../common/request'
-import type { TransactionalV1CampaignsSendObject } from './types'
-
-/**
- * Postback body for sending transactional email via API-triggered delivery.
- *
- * {@link https://www.braze.com/docs/api/endpoints/messaging/send_messages/post_send_transactional_message/#postback-body}
- */
-type Response = {
-  dispatch_id: string
-  status: 'sent' | 'processed' | 'aborted' | 'delivered' | 'bounced'
-  metadata: {
-    external_send_id: string
-    campaign_api_id: string
-    received_at?: string
-    enqueued_at?: string
-    executed_at?: string
-    sent_at?: string
-    processed_at?: string
-    delivered_at?: string
-    bounced_at?: string
-    aborted_at?: string
-    reason?: string
-  }
-}
+import type { CampaignSendResponse, TransactionalV1CampaignsSendObject } from './types'
 
 /**
  * Sending transactional email via API-triggered delivery.
@@ -42,7 +19,7 @@ export function send(
   apiKey: string,
   campaignId: string,
   body: TransactionalV1CampaignsSendObject,
-) {
+): Promise<CampaignSendResponse> {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -50,9 +27,5 @@ export function send(
     },
   }
 
-  return post(
-    `${apiUrl}/transactional/v1/campaigns/${campaignId}/send`,
-    body,
-    options,
-  ) as Promise<Response>
+  return post(`${apiUrl}/transactional/v1/campaigns/${campaignId}/send`, body, options)
 }

@@ -4,6 +4,7 @@ import * as email from './email'
 import * as messages from './messages'
 import * as sends from './sends'
 import * as subscription from './subscription'
+import * as templates from './templates'
 import * as transactional from './transactional'
 import * as users from './users'
 import * as v2 from './v2'
@@ -124,6 +125,15 @@ export class Braze {
     user: {
       status: (body: subscription.user.SubscriptionUserStatusObject) =>
         subscription.user.status(this.apiUrl, this.apiKey, body),
+    },
+  }
+
+  templates = {
+    content_blocks: {
+      get: (body: templates.content_blocks.ContentBlockBody) =>
+        templates.content_blocks.getContentBlock(this.apiUrl, this.apiKey, body),
+      list: (body: templates.content_blocks.ContentBlockListBody) =>
+        templates.content_blocks.listContentBlocks(this.apiUrl, this.apiKey, body),
     },
   }
 

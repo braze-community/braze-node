@@ -1,5 +1,6 @@
 import { post } from '../../../common/request'
 import type { CampaignsTriggerScheduleCreateObject } from './types'
+import { CampaignsTriggerScheduleCreateResponse } from './types'
 
 /**
  * Schedule API-triggered campaigns.
@@ -13,7 +14,11 @@ import type { CampaignsTriggerScheduleCreateObject } from './types'
  * @param body - Request parameters.
  * @returns - Braze response.
  */
-export function create(apiUrl: string, apiKey: string, body: CampaignsTriggerScheduleCreateObject) {
+export function create(
+  apiUrl: string,
+  apiKey: string,
+  body: CampaignsTriggerScheduleCreateObject,
+): Promise<CampaignsTriggerScheduleCreateResponse> {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -21,8 +26,5 @@ export function create(apiUrl: string, apiKey: string, body: CampaignsTriggerSch
     },
   }
 
-  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, options) as Promise<{
-    dispatch_id: string
-    schedule_id: string
-  }>
+  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, options)
 }

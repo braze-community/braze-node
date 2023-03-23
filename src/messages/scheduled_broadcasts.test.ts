@@ -1,4 +1,4 @@
-import { get } from '../common/request'
+import { get, ServerResponse } from '../common/request'
 import { scheduled_broadcasts } from '.'
 
 jest.mock('../common/request')
@@ -14,7 +14,7 @@ describe('/messages/scheduled_broadcasts', () => {
   const body = {
     end_time: '2018-09-01T00:00:00-04:00',
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)

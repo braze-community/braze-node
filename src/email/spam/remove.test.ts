@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { remove } from '.'
 import type { EmailSpamRemoveObject } from './types'
 
@@ -15,7 +15,7 @@ describe('/email/spam/remove', () => {
   const body: EmailSpamRemoveObject = {
     email: 'example@braze.com',
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

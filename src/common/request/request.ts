@@ -6,19 +6,12 @@ export enum RequestMethod {
   POST = 'POST',
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type RequestBody = Record<string, any>
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ResponseBody = Record<string, any>
-
 /**
  * {@link https://www.braze.com/docs/api/errors/#server-responses}
  */
-interface ServerResponse {
+export interface ServerResponse {
   message: string
   errors?: string[]
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
 }
 
 class ResponseError extends Error {
@@ -40,17 +33,17 @@ class ResponseError extends Error {
  * @param options - Request options.
  * @returns - Response.
  */
-export async function request(
+export async function request<Response extends ServerResponse = ServerResponse>(
   url: string,
-  body: RequestBody,
+  body?: Record<string, any>,
   options?: RequestInit,
-): Promise<ResponseBody> {
+): Promise<Response> {
   const response = await fetch(url, {
-    body: JSON.stringify(body),
+    body: body ? JSON.stringify(body) : undefined,
     ...options,
   })
 
-  const data: ServerResponse = await response.json()
+  const data: Response = await response.json()
 
   if (response.ok) {
     return data

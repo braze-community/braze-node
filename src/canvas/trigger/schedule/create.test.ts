@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { post, ServerResponse } from '../../../common/request'
 import { create } from '.'
 import type { CanvasTriggerScheduleCreateObject } from './types'
 
@@ -80,7 +80,7 @@ describe('/canvas/trigger/schedule/create', () => {
       at_optimal_time: false,
     },
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

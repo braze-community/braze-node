@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { post, ServerResponse } from '../../../common/request'
 import { send } from '.'
 import type { TransactionalV1CampaignsSendObject } from './types'
 
@@ -25,7 +25,7 @@ describe('/transactional/v1/campaigns/YOUR_CAMPAIGN_ID_HERE/send', () => {
       },
     ],
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

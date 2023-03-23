@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { post, ServerResponse } from '../common/request'
 import { track } from '.'
 import type { UsersTrackObject } from './types'
 
@@ -48,7 +48,7 @@ describe('/users/track', () => {
     ],
   }
 
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

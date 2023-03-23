@@ -1,3 +1,4 @@
+import { ServerResponse } from '../common/request'
 import type { Properties, UserAlias } from '../common/types'
 
 /**
@@ -32,6 +33,15 @@ export interface UsersDeleteObject {
   external_ids?: string[]
   user_aliases?: UserAlias[]
   braze_ids?: string[]
+}
+
+/**
+ * Response body for user delete.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_delete/#request-body}
+ */
+export interface UsersDeleteResponse extends ServerResponse {
+  deleted: number
 }
 
 /**

@@ -1,4 +1,4 @@
-import { post, request, RequestMethod } from '.'
+import { post, request, RequestMethod, ServerResponse } from '.'
 
 jest.mock('./request')
 const mockedRequest = jest.mocked(request)
@@ -6,7 +6,7 @@ const mockedRequest = jest.mocked(request)
 describe('post', () => {
   const url = 'https://example.com/'
   const body = {}
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
   const options = {
     headers: {
       'Content-Type': 'application/json',

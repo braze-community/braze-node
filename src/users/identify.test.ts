@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { post, ServerResponse } from '../common/request'
 import { identify } from '.'
 import type { UsersIdentifyObject } from './types'
 
@@ -24,7 +24,7 @@ describe('/users/identify', () => {
     ],
   }
 
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

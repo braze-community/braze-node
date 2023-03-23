@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { _delete } from '.'
 import type { MessagesScheduleDeleteObject } from './types'
 
@@ -15,7 +15,7 @@ describe('/messages/schedule/delete', () => {
   const body: MessagesScheduleDeleteObject = {
     schedule_id: 'schedule_identifier',
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

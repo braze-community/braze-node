@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { create } from '.'
 import type { SendsIdCreateObject } from './types'
 
@@ -16,7 +16,7 @@ describe('/sends/id/create', () => {
     campaign_id: 'campaign_identifier',
     send_id: 'send_identifier',
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

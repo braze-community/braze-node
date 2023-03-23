@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { post, ServerResponse } from '../../../common/request'
 import { create } from '.'
 import type { CampaignsTriggerScheduleCreateObject } from './types'
 
@@ -82,7 +82,7 @@ describe('/campaigns/trigger/schedule/create', () => {
     },
   }
 
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

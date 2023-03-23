@@ -179,8 +179,8 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 - [ ] /content_blocks/create
 - [ ] /content_blocks/update
-- [ ] /content_blocks/info
-- [ ] /content_blocks/list
+- [x] /content_blocks/info
+- [x] /content_blocks/list
 
 ### KPI
 

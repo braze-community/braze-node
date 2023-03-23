@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { post, ServerResponse } from '../common/request'
 import { blacklist } from '.'
 import type { EmailBlacklistObject } from './types'
 
@@ -15,7 +15,7 @@ describe('/email/blacklist', () => {
   const body: EmailBlacklistObject = {
     email: ['blacklist_email1', 'blacklist_email2'],
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { post, ServerResponse } from '../../../common/request'
 import { set } from '.'
 import type { V2SubscriptionStatusSetObject } from './types'
 
@@ -12,7 +12,7 @@ beforeEach(() => {
 describe('/v2/subscription/status/set', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request for email and SMS with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
