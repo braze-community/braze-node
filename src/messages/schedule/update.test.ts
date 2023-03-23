@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { update } from '.'
 import type { MessagesScheduleUpdateObject } from './types'
 
@@ -36,7 +36,7 @@ describe('/messages/schedule/update', () => {
     },
   }
 
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

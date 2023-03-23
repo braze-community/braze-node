@@ -1,3 +1,4 @@
+import { ServerResponse } from '../../../common/request'
 import type { ScheduleObject } from '../../../common/types'
 import type { CampaignsTriggerSendObject } from '../types'
 
@@ -8,6 +9,15 @@ import type { CampaignsTriggerSendObject } from '../types'
  */
 export interface CampaignsTriggerScheduleCreateObject extends CampaignsTriggerSendObject {
   schedule: ScheduleObject
+}
+/**
+ * Response body for schedule API-triggered campaigns.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/messaging/schedule_messages/post_schedule_triggered_campaigns/#request-body}
+ */
+export interface CampaignsTriggerScheduleCreateResponse extends ServerResponse {
+  dispatch_id: string
+  schedule_id: string
 }
 
 /**

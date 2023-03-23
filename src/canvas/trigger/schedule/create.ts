@@ -1,5 +1,6 @@
 import { post } from '../../../common/request'
 import type { CanvasTriggerScheduleCreateObject } from './types'
+import { CanvasTriggerScheduleCreatResponse } from './types'
 
 /**
  * Schedule API-triggered canvases.
@@ -13,7 +14,11 @@ import type { CanvasTriggerScheduleCreateObject } from './types'
  * @param body - Request parameters.
  * @returns - Braze response.
  */
-export function create(apiUrl: string, apiKey: string, body: CanvasTriggerScheduleCreateObject) {
+export function create(
+  apiUrl: string,
+  apiKey: string,
+  body: CanvasTriggerScheduleCreateObject,
+): Promise<CanvasTriggerScheduleCreatResponse> {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -21,8 +26,5 @@ export function create(apiUrl: string, apiKey: string, body: CanvasTriggerSchedu
     },
   }
 
-  return post(`${apiUrl}/canvas/trigger/schedule/create`, body, options) as Promise<{
-    dispatch_id: string
-    schedule_id: string
-  }>
+  return post(`${apiUrl}/canvas/trigger/schedule/create`, body, options)
 }

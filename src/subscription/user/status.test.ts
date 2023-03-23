@@ -1,4 +1,4 @@
-import { get } from '../../common/request'
+import { get, ServerResponse } from '../../common/request'
 import { status } from '.'
 import type { SubscriptionUserStatusObject } from './types'
 
@@ -12,7 +12,7 @@ beforeEach(() => {
 describe('/subscription/user/status', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request for multiple users with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)

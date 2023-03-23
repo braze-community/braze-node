@@ -1,5 +1,6 @@
 import { post } from '../common/request'
 import type { UsersDeleteObject } from './types'
+import { UsersDeleteResponse } from './types'
 
 /**
  * User delete endpoint.
@@ -13,7 +14,11 @@ import type { UsersDeleteObject } from './types'
  * @param body - Request parameters.
  * @returns - Braze response.
  */
-export function _delete(apiUrl: string, apiKey: string, body: UsersDeleteObject) {
+export function _delete(
+  apiUrl: string,
+  apiKey: string,
+  body: UsersDeleteObject,
+): Promise<UsersDeleteResponse> {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -21,7 +26,5 @@ export function _delete(apiUrl: string, apiKey: string, body: UsersDeleteObject)
     },
   }
 
-  return post(`${apiUrl}/users/delete`, body, options) as Promise<{
-    deleted: number
-  }>
+  return post(`${apiUrl}/users/delete`, body, options)
 }

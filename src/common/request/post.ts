@@ -1,9 +1,11 @@
-import { request, RequestMethod } from './request'
+import { request, RequestMethod, ServerResponse } from './request'
 
 /**
  * Sends a post request.
  */
-export function post(...args: Parameters<typeof request>) {
+export function post<Response extends ServerResponse = ServerResponse>(
+  ...args: Parameters<typeof request>
+) {
   const [url, body, options] = args
-  return request(url, body, { ...options, method: RequestMethod.POST })
+  return request<Response>(url, body, { ...options, method: RequestMethod.POST })
 }

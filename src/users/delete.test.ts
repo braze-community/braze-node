@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { post, ServerResponse } from '../common/request'
 import { _delete } from '.'
 import type { UsersDeleteObject } from './types'
 
@@ -27,7 +27,7 @@ describe('/users/delete', () => {
     ],
   }
 
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

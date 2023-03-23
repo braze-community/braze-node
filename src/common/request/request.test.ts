@@ -1,7 +1,7 @@
 import type { Response } from 'node-fetch'
 import fetch from 'node-fetch'
 
-import { request, RequestMethod } from '.'
+import { request, RequestMethod, ServerResponse } from '.'
 
 jest.mock('node-fetch')
 const mockedFetch = jest.mocked(fetch)
@@ -9,7 +9,7 @@ const mockedFetch = jest.mocked(fetch)
 describe('request', () => {
   const url = 'https://example.com/'
   const body = {}
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
   const response = {
     json: jest.fn(),
     ok: true,
@@ -19,6 +19,15 @@ describe('request', () => {
     jest.clearAllMocks()
     mockedFetch.mockReturnValueOnce(response as unknown as Promise<Response>)
     response.json.mockResolvedValueOnce(data)
+  })
+
+  it('calls fetch with url', async () => {
+    expect(await request(url)).toBe(data)
+    expect(mockedFetch).toBeCalledWith(url, {
+      body: undefined,
+    })
+    expect(mockedFetch).toBeCalledTimes(1)
+    expect(response.json).toBeCalledTimes(1)
   })
 
   it('calls fetch with url and body', async () => {

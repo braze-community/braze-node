@@ -1,4 +1,6 @@
 import { get } from '../common/request'
+import { buildParams } from '../common/request/params'
+import { ScheduledBroadcastsObject, ScheduledBroadcastsResponse } from './types'
 
 /**
  * Get upcoming scheduled campaigns and Canvases.
@@ -12,7 +14,11 @@ import { get } from '../common/request'
  * @param body - Request parameters.
  * @returns - Braze response.
  */
-export function scheduled_broadcasts(apiUrl: string, apiKey: string, body: { end_time: string }) {
+export function scheduled_broadcasts(
+  apiUrl: string,
+  apiKey: string,
+  body: ScheduledBroadcastsObject,
+): Promise<ScheduledBroadcastsResponse> {
   const options = {
     headers: {
       'Content-Type': 'application/json',
@@ -20,18 +26,5 @@ export function scheduled_broadcasts(apiUrl: string, apiKey: string, body: { end
     },
   }
 
-  return get(
-    `${apiUrl}/messages/scheduled_broadcasts?${new URLSearchParams(body)}`,
-    {},
-    options,
-  ) as Promise<{
-    scheduled_broadcasts: {
-      name: string
-      id: string
-      type: 'Canvas' | 'Campaign'
-      tags: string[]
-      next_send_time: string
-      schedule_type: 'local_time_zones' | 'intelligent_delivery' | string
-    }[]
-  }>
+  return get(`${apiUrl}/messages/scheduled_broadcasts?${buildParams(body)}`, {}, options)
 }

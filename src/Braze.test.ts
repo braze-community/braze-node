@@ -31,7 +31,7 @@ import type {
   V2SubscriptionStatusSetObject,
 } from '.'
 import { Braze } from '.'
-import { request } from './common/request'
+import { request, ServerResponse } from './common/request'
 
 jest.mock('./common/request/request')
 const mockedRequest = jest.mocked(request)
@@ -74,7 +74,7 @@ const options = {
   },
   method: expect.stringMatching(/^GET|POST$/),
 }
-const response = {}
+const response: ServerResponse = { message: 'success' }
 
 it('calls campaigns.trigger.schedule.create()', async () => {
   mockedRequest.mockResolvedValueOnce(response)

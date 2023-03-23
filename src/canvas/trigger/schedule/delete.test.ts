@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { post, ServerResponse } from '../../../common/request'
 import { _delete } from '.'
 import type { CanvasTriggerScheduleDeleteObject } from './types'
 
@@ -16,7 +16,7 @@ describe('/canvas/trigger/schedule/delete', () => {
     canvas_id: 'canvas_identifier',
     schedule_id: 'schedule_identifier',
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { post, ServerResponse } from '../../common/request'
 import { remove } from '.'
 import type { UsersExternalIdsRemoveObject } from './types'
 
@@ -15,7 +15,7 @@ describe('/users/external_ids/remove', () => {
   const body: UsersExternalIdsRemoveObject = {
     external_ids: ['existing_deprecated_external_id_string'],
   }
-  const data = {}
+  const data: ServerResponse = { message: 'success' }
 
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)

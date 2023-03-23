@@ -1,3 +1,4 @@
+import { ServerResponse } from '../common/request'
 import type { ConnectedAudienceObject, UserAlias } from '../common/types'
 
 /**
@@ -63,4 +64,19 @@ interface EmailObjectWithBody extends EmailObject {
 
 interface EmailObjectWithEmailTemplateId extends EmailObject {
   email_template_id: string
+}
+
+export interface ScheduledBroadcastsObject {
+  end_time: string
+}
+
+export interface ScheduledBroadcastsResponse extends ServerResponse {
+  scheduled_broadcasts: {
+    name: string
+    id: string
+    type: 'Canvas' | 'Campaign'
+    tags: string[]
+    next_send_time: string
+    schedule_type: 'local_time_zones' | 'intelligent_delivery' | string
+  }[]
 }
