@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/remarkablemark/braze-api/compare/v1.30.0...v1.31.0) (2023-03-23)
+
+
+### Features
+
+* **content blocks:** add list and get ([ef2e2fe](https://github.com/remarkablemark/braze-api/commit/ef2e2fe4f946d50c3677f010998492a85aed63e1))
+
 ## [1.30.0](https://github.com/remarkablemark/braze-api/compare/v1.29.0...v1.30.0) (2022-09-10)
 
 
