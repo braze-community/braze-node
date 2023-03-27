@@ -204,6 +204,20 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 - [ ] /purchases/product_list
 
+### Catalogs
+
+- [ ] /synchronous/catalogs/delete
+- [x] /synchronous/catalogs/get
+- [ ] /synchronous/catalogs/post
+- [ ] /synchronous/catalog-items/delete
+- [x] /synchronous/catalog-items/list
+- [x] /synchronous/catalog-items/get
+- [ ] /synchronous/catalog-items/update
+- [ ] /synchronous/catalog-items/create
+- [ ] /asynchronous/catalog-items/delete-multiple
+- [ ] /asynchronous/catalog-items/update-multiple
+- [ ] /asynchronous/catalog-items/create-multiple
+
 ## Release
 
 Release is automated with [Release Please](https://github.com/googleapis/release-please).
