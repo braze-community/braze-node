@@ -1,5 +1,6 @@
 import * as campaigns from './campaigns'
 import * as canvas from './canvas'
+import * as catalogs from './catalogs'
 import * as email from './email'
 import * as messages from './messages'
 import * as sends from './sends'
@@ -70,6 +71,18 @@ export class Braze {
 
       send: (body: canvas.trigger.CanvasTriggerSendObject) =>
         canvas.trigger.send(this.apiUrl, this.apiKey, body),
+    },
+  }
+
+  catalogs = {
+    synchronous: {
+      list: () => catalogs.synchronous.listCatalogs(this.apiUrl, this.apiKey),
+      items: <T extends catalogs.synchronous.CatalogListItem>(
+        body: catalogs.synchronous.CatalogListItemsBody,
+      ) => catalogs.synchronous.listCatalogItems<T>(this.apiUrl, this.apiKey, body),
+      item: <T extends catalogs.synchronous.CatalogListItem>(
+        body: catalogs.synchronous.CatalogListItemBody,
+      ) => catalogs.synchronous.getCatalogItem<T>(this.apiUrl, this.apiKey, body),
     },
   }
 
