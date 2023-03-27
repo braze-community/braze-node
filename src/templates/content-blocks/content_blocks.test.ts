@@ -36,7 +36,7 @@ describe('Content Blocks', () => {
       message: 'success',
     }
 
-    it('with required params', async () => {
+    it('is called with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       const contentBlockId = 'YOUR_CONTENT_BLOCK_ID'
       expect(
@@ -52,7 +52,7 @@ describe('Content Blocks', () => {
       expect(mockedRequest).toBeCalledTimes(1)
     })
 
-    it('with all params', async () => {
+    it('is called with all params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       const contentBlockId = 'YOUR_CONTENT_BLOCK_ID'
       expect(
@@ -73,14 +73,14 @@ describe('Content Blocks', () => {
   describe('templates.content_blocks.list()', () => {
     const response: ContentBlockListResponse = { content_blocks: [], count: 0, message: 'success' }
 
-    it('with required params', async () => {
+    it('is called with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.content_blocks.list({})).toBe(response)
       expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/list?`, undefined, options)
       expect(mockedRequest).toBeCalledTimes(1)
     })
 
-    it('with all params', async () => {
+    it('is called with all params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(
         await braze.templates.content_blocks.list({

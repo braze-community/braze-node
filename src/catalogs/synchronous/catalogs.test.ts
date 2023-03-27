@@ -27,8 +27,11 @@ describe('Catalogs - Synchronous', () => {
   }
 
   describe('List Catalogs', () => {
-    const response: CatalogListResponse = { catalogs: [], message: 'success' }
-    it('with no params', async () => {
+    const response: CatalogListResponse = {
+      catalogs: [],
+      message: 'success',
+    }
+    it('is called with no params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.catalogs.synchronous.list()).toBe(response)
       expect(mockedRequest).toBeCalledWith(`${apiUrl}/catalogs`, undefined, options)
@@ -38,13 +41,18 @@ describe('Catalogs - Synchronous', () => {
   describe('List Catalog Items', () => {
     type ResponseType = CatalogListItem<{ foo: string }>
     const response: CatalogListItemsResponse<ResponseType> = {
-      items: [{ id: 'abc123', foo: 'bar' }],
+      items: [
+        {
+          id: 'abc123',
+          foo: 'bar',
+        },
+      ],
       message: 'success',
     }
 
     const catalog_name = 'CATALOG_NAME'
 
-    it('with required params', async () => {
+    it('is called with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toBe(response)
       expect(mockedRequest).toBeCalledWith(
@@ -54,7 +62,7 @@ describe('Catalogs - Synchronous', () => {
       )
     })
 
-    it('with all params', async () => {
+    it('is called with all params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(
         await braze.catalogs.synchronous.items<ResponseType>({ catalog_name, cursor: 'abcdefg' }),
@@ -70,14 +78,19 @@ describe('Catalogs - Synchronous', () => {
   describe('Get Catalog Item', () => {
     type ResponseType = CatalogListItem<{ foo: string }>
     const response: CatalogListItemResponse<ResponseType> = {
-      items: [{ id: 'abc123', foo: 'bar' }],
+      items: [
+        {
+          id: 'abc123',
+          foo: 'bar',
+        },
+      ],
       message: 'success',
     }
 
     const catalog_name = 'CATALOG_NAME'
     const item_id = 'ITEM_ID'
 
-    it('with required params', async () => {
+    it('is called with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.catalogs.synchronous.item<ResponseType>({ catalog_name, item_id })).toBe(
         response,
