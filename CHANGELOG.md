@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.32.0](https://github.com/remarkablemark/braze-api/compare/v1.31.0...v1.32.0) (2023-03-27)
+
+
+### Features
+
+* **catalogs:** add a few catalog listing endpoints ([ca39474](https://github.com/remarkablemark/braze-api/commit/ca39474a6b43b8ea1df6660e6620a872ef6ccf8b))
+
+
+### Bug Fixes
+
+* code review feedback ([a50508a](https://github.com/remarkablemark/braze-api/commit/a50508a6786d9544977fe6012f263b9ca3060108))
+
 ## [1.31.0](https://github.com/remarkablemark/braze-api/compare/v1.30.0...v1.31.0) (2023-03-23)
 
 
