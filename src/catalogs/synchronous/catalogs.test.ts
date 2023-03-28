@@ -11,13 +11,10 @@ import {
   CatalogListResponse,
 } from './types'
 
-jest.mock('../../common/request/request', () => {
-  const originalRequest = jest.requireActual('../../common/request/request')
-  return {
-    ...originalRequest,
-    request: jest.fn(),
-  }
-})
+jest.mock('../../common/request/request', () => ({
+  ...jest.requireActual('../../common/request/request'),
+  request: jest.fn(),
+}))
 const mockedRequest = jest.mocked(request)
 jest.mock('node-fetch', () => fetchMockJest.sandbox())
 const fetchMock = fetch as unknown as FetchMockStatic

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "lib": ["es2020", "dom"],
+    "lib": ["es2020"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -11,5 +11,6 @@
     "outDir": "lib",
     "noEmit": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/*.test.ts"]
 }
