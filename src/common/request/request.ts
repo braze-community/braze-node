@@ -15,13 +15,13 @@ export interface ServerResponse {
 }
 
 export class ResponseError extends Error {
-  public readonly name = 'ResponseError'
-  constructor(
-    message: string,
-    public readonly status: number,
-    public readonly errors?: ServerResponse['errors'],
-  ) {
+  status: number
+  errors?: ServerResponse['errors']
+
+  constructor(message: string, status: number, errors?: ServerResponse['errors']) {
     super(message)
+    this.status = status
+    this.errors = errors
   }
 }
 
