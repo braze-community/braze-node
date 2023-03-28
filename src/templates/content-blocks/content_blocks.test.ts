@@ -71,7 +71,11 @@ describe('Content Blocks', () => {
   })
 
   describe('templates.content_blocks.list()', () => {
-    const response: ContentBlockListResponse = { content_blocks: [], count: 0, message: 'success' }
+    const response: ContentBlockListResponse = {
+      content_blocks: [],
+      count: 0,
+      message: 'success',
+    }
 
     it('is called with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)

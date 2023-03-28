@@ -1,5 +1,9 @@
+import { FetchMockStatic } from 'fetch-mock'
+import * as fetchMockJest from 'fetch-mock-jest'
+import fetch from 'node-fetch'
+
 import { Braze } from '../../Braze'
-import { request } from '../../common/request'
+import { request, ResponseError } from '../../common/request'
 import {
   CatalogListItem,
   CatalogListItemResponse,
@@ -7,8 +11,16 @@ import {
   CatalogListResponse,
 } from './types'
 
-jest.mock('../../common/request/request')
+jest.mock('../../common/request/request', () => {
+  const originalRequest = jest.requireActual('../../common/request/request')
+  return {
+    ...originalRequest,
+    request: jest.fn(),
+  }
+})
 const mockedRequest = jest.mocked(request)
+jest.mock('node-fetch', () => fetchMockJest.sandbox())
+const fetchMock = fetch as unknown as FetchMockStatic
 
 const apiUrl = 'https://rest.iad-01.braze.com'
 const apiKey = 'apiKey'
@@ -39,6 +51,8 @@ describe('Catalogs - Synchronous', () => {
   })
 
   describe('List Catalog Items', () => {
+    beforeEach(() => fetchMock.reset())
+
     type ResponseType = CatalogListItem<{ foo: string }>
     const response: CatalogListItemsResponse<ResponseType> = {
       items: [
@@ -53,23 +67,162 @@ describe('Catalogs - Synchronous', () => {
     const catalog_name = 'CATALOG_NAME'
 
     it('is called with required params', async () => {
-      mockedRequest.mockResolvedValueOnce(response)
-      expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
-        `${apiUrl}/catalogs/${catalog_name}/items?`,
-        undefined,
+      fetchMock.get(`${apiUrl}/catalogs/${catalog_name}/items`, response)
+      expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toEqual(
+        response,
+      )
+      expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
+    })
+
+    it('throws exception on failed request', async () => {
+      fetchMock.get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+        body: {
+          message: 'error',
+          errors: ['there was a problem'],
+        },
+        status: 500,
+      })
+      await expect(
+        braze.catalogs.synchronous.items<ResponseType>({ catalog_name }),
+      ).rejects.toThrow(new ResponseError('error', 500, ['there was a problem']))
+      expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
+    })
+
+    it('is looped when there is a cursor', async () => {
+      const responses: CatalogListItemsResponse<ResponseType>[] = [
+        {
+          items: [
+            {
+              id: 'abc123',
+              foo: 'bar',
+            },
+          ],
+          message: 'success',
+        },
+        {
+          items: [
+            {
+              id: 'def456',
+              foo: 'baz',
+            },
+          ],
+          message: 'success',
+        },
+        {
+          items: [
+            {
+              id: 'ghi789',
+              foo: 'bah',
+            },
+          ],
+          message: 'success',
+        },
+      ]
+
+      fetchMock
+        .get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+          body: responses[0],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="next"`,
+          },
+        })
+        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
+          body: responses[1],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="prev",</catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=>; rel="next"`,
+          },
+        })
+        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`, {
+          body: responses[2],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDow>; rel="prev"`,
+          },
+        })
+
+      expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toEqual({
+        items: responses.reduce<ResponseType[]>(
+          (items, response) => [...items, ...response.items],
+          [],
+        ),
+        message: 'success',
+      })
+      expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
+      expect(fetchMock).toHaveFetched(
+        `${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`,
+        options,
+      )
+      expect(fetchMock).toHaveFetched(
+        `${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`,
         options,
       )
     })
 
-    it('is called with all params', async () => {
-      mockedRequest.mockResolvedValueOnce(response)
+    it('is stops with max pages when looped when there is a cursor', async () => {
+      const responses: CatalogListItemsResponse<ResponseType>[] = [
+        {
+          items: [
+            {
+              id: 'abc123',
+              foo: 'bar',
+            },
+          ],
+          message: 'success',
+        },
+        {
+          items: [
+            {
+              id: 'def456',
+              foo: 'baz',
+            },
+          ],
+          message: 'success',
+        },
+        {
+          items: [
+            {
+              id: 'ghi789',
+              foo: 'bah',
+            },
+          ],
+          message: 'success',
+        },
+      ]
+
+      fetchMock
+        .get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+          body: responses[0],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="next"`,
+          },
+        })
+        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
+          body: responses[1],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="prev",</catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=>; rel="next"`,
+          },
+        })
+        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`, {
+          body: responses[2],
+          headers: {
+            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDow>; rel="prev"`,
+          },
+        })
+
       expect(
-        await braze.catalogs.synchronous.items<ResponseType>({ catalog_name, cursor: 'abcdefg' }),
-      ).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
-        `${apiUrl}/catalogs/${catalog_name}/items?cursor=abcdefg`,
-        undefined,
+        await braze.catalogs.synchronous.items<ResponseType>({ catalog_name, max_pages: 2 }),
+      ).toEqual({
+        items: responses
+          .slice(0, 2)
+          .reduce<ResponseType[]>((items, response) => [...items, ...response.items], []),
+        message: 'success',
+      })
+      expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
+      expect(fetchMock).toHaveFetched(
+        `${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`,
+        options,
+      )
+      expect(fetchMock).not.toHaveFetched(
+        `${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`,
         options,
       )
     })

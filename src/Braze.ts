@@ -14,12 +14,12 @@ export class Braze {
   /**
    * {@link https://www.braze.com/docs/api/basics/#endpoints}
    */
-  private apiUrl: string
+  private readonly apiUrl: string
 
   /**
    * {@link https://www.braze.com/docs/api/basics/#app-group-rest-api-keys}
    */
-  private apiKey: string
+  private readonly apiKey: string
 
   /**
    * @param apiUrl - Braze REST endpoint.
