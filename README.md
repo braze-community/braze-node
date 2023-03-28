@@ -218,9 +218,9 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [ ] /asynchronous/catalog-items/update-multiple
 - [ ] /asynchronous/catalog-items/create-multiple
 
-## Release
+## Contributing
 
-Release is automated with [Release Please](https://github.com/googleapis/release-please).
+We encourage contributions! Please check out the [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed.
 
 ## License
 
