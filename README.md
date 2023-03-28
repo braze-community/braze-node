@@ -9,6 +9,7 @@
 [![NPM version](https://img.shields.io/npm/v/braze-api.svg)](https://www.npmjs.com/package/braze-api)
 [![build](https://github.com/remarkablemark/braze-api/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/braze-api/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/remarkablemark/braze-api/branch/master/graph/badge.svg?token=QHPI1I0XI3)](https://codecov.io/gh/remarkablemark/braze-api)
+[![NPM downloads](https://badgen.net/npm/dm/braze-api)](https://www.npmjs.com/package/braze-api)
 
 Node.js library for [Braze](https://www.braze.com/) (see [demo](https://replit.com/@remarkablemark/braze-api)). The types are inspired by [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
 
