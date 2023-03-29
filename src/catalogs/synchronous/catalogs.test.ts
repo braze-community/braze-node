@@ -3,6 +3,7 @@ import fetch from 'node-fetch'
 
 import { Braze } from '../../Braze'
 import { request, ResponseError } from '../../common/request'
+import { getListCatalogItems } from './list_items'
 import {
   CatalogListItem,
   CatalogListItemResponse,
@@ -47,6 +48,26 @@ describe('Catalogs - Synchronous', () => {
   })
 
   describe('List Catalog Items', () => {
+    const response: CatalogListItemsResponse<CatalogListItem> = {
+      items: [
+        {
+          id: 'abc123',
+        },
+      ],
+      message: 'success',
+    }
+
+    const catalog_name = 'CATALOG_NAME'
+
+    it('raises exception when calling next for completed iteration', async () => {
+      fetchMock.getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, response)
+
+      const instance = await getListCatalogItems(apiUrl, apiKey, { catalog_name })
+      expect(() => instance.next()).toThrow(new ResponseError('There is no next page', 0))
+    })
+  })
+
+  describe('List Catalog Items - Iterator', () => {
     beforeEach(() => {
       fetchMock.reset()
     })
@@ -58,6 +79,10 @@ describe('Catalogs - Synchronous', () => {
           id: 'abc123',
           foo: 'bar',
         },
+        {
+          id: 'def456',
+          foo: 'baz',
+        },
       ],
       message: 'success',
     }
@@ -65,28 +90,30 @@ describe('Catalogs - Synchronous', () => {
     const catalog_name = 'CATALOG_NAME'
 
     it('is called with required params', async () => {
-      fetchMock.get(`${apiUrl}/catalogs/${catalog_name}/items`, response)
-      expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toEqual(
-        response,
-      )
+      fetchMock.getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, response)
+      const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
+      await expect(itemIterator.next()).resolves.toEqual({ done: false, value: response.items[0] })
+      await expect(itemIterator.next()).resolves.toEqual({ done: false, value: response.items[1] })
+      await expect(itemIterator.next()).resolves.toEqual({ done: true, value: undefined })
       expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
     })
 
     it('throws exception on failed request', async () => {
-      fetchMock.get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+      fetchMock.getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, {
         body: {
           message: 'error',
           errors: ['there was a problem'],
         },
         status: 500,
       })
-      await expect(
-        braze.catalogs.synchronous.items<ResponseType>({ catalog_name }),
-      ).rejects.toThrow(new ResponseError('error', 500, ['there was a problem']))
+      const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
+      await expect(itemIterator.next()).rejects.toThrow(
+        new ResponseError('error', 500, ['there was a problem']),
+      )
       expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
     })
 
-    it('is looped when there is a cursor', async () => {
+    it('calls next link when there is one', async () => {
       const responses: CatalogListItemsResponse<ResponseType>[] = [
         {
           items: [
@@ -112,50 +139,68 @@ describe('Catalogs - Synchronous', () => {
               id: 'ghi789',
               foo: 'bah',
             },
+            {
+              id: 'jkl012',
+              foo: 'bat',
+            },
           ],
           message: 'success',
         },
       ]
 
       fetchMock
-        .get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+        .getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, {
           body: responses[0],
           headers: {
             Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="next"`,
           },
         })
-        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
+        .getOnce(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
           body: responses[1],
           headers: {
             Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="prev",</catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=>; rel="next"`,
           },
         })
-        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`, {
+        .getOnce(`${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`, {
           body: responses[2],
           headers: {
             Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDow>; rel="prev"`,
           },
         })
 
-      expect(await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })).toEqual({
-        items: responses.reduce<ResponseType[]>(
-          (items, response) => [...items, ...response.items],
-          [],
-        ),
-        message: 'success',
+      const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
+      await expect(itemIterator.next()).resolves.toEqual({
+        done: false,
+        value: responses[0].items[0],
       })
       expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
+
+      await expect(itemIterator.next()).resolves.toEqual({
+        done: false,
+        value: responses[1].items[0],
+      })
       expect(fetchMock).toHaveFetched(
         `${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`,
         options,
       )
+
+      await expect(itemIterator.next()).resolves.toEqual({
+        done: false,
+        value: responses[2].items[0],
+      })
+      await expect(itemIterator.next()).resolves.toEqual({
+        done: false,
+        value: responses[2].items[1],
+      })
       expect(fetchMock).toHaveFetched(
         `${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`,
         options,
       )
+
+      await expect(itemIterator.next()).resolves.toEqual({ done: true, value: undefined })
     })
 
-    it('is stops with max pages when looped when there is a cursor', async () => {
+    it('calls next link when there is one - loop version', async () => {
       const responses: CatalogListItemsResponse<ResponseType>[] = [
         {
           items: [
@@ -169,17 +214,12 @@ describe('Catalogs - Synchronous', () => {
         {
           items: [
             {
-              id: 'def456',
-              foo: 'baz',
-            },
-          ],
-          message: 'success',
-        },
-        {
-          items: [
-            {
               id: 'ghi789',
               foo: 'bah',
+            },
+            {
+              id: 'jkl012',
+              foo: 'bat',
             },
           ],
           message: 'success',
@@ -187,42 +227,26 @@ describe('Catalogs - Synchronous', () => {
       ]
 
       fetchMock
-        .get(`${apiUrl}/catalogs/${catalog_name}/items`, {
+        .getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, {
           body: responses[0],
           headers: {
             Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="next"`,
           },
         })
-        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
+        .getOnce(`${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`, {
           body: responses[1],
-          headers: {
-            Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=>; rel="prev",</catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=>; rel="next"`,
-          },
-        })
-        .get(`${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`, {
-          body: responses[2],
           headers: {
             Link: `</catalogs/${catalog_name}/items?cursor=c2tpcDow>; rel="prev"`,
           },
         })
 
-      expect(
-        await braze.catalogs.synchronous.items<ResponseType>({ catalog_name, max_pages: 2 }),
-      ).toEqual({
-        items: responses
-          .slice(0, 2)
-          .reduce<ResponseType[]>((items, response) => [...items, ...response.items], []),
-        message: 'success',
-      })
-      expect(fetchMock).toHaveFetched(`${apiUrl}/catalogs/${catalog_name}/items`, options)
-      expect(fetchMock).toHaveFetched(
-        `${apiUrl}/catalogs/${catalog_name}/items?cursor=c2tpcDoxMDA=`,
-        options,
-      )
-      expect(fetchMock).not.toHaveFetched(
-        `${apiUrl}/catalogs/${catalog_name}/items?cursor=b2tpcDoxMDB=`,
-        options,
-      )
+      const itemIterator = braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
+      const items = []
+      for await (const item of itemIterator) {
+        items.push(item)
+      }
+
+      expect(items).toEqual([...responses[0].items, ...responses[1].items])
     })
   })
 
