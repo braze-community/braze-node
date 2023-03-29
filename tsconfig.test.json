@@ -4,5 +4,5 @@
     "lib": ["es2020", "dom"]
   },
   "include": ["**/*.test.ts"],
-  "exclude": ["node_modules"]
+  "exclude": []
 }

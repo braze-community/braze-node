@@ -1,4 +1,3 @@
-import { FetchMockStatic } from 'fetch-mock'
 import * as fetchMockJest from 'fetch-mock-jest'
 import fetch from 'node-fetch'
 
@@ -17,7 +16,7 @@ jest.mock('../../common/request/request', () => ({
 }))
 const mockedRequest = jest.mocked(request)
 jest.mock('node-fetch', () => fetchMockJest.sandbox())
-const fetchMock = fetch as unknown as FetchMockStatic
+const fetchMock = fetch as unknown as typeof fetchMockJest
 
 const apiUrl = 'https://rest.iad-01.braze.com'
 const apiKey = 'apiKey'
@@ -48,7 +47,9 @@ describe('Catalogs - Synchronous', () => {
   })
 
   describe('List Catalog Items', () => {
-    beforeEach(() => fetchMock.reset())
+    beforeEach(() => {
+      fetchMock.reset()
+    })
 
     type ResponseType = CatalogListItem<{ foo: string }>
     const response: CatalogListItemsResponse<ResponseType> = {
