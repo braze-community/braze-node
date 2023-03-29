@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/remarkablemark/braze-api/compare/v1.32.0...v2.0.0) (2023-03-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **catalog list items:** catalogs.synchronous.items now returns a generator instead of an array
+
+### Features
+
+* **catalog list items:** return generator instead of array ([3a847bd](https://github.com/remarkablemark/braze-api/commit/3a847bd97af8925cc98561cf9798a0a08a2bc591))
+
+
+### Bug Fixes
+
+* **catalog items:** add pagination ([b29081b](https://github.com/remarkablemark/braze-api/commit/b29081bdca34e16e77b5837110683e0797c13e84))
+
 ## [1.32.0](https://github.com/remarkablemark/braze-api/compare/v1.31.0...v1.32.0) (2023-03-27)
 
 ### Features
