@@ -14,7 +14,7 @@ export interface ServerResponse {
   errors?: string[]
 }
 
-class ResponseError extends Error {
+export class ResponseError extends Error {
   status: number
   errors?: ServerResponse['errors']
 

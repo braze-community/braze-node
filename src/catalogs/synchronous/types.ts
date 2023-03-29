@@ -22,7 +22,7 @@ export interface CatalogListResponse extends ServerResponse {
  */
 export interface CatalogListItemsBody {
   catalog_name: string
-  cursor?: string
+  max_pages?: number
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

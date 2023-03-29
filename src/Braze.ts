@@ -79,7 +79,7 @@ export class Braze {
       list: () => catalogs.synchronous.listCatalogs(this.apiUrl, this.apiKey),
       items: <T extends catalogs.synchronous.CatalogListItem>(
         body: catalogs.synchronous.CatalogListItemsBody,
-      ) => catalogs.synchronous.listCatalogItems<T>(this.apiUrl, this.apiKey, body),
+      ) => catalogs.synchronous.getListCatalogItemsIterator<T>(this.apiUrl, this.apiKey, body),
       item: <T extends catalogs.synchronous.CatalogListItem>(
         body: catalogs.synchronous.CatalogListItemBody,
       ) => catalogs.synchronous.getCatalogItem<T>(this.apiUrl, this.apiKey, body),
