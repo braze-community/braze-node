@@ -221,7 +221,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ## Contributing
 
-We encourage contributions! Please check out the [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed.
+We encourage contributions! Check out the [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed.
 
 ## License
 
