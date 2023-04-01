@@ -144,4 +144,4 @@ open docs/index.html
 
 Release and publish are automated with [Release Please].
 
-[release please]: https://github.com/googleapis/release-please
+[release please]: https://github.com/googleapis/release-please#readme
