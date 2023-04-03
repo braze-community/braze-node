@@ -1,6 +1,6 @@
-// eslint-disable-next-line tsdoc/syntax
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-export default {
+import type { Config } from 'jest'
+
+const config: Config = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
@@ -13,3 +13,5 @@ export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
 }
+
+export default config
