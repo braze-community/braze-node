@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/remarkablemark/braze-api/compare/v2.0.0...v2.0.1) (2023-04-20)
+
+
+### Bug Fixes
+
+* correct typing of users track returned errors ([3ebb2bb](https://github.com/remarkablemark/braze-api/commit/3ebb2bb38da02bc75141b0322a56f2381125ad47))
+
 ## [2.0.0](https://github.com/remarkablemark/braze-api/compare/v1.32.0...v2.0.0) (2023-03-29)
 
 
