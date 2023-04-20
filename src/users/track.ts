@@ -31,6 +31,6 @@ export function track(apiUrl: string, apiKey: string, body: UsersTrackObject, bu
     attributes_processed?: number
     events_processed?: number
     purchases_processed?: number
-    errors?: object
+    errors?: object[]
   }>
 }
