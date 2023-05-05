@@ -36,7 +36,7 @@
     "node-fetch": "2.6.9"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.1",
+    "@commitlint/cli": "17.6.3",
     "@commitlint/config-conventional": "17.6.1",
     "@types/jest": "29.5.1",
     "@types/node": "18.16.3",
