@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "@types/node-fetch": "2.6.3",
-    "node-fetch": "2.6.10"
+    "node-fetch": "2.6.11"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.3",
