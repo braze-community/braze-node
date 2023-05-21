@@ -89,7 +89,7 @@ Use the [REST endpoint](https://www.braze.com/docs/api/basics/#endpoints) provis
 | EU-01    | https://rest.fra-01.braze.eu  |
 | EU-02    | https://rest.fra-02.braze.eu  |
 
-## API Key
+### API Key
 
 The [API key](https://www.braze.com/docs/api/basics/#app-group-rest-api-keys) can be created in your Braze dashboard.
 
