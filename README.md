@@ -75,7 +75,7 @@ const braze = new Braze('YOUR_API_URL', 'YOUR_API_KEY')
 
 ### API URL
 
-Use the [REST endpoint](https://www.braze.com/docs/api/basics/#endpoints) provisioned to your account when you log in to the dashboard:
+Use the [REST endpoint](https://www.braze.com/docs/api/basics#endpoints) provisioned to your account when you log in to the dashboard:
 
 | Instance | REST Endpoint                 |
 | -------- | ----------------------------- |
@@ -91,11 +91,11 @@ Use the [REST endpoint](https://www.braze.com/docs/api/basics/#endpoints) provis
 
 ### API Key
 
-The [API key](https://www.braze.com/docs/api/basics/#app-group-rest-api-keys) can be created in your Braze dashboard.
+The [API key](https://www.braze.com/docs/api/basics#creating-and-managing-rest-api-keys) can be created in your Braze dashboard.
 
 ## API Methods
 
-This library currently supports a subset of the [Braze API endpoints](https://www.braze.com/docs/api/endpoints/). Pull requests are welcome.
+This library currently supports a subset of the [Braze API endpoints](https://www.braze.com/docs/api/home). Pull requests are welcome.
 
 ### User data
 
