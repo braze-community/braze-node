@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/remarkablemark/braze-api/compare/v2.0.1...v2.1.0) (2023-06-16)
+
+
+### Features
+
+* **module:** add ECMAScript modules (ESM) support ([e8eebac](https://github.com/remarkablemark/braze-api/commit/e8eebac6ea358d8e08a6495fb1f038b2b445bc5f))
+
 ## [2.0.1](https://github.com/remarkablemark/braze-api/compare/v2.0.0...v2.0.1) (2023-04-20)
 
 
