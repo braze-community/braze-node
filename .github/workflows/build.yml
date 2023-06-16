@@ -29,11 +29,11 @@ jobs:
       - name: Check type
         run: npm run lint:tsc
 
-      - name: Build package
-        run: npm run build
-
       - name: Run tests
         run: npm run test:ci
+
+      - name: Run module tests
+        run: npm run test:module
 
       - name: Codecov
         uses: codecov/codecov-action@v3
