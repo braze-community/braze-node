@@ -217,7 +217,7 @@ it('calls subscription.status.get()', async () => {
   expect(await braze.subscription.status.get(body)).toBe(response)
   expect(mockedRequest).toBeCalledWith(
     `${apiUrl}/subscription/status/get?subscription_group_id=subscription_group_id`,
-    {},
+    undefined,
     { headers: options.headers },
   )
   expect(mockedRequest).toBeCalledTimes(1)
