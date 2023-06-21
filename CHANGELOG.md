@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/remarkablemark/braze-api/compare/v2.1.0...v2.1.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* subscription.status.get pass undefined body instead of empty object ([e73d1b1](https://github.com/remarkablemark/braze-api/commit/e73d1b1f4b3dec8a45a7272e70b35143016eb25a))
+
 ## [2.1.0](https://github.com/remarkablemark/braze-api/compare/v2.0.1...v2.1.0) (2023-06-16)
 
 
