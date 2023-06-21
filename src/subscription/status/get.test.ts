@@ -23,7 +23,7 @@ describe('/subscription/status/get', () => {
     expect(await get(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/status/get?subscription_group_id=subscription_group_id&external_id=1&external_id=2`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ describe('/subscription/status/get', () => {
     expect(await get(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/status/get?subscription_group_id=subscription_group_id&email=example%40braze.com`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ describe('/subscription/status/get', () => {
     expect(await get(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/status/get?subscription_group_id=subscription_group_id&phone=%2B11112223333`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
