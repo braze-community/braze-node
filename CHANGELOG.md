@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/remarkablemark/braze-api/compare/v2.1.1...v2.2.0) (2023-06-23)
+
+
+### Features
+
+* allow calls to /users/merge endpoint ([dc07e48](https://github.com/remarkablemark/braze-api/commit/dc07e48ad22241f724a6f0d5f0e503576cfc1afb))
+
 ## [2.1.1](https://github.com/remarkablemark/braze-api/compare/v2.1.0...v2.1.1) (2023-06-21)
 
 
