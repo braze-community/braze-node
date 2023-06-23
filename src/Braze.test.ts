@@ -27,6 +27,7 @@ import type {
   UsersExternalIdsRemoveObject,
   UsersExternalIdsRenameObject,
   UsersIdentifyObject,
+  UsersMergeObject,
   UsersTrackObject,
   V2SubscriptionStatusSetObject,
 } from '.'
@@ -316,6 +317,13 @@ it('calls users.identify()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.users.identify(body as UsersIdentifyObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/identify`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.merge()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.merge(body as UsersMergeObject)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/merge`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
