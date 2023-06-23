@@ -189,6 +189,8 @@ export class Braze {
 
     identify: (body: users.UsersIdentifyObject) => users.identify(this.apiUrl, this.apiKey, body),
 
+    merge: (body: users.UsersMergeObject) => users.merge(this.apiUrl, this.apiKey, body),
+
     track: (body: users.UsersTrackObject, bulk?: boolean) =>
       users.track(this.apiUrl, this.apiKey, body, bulk),
   }

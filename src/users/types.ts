@@ -25,6 +25,18 @@ export interface UsersIdentifyObject {
 }
 
 /**
+ * Request body for user merge.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/post_users_merge/#request-body}
+ */
+export interface UsersMergeObject {
+  merge_updates: {
+    identifier_to_merge: { external_id: string } | { user_alias: UserAlias }
+    identifier_to_keep: { external_id: string } | { user_alias: UserAlias }
+  }[]
+}
+
+/**
  * Request body for user delete.
  *
  * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_delete/#request-body}
