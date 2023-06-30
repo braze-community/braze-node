@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/remarkablemark/braze-api/compare/v2.2.0...v2.2.1) (2023-06-30)
+
+
+### Build System
+
+* **deps:** bump node-fetch and @types/node-fetch ([#288](https://github.com/remarkablemark/braze-api/issues/288)) ([355feaf](https://github.com/remarkablemark/braze-api/commit/355feafd9ab1a25dd9062735d93b7f1c54969457))
+
 ## [2.2.0](https://github.com/remarkablemark/braze-api/compare/v2.1.1...v2.2.0) (2023-06-23)
 
 
