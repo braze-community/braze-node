@@ -4,15 +4,16 @@
   "description": "Track users, send messages, export data, and more with Braze API.",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "cjs/index.js",
-  "module": "index.mjs",
+  "module": "esm/index.js",
   "exports": {
-    "types": "./cjs/index.d.ts",
-    "import": "./module/index.mjs",
+    "import": "./esm/index.js",
     "require": "./cjs/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf coverage cjs docs",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc",
+    "build:esm": "tsc --module nodenext --outDir esm",
+    "clean": "rm -rf cjs coverage docs esm",
     "docs": "typedoc",
     "docs:watch": "npm run docs -- --watch",
     "lint": "eslint --ignore-path .gitignore --ext .js,.mjs,.ts .",
@@ -20,10 +21,10 @@
     "lint:tsc": "tsc --noEmit && tsc --project tsconfig.test.json",
     "postinstall": "husky install",
     "postpublish": "pinst --enable",
-    "prepublishOnly": "pinst --disable && npm run lint && npm run lint:tsc && npm run test:ci && npm run clean && npm run build",
+    "prepublishOnly": "pinst --disable && npm run lint && npm run lint:tsc && npm run test:ci && npm run test:esm && npm run clean && npm run build",
     "test": "jest",
     "test:ci": "CI=true jest --ci --colors --coverage",
-    "test:module": "npm run build && node --test module",
+    "test:esm": "npm run build:esm && node --test src",
     "test:watch": "jest --watch"
   },
   "repository": {
@@ -65,7 +66,7 @@
   },
   "files": [
     "cjs/",
-    "module/"
+    "esm/"
   ],
   "engines": {
     "node": ">=14"

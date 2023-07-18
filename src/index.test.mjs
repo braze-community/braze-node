@@ -2,7 +2,7 @@ import { describe, it } from 'node:test'
 
 import assert from 'assert'
 
-import { Braze } from './index.mjs'
+import { Braze } from '../esm/index.js'
 
 describe('index', () => {
   it('exports "Braze" class', () => {
