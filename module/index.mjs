@@ -1,1 +1,1 @@
-export { Braze } from '../lib/index.js'
+export { Braze } from '../cjs/index.js'
