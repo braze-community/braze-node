@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/remarkablemark/braze-api/compare/v2.2.1...v2.2.2) (2023-07-18)
+
+
+### Bug Fixes
+
+* **package:** fix "module" field in package.json ([efc54f8](https://github.com/remarkablemark/braze-api/commit/efc54f84568b81a70f7c7e9cb3af0ed973daf6df))
+
 ## [2.2.1](https://github.com/remarkablemark/braze-api/compare/v2.2.0...v2.2.1) (2023-06-30)
 
 
