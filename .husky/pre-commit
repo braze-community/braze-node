@@ -3,4 +3,5 @@
 
 npm run lint:tsc
 npm run test:ci
+npm run test:esm
 npx lint-staged

@@ -8,9 +8,8 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "lib",
-    "noEmit": true
+    "outDir": "cjs"
   },
   "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
