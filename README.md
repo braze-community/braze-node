@@ -11,7 +11,7 @@
 [![codecov](https://codecov.io/gh/remarkablemark/braze-api/branch/master/graph/badge.svg?token=QHPI1I0XI3)](https://codecov.io/gh/remarkablemark/braze-api)
 [![NPM downloads](https://badgen.net/npm/dm/braze-api)](https://www.npmjs.com/package/braze-api)
 
-Node.js library for [Braze](https://www.braze.com/) (see [demo](https://replit.com/@remarkablemark/braze-api)). The types are inspired by [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
+Node.js library for [Braze](https://www.braze.com/). See [docs](https://b.remarkabl.org/braze-api) and [demo](https://replit.com/@remarkablemark/braze-api). The types are from [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
 
 ## Quick Start
 
@@ -34,7 +34,9 @@ await braze.messages.send({
 
 ## Documentation
 
-See [Braze API guide](https://www.braze.com/docs/api/basics/) and [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
+- [TypeDoc](https://b.remarkabl.org/braze-api)
+- [Braze API Guide](https://www.braze.com/docs/api/)
+- [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG)
 
 ## Prerequisites
 
@@ -222,7 +224,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ## Contributing
 
-We encourage contributions! Check out the [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed.
+Contributions are welcome! See our [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed. :wave:
 
 ## License
 
