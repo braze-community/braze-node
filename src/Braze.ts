@@ -148,6 +148,16 @@ export class Braze {
       list: (body: templates.content_blocks.ContentBlockListBody) =>
         templates.content_blocks.listContentBlocks(this.apiUrl, this.apiKey, body),
     },
+    email_templates: {
+      get: (body: templates.email_templates.EmailTemplateBody) =>
+        templates.email_templates.getEmailTemplate(this.apiUrl, this.apiKey, body),
+      list: (body: templates.email_templates.EmailTemplateListBody) =>
+        templates.email_templates.getEmailTemplateList(this.apiUrl, this.apiKey, body),
+      create: (body: templates.email_templates.CreateEmailTemplateBody) =>
+        templates.email_templates.createEmailTemplate(this.apiUrl, this.apiKey, body),
+      update: (body: templates.email_templates.UpdateEmailTemplateBody) =>
+        templates.email_templates.updateEmailTemplate(this.apiUrl, this.apiKey, body),
+    },
   }
 
   transactional = {
