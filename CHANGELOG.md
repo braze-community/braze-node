@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/remarkablemark/braze-api/compare/v2.2.2...v2.3.0) (2023-07-27)
+
+
+### Features
+
+* **email-templates:** add list, get, create and update ([f65b0d4](https://github.com/remarkablemark/braze-api/commit/f65b0d4a42b21de71401a47b52ec69e30022d571))
+
 ## [2.2.2](https://github.com/remarkablemark/braze-api/compare/v2.2.1...v2.2.2) (2023-07-18)
 
 
