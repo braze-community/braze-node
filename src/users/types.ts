@@ -1,6 +1,10 @@
 import { ServerResponse } from '../common/request'
 import type { Properties, UserAlias } from '../common/types'
 
+export * from './alias/types'
+export * from './export/types'
+export * from './external_ids/types'
+
 /**
  * Request body for user track.
  *

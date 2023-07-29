@@ -1,3 +1,6 @@
+export * from './bounce/types'
+export * from './spam/types'
+
 /**
  * Request body for blacklist emails.
  *
