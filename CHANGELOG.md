@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/remarkablemark/braze-api/compare/v2.3.0...v2.3.1) (2023-07-29)
+
+
+### Documentation
+
+* **readme:** check off recently added API methods ([59501df](https://github.com/remarkablemark/braze-api/commit/59501df6640401e7a79f24f5c61bf15947615007))
+
 ## [2.3.0](https://github.com/remarkablemark/braze-api/compare/v2.2.2...v2.3.0) (2023-07-27)
 
 
