@@ -146,12 +146,12 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 - [x] /email/bounce/remove
 - [x] /email/spam/remove
 - [ ] /email/status
-- [ ] /templates/email/create
-- [ ] /templates/email/update
+- [x] /templates/email/create
+- [x] /templates/email/update
 - [ ] /email/hard_bounces
 - [ ] /email/unsubscribes
-- [ ] /templates/email/info
-- [ ] /templates/email/list
+- [x] /templates/email/info
+- [x] /templates/email/list
 
 ### Campaigns
 
