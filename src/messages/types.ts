@@ -1,6 +1,8 @@
 import { ServerResponse } from '../common/request'
 import type { ConnectedAudienceObject, UserAlias } from '../common/types'
 
+export * from './schedule/types'
+
 /**
  * Request body for sending messages immediately via API only.
  *
