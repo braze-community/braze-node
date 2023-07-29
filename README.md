@@ -97,7 +97,7 @@ The [API key](https://www.braze.com/docs/api/basics#creating-and-managing-rest-a
 
 ## API Methods
 
-This library currently supports a subset of the [Braze API endpoints](https://www.braze.com/docs/api/home). Pull requests are welcome.
+The library supports the following [Braze API endpoints](https://www.braze.com/docs/api/home). Pull requests are welcome!
 
 ### User data
 
@@ -224,7 +224,7 @@ This library currently supports a subset of the [Braze API endpoints](https://ww
 
 ## Contributing
 
-Contributions are welcome! See our [contributing guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed. :wave:
+We encourage contributions! See the [guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed. :wave:
 
 ## License
 
