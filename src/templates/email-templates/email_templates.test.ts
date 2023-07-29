@@ -25,14 +25,14 @@ describe('Email Templates', () => {
     },
   }
 
-  describe('Call templates.email_templates.list()', () => {
+  describe('templates.email_templates.list()', () => {
     const response: EmailTemplateListResponse = {
       templates: [],
       count: 0,
       message: 'success',
     }
 
-    it('is called with required params', async () => {
+    it('calls GET /templates/email/list with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.list({})).toBe(response)
       expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/list?`, undefined, options)
@@ -40,7 +40,7 @@ describe('Email Templates', () => {
     })
   })
 
-  describe('Call templates.email_templates.get()', () => {
+  describe('templates.email_templates.get()', () => {
     const response: EmailTemplateResponse = {
       created_at: '',
       description: '',
@@ -56,7 +56,7 @@ describe('Email Templates', () => {
       should_inline_css: true,
     }
 
-    it('is called with required params', async () => {
+    it('calls GET /templates/email/info with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       const emailTemplateId = 'YOUR_EMAIL_TEMPLATE_ID'
       expect(
@@ -73,7 +73,7 @@ describe('Email Templates', () => {
     })
   })
 
-  describe('Call templates.email_templates.create()', () => {
+  describe('templates.email_templates.create()', () => {
     const response: PostEmailTemplateResponse = {
       email_template_id: '',
       message: 'success',
@@ -87,7 +87,7 @@ describe('Email Templates', () => {
       should_inline_css: true,
     }
 
-    it('is called with body', async () => {
+    it('calls POST /templates/email/create with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.create(requestBody)).toBe(response)
       expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/create`, requestBody, {
@@ -98,7 +98,7 @@ describe('Email Templates', () => {
     })
   })
 
-  describe('Call templates.email_templates.update()', () => {
+  describe('templates.email_templates.update()', () => {
     const response: PostEmailTemplateResponse = {
       email_template_id: '5',
       message: 'success',
@@ -110,7 +110,7 @@ describe('Email Templates', () => {
       subject: '',
     }
 
-    it('is called with body', async () => {
+    it('calls POST /templates/email/update with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.update(requestBody)).toBe(response)
       expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/update`, requestBody, {

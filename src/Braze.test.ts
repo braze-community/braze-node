@@ -59,9 +59,7 @@ describe('Braze', () => {
 
   it.each([undefined, null, 0, 1, ''])('throws if second argument is %p', (apiKey) => {
     expect(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      new Braze(apiUrl, apiKey)
+      new Braze(apiUrl, apiKey as string)
     }).toThrow(`Invalid Braze API key: ${apiKey}`)
   })
 })
