@@ -26,5 +26,5 @@ export function scheduled_broadcasts(
     },
   }
 
-  return get(`${apiUrl}/messages/scheduled_broadcasts?${buildParams(body)}`, {}, options)
+  return get(`${apiUrl}/messages/scheduled_broadcasts?${buildParams(body)}`, undefined, options)
 }
