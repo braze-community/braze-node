@@ -18,5 +18,5 @@ export function getContentBlock(
     },
   }
 
-  return get(`${apiUrl}/content_blocks/info?${buildParams(body)}`, undefined, options)
+  return get(`${apiUrl}/content_blocks/info?${buildParams(body)}`, options)
 }

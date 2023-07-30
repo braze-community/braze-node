@@ -2,7 +2,6 @@ import type { RequestInit } from 'node-fetch'
 import fetch from 'node-fetch'
 
 export enum RequestMethod {
-  GET = 'GET',
   POST = 'POST',
 }
 
@@ -25,6 +24,11 @@ export class ResponseError extends Error {
   }
 }
 
+export type RequestURL = string
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type RequestBody = Record<string, any>
+export type RequestOptions = RequestInit
+
 /**
  * Makes a request.
  *
@@ -33,11 +37,10 @@ export class ResponseError extends Error {
  * @param options - Request options.
  * @returns - Response.
  */
-export async function request<Response extends ServerResponse = ServerResponse>(
-  url: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  body?: Record<string, any>,
-  options?: RequestInit,
+export async function request<Response extends ServerResponse>(
+  url: RequestURL,
+  body?: RequestBody,
+  options?: RequestOptions,
 ): Promise<Response> {
   const response = await fetch(url, {
     body: body ? JSON.stringify(body) : undefined,

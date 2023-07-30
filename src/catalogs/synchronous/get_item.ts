@@ -18,5 +18,5 @@ export function getCatalogItem<T extends CatalogListItem>(
     },
   }
 
-  return get(`${apiUrl}/catalogs/${body.catalog_name}/items/${body.item_id}`, undefined, options)
+  return get(`${apiUrl}/catalogs/${body.catalog_name}/items/${body.item_id}`, options)
 }

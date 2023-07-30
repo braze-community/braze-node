@@ -14,5 +14,5 @@ export function listCatalogs(apiUrl: string, apiKey: string): Promise<CatalogLis
     },
   }
 
-  return get(`${apiUrl}/catalogs`, undefined, options)
+  return get(`${apiUrl}/catalogs`, options)
 }

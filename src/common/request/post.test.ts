@@ -18,7 +18,7 @@ describe('post', () => {
   })
 
   it('calls request with url and body', async () => {
-    expect(await post(url, body)).toBe(data)
+    expect(await post(url, body, {})).toBe(data)
     expect(mockedRequest).toBeCalledWith(url, body, {
       method: RequestMethod.POST,
     })

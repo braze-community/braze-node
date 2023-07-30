@@ -21,11 +21,7 @@ export function get(apiUrl: string, apiKey: string, body: SubscriptionStatusGetO
     },
   }
 
-  return _get(
-    `${apiUrl}/subscription/status/get?${buildParams(body)}`,
-    undefined,
-    options,
-  ) as Promise<{
+  return _get(`${apiUrl}/subscription/status/get?${buildParams(body)}`, options) as Promise<{
     status: Record<string, 'Subscribed' | 'Unsubscribed' | 'Unknown'>
     message: 'success' | string
   }>

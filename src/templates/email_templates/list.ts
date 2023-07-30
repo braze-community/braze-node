@@ -18,5 +18,5 @@ export function getEmailTemplateList(
     },
   }
 
-  return get(`${apiUrl}/templates/email/list?${buildParams(body)}`, undefined, options)
+  return get(`${apiUrl}/templates/email/list?${buildParams(body)}`, options)
 }

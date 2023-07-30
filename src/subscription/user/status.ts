@@ -21,5 +21,5 @@ export function status(apiUrl: string, apiKey: string, body: SubscriptionUserSta
     },
   }
 
-  return get(`${apiUrl}/subscription/user/status?${buildParams(body)}`, undefined, options)
+  return get(`${apiUrl}/subscription/user/status?${buildParams(body)}`, options)
 }
