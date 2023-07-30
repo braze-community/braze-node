@@ -190,7 +190,7 @@ it('calls messages.scheduled_broadcasts()', async () => {
   expect(await braze.messages.scheduled_broadcasts({ end_time: '2022-08-21' })).toBe(response)
   expect(mockedRequest).toBeCalledWith(
     `${apiUrl}/messages/scheduled_broadcasts?end_time=2022-08-21`,
-    {},
+    undefined,
     { headers: options.headers },
   )
   expect(mockedRequest).toBeCalledTimes(1)
@@ -237,7 +237,7 @@ it('calls subscription.user.status()', async () => {
   expect(await braze.subscription.user.status(body)).toBe(response)
   expect(mockedRequest).toBeCalledWith(
     `${apiUrl}/subscription/user/status?external_id=external_id`,
-    {},
+    undefined,
     { headers: options.headers },
   )
   expect(mockedRequest).toBeCalledTimes(1)

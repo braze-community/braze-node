@@ -8,7 +8,7 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-describe('/messages/scheduled_broadcasts', () => {
+describe('messages.scheduled_broadcasts()', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
   const body = {
@@ -16,12 +16,12 @@ describe('/messages/scheduled_broadcasts', () => {
   }
   const data: ServerResponse = { message: 'success' }
 
-  it('calls request with url and body', async () => {
+  it('calls GET /messages/scheduled_broadcasts with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)
     expect(await scheduled_broadcasts(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/messages/scheduled_broadcasts?end_time=2018-09-01T00%3A00%3A00-04%3A00`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',

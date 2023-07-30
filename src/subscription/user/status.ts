@@ -39,5 +39,5 @@ export function status(apiUrl: string, apiKey: string, body: SubscriptionUserSta
     params.append('offset', body.offset.toString())
   }
 
-  return get(`${apiUrl}/subscription/user/status?${params}`, {}, options)
+  return get(`${apiUrl}/subscription/user/status?${params}`, undefined, options)
 }

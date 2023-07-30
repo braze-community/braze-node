@@ -9,12 +9,12 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-describe('/subscription/user/status', () => {
+describe('subscription.user.status()', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
   const data: ServerResponse = { message: 'success' }
 
-  it('calls request for multiple users with url and body', async () => {
+  it('calls GET /subscription/user/status for multiple users with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)
     const body: SubscriptionUserStatusObject = {
       external_id: ['1', '2'],
@@ -22,7 +22,7 @@ describe('/subscription/user/status', () => {
     expect(await status(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/user/status?external_id=1&external_id=2`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ describe('/subscription/user/status', () => {
     expect(mockedGet).toBeCalledTimes(1)
   })
 
-  it('calls request for email with url and body', async () => {
+  it('calls GET /subscription/user/status for email with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)
     const body: SubscriptionUserStatusObject = {
       external_id: 'external_id',
@@ -44,7 +44,7 @@ describe('/subscription/user/status', () => {
     expect(await status(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/user/status?external_id=external_id&email=example%40braze.com&limit=100&offset=1`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ describe('/subscription/user/status', () => {
     expect(mockedGet).toBeCalledTimes(1)
   })
 
-  it('calls request for SMS with url and body', async () => {
+  it('calls GET /subscription/user/status for SMS with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)
     const body: SubscriptionUserStatusObject = {
       external_id: 'external_id',
@@ -66,7 +66,7 @@ describe('/subscription/user/status', () => {
     expect(await status(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
       `${apiUrl}/subscription/user/status?external_id=external_id&phone=%2B11112223333&limit=100&offset=1`,
-      {},
+      undefined,
       {
         headers: {
           'Content-Type': 'application/json',
