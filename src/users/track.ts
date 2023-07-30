@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { UsersTrackObject } from './types'
 
 /**
@@ -15,12 +15,7 @@ import type { UsersTrackObject } from './types'
  * @returns - Braze response.
  */
 export function track(apiUrl: string, apiKey: string, body: UsersTrackObject, bulk?: boolean) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
+  const options = buildOptions({ apiKey })
 
   if (bulk) {
     ;(options.headers as Record<string, string>)['X-Braze-Bulk'] = 'true'

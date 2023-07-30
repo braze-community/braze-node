@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { UsersAliasObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { UsersAliasObject } from './types'
  * @returns - Braze response.
  */
 export function _new(apiUrl: string, apiKey: string, body: UsersAliasObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/users/alias/new`, body, options)
+  return post(`${apiUrl}/users/alias/new`, body, buildOptions({ apiKey }))
 }

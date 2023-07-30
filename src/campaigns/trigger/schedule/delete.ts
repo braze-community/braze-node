@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CampaignsTriggerScheduleDeleteObject } from './types'
 
 /**
@@ -18,12 +18,5 @@ export function _delete(
   apiKey: string,
   body: CampaignsTriggerScheduleDeleteObject,
 ) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/campaigns/trigger/schedule/delete`, body, options)
+  return post(`${apiUrl}/campaigns/trigger/schedule/delete`, body, buildOptions({ apiKey }))
 }

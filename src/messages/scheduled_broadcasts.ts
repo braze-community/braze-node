@@ -1,4 +1,4 @@
-import { buildParams, get } from '../common/request'
+import { buildOptions, buildParams, get } from '../common/request'
 import { ScheduledBroadcastsObject, ScheduledBroadcastsResponse } from './types'
 
 /**
@@ -18,12 +18,8 @@ export function scheduled_broadcasts(
   apiKey: string,
   body: ScheduledBroadcastsObject,
 ): Promise<ScheduledBroadcastsResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return get(`${apiUrl}/messages/scheduled_broadcasts?${buildParams(body)}`, options)
+  return get(
+    `${apiUrl}/messages/scheduled_broadcasts?${buildParams(body)}`,
+    buildOptions({ apiKey }),
+  )
 }

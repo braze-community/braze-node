@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import { PostEmailTemplateResponse, UpdateEmailTemplateBody } from './types'
 
 /**
@@ -11,12 +11,5 @@ export function updateEmailTemplate(
   apiKey: string,
   body: UpdateEmailTemplateBody,
 ): Promise<PostEmailTemplateResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/templates/email/update`, body, options)
+  return post(`${apiUrl}/templates/email/update`, body, buildOptions({ apiKey }))
 }

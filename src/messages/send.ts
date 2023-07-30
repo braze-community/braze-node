@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { MessagesSendObject } from './types'
 
 /**
@@ -14,14 +14,7 @@ import type { MessagesSendObject } from './types'
  * @returns - Braze response.
  */
 export function send(apiUrl: string, apiKey: string, body: MessagesSendObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/messages/send`, body, options) as Promise<{
+  return post(`${apiUrl}/messages/send`, body, buildOptions({ apiKey })) as Promise<{
     dispatch_id: string
     message: string
   }>

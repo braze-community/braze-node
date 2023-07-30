@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CanvasTriggerScheduleDeleteObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { CanvasTriggerScheduleDeleteObject } from './types'
  * @returns - Braze response.
  */
 export function _delete(apiUrl: string, apiKey: string, body: CanvasTriggerScheduleDeleteObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/canvas/trigger/schedule/delete`, body, options)
+  return post(`${apiUrl}/canvas/trigger/schedule/delete`, body, buildOptions({ apiKey }))
 }

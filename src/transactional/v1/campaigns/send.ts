@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CampaignSendResponse, TransactionalV1CampaignsSendObject } from './types'
 
 /**
@@ -20,12 +20,9 @@ export function send(
   campaignId: string,
   body: TransactionalV1CampaignsSendObject,
 ): Promise<CampaignSendResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/transactional/v1/campaigns/${campaignId}/send`, body, options)
+  return post(
+    `${apiUrl}/transactional/v1/campaigns/${campaignId}/send`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

@@ -1,4 +1,4 @@
-import { buildParams, get as _get } from '../../common/request'
+import { buildOptions, buildParams, get as _get } from '../../common/request'
 import type { SubscriptionStatusGetObject } from './types'
 
 /**
@@ -14,14 +14,10 @@ import type { SubscriptionStatusGetObject } from './types'
  * @returns - Braze response.
  */
 export function get(apiUrl: string, apiKey: string, body: SubscriptionStatusGetObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return _get(`${apiUrl}/subscription/status/get?${buildParams(body)}`, options) as Promise<{
+  return _get(
+    `${apiUrl}/subscription/status/get?${buildParams(body)}`,
+    buildOptions({ apiKey }),
+  ) as Promise<{
     status: Record<string, 'Subscribed' | 'Unsubscribed' | 'Unknown'>
     message: 'success' | string
   }>

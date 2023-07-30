@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CanvasTriggerScheduleCreateObject } from './types'
 import { CanvasTriggerScheduleCreatResponse } from './types'
 
@@ -19,12 +19,5 @@ export function create(
   apiKey: string,
   body: CanvasTriggerScheduleCreateObject,
 ): Promise<CanvasTriggerScheduleCreatResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/canvas/trigger/schedule/create`, body, options)
+  return post(`${apiUrl}/canvas/trigger/schedule/create`, body, buildOptions({ apiKey }))
 }

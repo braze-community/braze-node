@@ -5,7 +5,7 @@ import type {
   UsersExportGlobalControlGroupResponse,
 } from './types'
 
-jest.mock('../../common/request')
+jest.mock('../../common/request/post')
 const mockedPost = jest.mocked(post)
 
 beforeEach(() => {

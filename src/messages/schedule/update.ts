@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { MessagesScheduleUpdateObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { MessagesScheduleUpdateObject } from './types'
  * @returns - Braze response.
  */
 export function update(apiUrl: string, apiKey: string, body: MessagesScheduleUpdateObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/messages/schedule/update`, body, options)
+  return post(`${apiUrl}/messages/schedule/update`, body, buildOptions({ apiKey }))
 }

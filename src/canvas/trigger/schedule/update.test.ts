@@ -2,7 +2,7 @@ import { post, ServerResponse } from '../../../common/request'
 import { update } from '.'
 import type { CanvasTriggerScheduleUpdateObject } from './types'
 
-jest.mock('../../../common/request')
+jest.mock('../../../common/request/post')
 const mockedPost = jest.mocked(post)
 
 beforeEach(() => {

@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { UsersExportSegmentObject, UsersExportSegmentResponse } from './types'
 
 /**
@@ -14,16 +14,9 @@ import type { UsersExportSegmentObject, UsersExportSegmentResponse } from './typ
  * @returns - Braze response.
  */
 export function segment(apiUrl: string, apiKey: string, body: UsersExportSegmentObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
   return post(
     `${apiUrl}/users/export/segment`,
     body,
-    options,
+    buildOptions({ apiKey }),
   ) as Promise<UsersExportSegmentResponse>
 }

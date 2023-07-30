@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { UsersMergeObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { UsersMergeObject } from './types'
  * @returns - Braze response.
  */
 export function merge(apiUrl: string, apiKey: string, body: UsersMergeObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/users/merge`, body, options)
+  return post(`${apiUrl}/users/merge`, body, buildOptions({ apiKey }))
 }

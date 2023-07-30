@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { EmailBlacklistObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { EmailBlacklistObject } from './types'
  * @returns - Braze response.
  */
 export function blacklist(apiUrl: string, apiKey: string, body: EmailBlacklistObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/email/blacklist`, body, options)
+  return post(`${apiUrl}/email/blacklist`, body, buildOptions({ apiKey }))
 }

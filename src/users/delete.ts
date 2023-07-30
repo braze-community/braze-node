@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { UsersDeleteObject } from './types'
 import { UsersDeleteResponse } from './types'
 
@@ -19,12 +19,5 @@ export function _delete(
   apiKey: string,
   body: UsersDeleteObject,
 ): Promise<UsersDeleteResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/users/delete`, body, options)
+  return post(`${apiUrl}/users/delete`, body, buildOptions({ apiKey }))
 }

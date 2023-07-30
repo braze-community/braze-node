@@ -1,4 +1,4 @@
-import { get } from '../../common/request'
+import { buildOptions, get } from '../../common/request'
 import { CatalogListItem, CatalogListItemBody, CatalogListItemResponse } from './types'
 
 /**
@@ -11,12 +11,8 @@ export function getCatalogItem<T extends CatalogListItem>(
   apiKey: string,
   body: CatalogListItemBody,
 ): Promise<CatalogListItemResponse<T>> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return get(`${apiUrl}/catalogs/${body.catalog_name}/items/${body.item_id}`, options)
+  return get(
+    `${apiUrl}/catalogs/${body.catalog_name}/items/${body.item_id}`,
+    buildOptions({ apiKey }),
+  )
 }

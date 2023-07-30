@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { V2SubscriptionStatusSetObject } from './types'
 
 /**
@@ -14,14 +14,7 @@ import type { V2SubscriptionStatusSetObject } from './types'
  * @returns - Braze response.
  */
 export function set(apiUrl: string, apiKey: string, body: V2SubscriptionStatusSetObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/v2/subscription/status/set`, body, options) as Promise<{
+  return post(`${apiUrl}/v2/subscription/status/set`, body, buildOptions({ apiKey })) as Promise<{
     message: 'success' | string
   }>
 }

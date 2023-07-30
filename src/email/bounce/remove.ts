@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { EmailBounceRemoveObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { EmailBounceRemoveObject } from './types'
  * @returns - Braze response.
  */
 export function remove(apiUrl: string, apiKey: string, body: EmailBounceRemoveObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/email/bounce/remove`, body, options)
+  return post(`${apiUrl}/email/bounce/remove`, body, buildOptions({ apiKey }))
 }

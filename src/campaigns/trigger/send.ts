@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { CampaignsTriggerSendObject } from './types'
 
 /**
@@ -14,14 +14,7 @@ import type { CampaignsTriggerSendObject } from './types'
  * @returns - Braze response.
  */
 export function send(apiUrl: string, apiKey: string, body: CampaignsTriggerSendObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/campaigns/trigger/send`, body, options) as Promise<{
+  return post(`${apiUrl}/campaigns/trigger/send`, body, buildOptions({ apiKey })) as Promise<{
     dispatch_id: string
     message: string
   }>

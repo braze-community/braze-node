@@ -1,4 +1,4 @@
-import { post } from '../common/request'
+import { buildOptions, post } from '../common/request'
 import type { UsersIdentifyObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { UsersIdentifyObject } from './types'
  * @returns - Braze response.
  */
 export function identify(apiUrl: string, apiKey: string, body: UsersIdentifyObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/users/identify`, body, options)
+  return post(`${apiUrl}/users/identify`, body, buildOptions({ apiKey }))
 }

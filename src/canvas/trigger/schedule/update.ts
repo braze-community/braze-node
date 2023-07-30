@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CanvasTriggerScheduleUpdateObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { CanvasTriggerScheduleUpdateObject } from './types'
  * @returns - Braze response.
  */
 export function update(apiUrl: string, apiKey: string, body: CanvasTriggerScheduleUpdateObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/canvas/trigger/schedule/update`, body, options)
+  return post(`${apiUrl}/canvas/trigger/schedule/update`, body, buildOptions({ apiKey }))
 }

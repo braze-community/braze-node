@@ -2,7 +2,7 @@ import { post } from '../../common/request'
 import { ids } from '.'
 import type { UsersExportIdsObject, UsersExportIdsResponse } from './types'
 
-jest.mock('../../common/request')
+jest.mock('../../common/request/post')
 const mockedPost = jest.mocked(post)
 
 beforeEach(() => {

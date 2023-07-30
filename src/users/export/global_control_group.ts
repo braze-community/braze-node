@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type {
   UsersExportGlobalControlGroupObject,
   UsersExportGlobalControlGroupResponse,
@@ -21,16 +21,9 @@ export function global_control_group(
   apiKey: string,
   body: UsersExportGlobalControlGroupObject,
 ) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
   return post(
     `${apiUrl}/users/export/global_control_group`,
     body,
-    options,
+    buildOptions({ apiKey }),
   ) as Promise<UsersExportGlobalControlGroupResponse>
 }

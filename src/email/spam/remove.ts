@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { EmailSpamRemoveObject } from './types'
 
 /**
@@ -14,12 +14,5 @@ import type { EmailSpamRemoveObject } from './types'
  * @returns - Braze response.
  */
 export function remove(apiUrl: string, apiKey: string, body: EmailSpamRemoveObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/email/spam/remove`, body, options)
+  return post(`${apiUrl}/email/spam/remove`, body, buildOptions({ apiKey }))
 }

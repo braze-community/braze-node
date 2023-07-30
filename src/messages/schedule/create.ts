@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { MessagesScheduleCreateObject } from './types'
 
 /**
@@ -14,14 +14,7 @@ import type { MessagesScheduleCreateObject } from './types'
  * @returns - Braze response.
  */
 export function create(apiUrl: string, apiKey: string, body: MessagesScheduleCreateObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/messages/schedule/create`, body, options) as Promise<{
+  return post(`${apiUrl}/messages/schedule/create`, body, buildOptions({ apiKey })) as Promise<{
     dispatch_id: string
     schedule_id: string
     message: 'success' | string

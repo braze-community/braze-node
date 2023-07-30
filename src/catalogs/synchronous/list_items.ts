@@ -1,6 +1,6 @@
 import fetch, { Response } from 'node-fetch'
 
-import { ResponseError } from '../../common/request'
+import { buildOptions, ResponseError } from '../../common/request'
 import { CatalogListItem, CatalogListItemsBody } from './types'
 
 function getNextPageLink(linkHeader: string | null): string | undefined {
@@ -23,7 +23,7 @@ class CatalogListItems<T extends CatalogListItem> {
   ) {}
 
   hasNextPage(): boolean {
-    return !!this.nextPageLink
+    return Boolean(this.nextPageLink)
   }
 
   next(): Promise<CatalogListItems<T>> {
@@ -38,12 +38,7 @@ class CatalogListItems<T extends CatalogListItem> {
     apiKey: string,
     url: string,
   ): Promise<CatalogListItems<T>> {
-    const response: Response = await fetch(apiUrl + url, {
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-    })
+    const response: Response = await fetch(apiUrl + url, buildOptions({ apiKey }))
     const data = await response.json()
 
     if (!response.ok) {

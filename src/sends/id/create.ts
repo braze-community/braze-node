@@ -1,4 +1,4 @@
-import { post } from '../../common/request'
+import { buildOptions, post } from '../../common/request'
 import type { SendsIdCreateObject } from './types'
 
 /**
@@ -14,14 +14,7 @@ import type { SendsIdCreateObject } from './types'
  * @returns - Braze response.
  */
 export function create(apiUrl: string, apiKey: string, body: SendsIdCreateObject) {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/sends/id/create`, body, options) as Promise<{
+  return post(`${apiUrl}/sends/id/create`, body, buildOptions({ apiKey })) as Promise<{
     message: string
     send_id: string
   }>

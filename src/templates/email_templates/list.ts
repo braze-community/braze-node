@@ -1,4 +1,4 @@
-import { buildParams, get } from '../../common/request'
+import { buildOptions, buildParams, get } from '../../common/request'
 import { EmailTemplateListBody, EmailTemplateListResponse } from './types'
 
 /**
@@ -11,12 +11,5 @@ export function getEmailTemplateList(
   apiKey: string,
   body: EmailTemplateListBody,
 ): Promise<EmailTemplateListResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return get(`${apiUrl}/templates/email/list?${buildParams(body)}`, options)
+  return get(`${apiUrl}/templates/email/list?${buildParams(body)}`, buildOptions({ apiKey }))
 }

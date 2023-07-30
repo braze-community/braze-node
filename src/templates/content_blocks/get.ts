@@ -1,4 +1,4 @@
-import { buildParams, get } from '../../common/request'
+import { buildOptions, buildParams, get } from '../../common/request'
 import { ContentBlockBody, ContentBlockResponse } from './types'
 
 /**
@@ -11,12 +11,5 @@ export function getContentBlock(
   apiKey: string,
   body: ContentBlockBody,
 ): Promise<ContentBlockResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return get(`${apiUrl}/content_blocks/info?${buildParams(body)}`, options)
+  return get(`${apiUrl}/content_blocks/info?${buildParams(body)}`, buildOptions({ apiKey }))
 }

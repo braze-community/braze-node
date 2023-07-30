@@ -1,4 +1,4 @@
-import { post } from '../../../common/request'
+import { buildOptions, post } from '../../../common/request'
 import type { CampaignsTriggerScheduleCreateObject } from './types'
 import { CampaignsTriggerScheduleCreateResponse } from './types'
 
@@ -19,12 +19,5 @@ export function create(
   apiKey: string,
   body: CampaignsTriggerScheduleCreateObject,
 ): Promise<CampaignsTriggerScheduleCreateResponse> {
-  const options = {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-  }
-
-  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, options)
+  return post(`${apiUrl}/campaigns/trigger/schedule/create`, body, buildOptions({ apiKey }))
 }
