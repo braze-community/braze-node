@@ -99,60 +99,6 @@ The [API key](https://www.braze.com/docs/api/basics#creating-and-managing-rest-a
 
 The library supports the following [Braze API endpoints](https://www.braze.com/docs/api/home). Pull requests are welcome!
 
-### User data
-
-- [x] /users/alias/new
-- [x] /users/delete
-- [x] /users/export/global_control_group
-- [x] /users/export/ids
-- [x] /users/export/segment
-- [x] /users/external_ids/rename
-- [x] /users/external_ids/remove
-- [x] /users/merge
-- [x] /users/identify
-- [x] /users/track
-
-### Send messages
-
-- [x] /campaigns/trigger/send
-- [x] /canvas/trigger/send
-- [x] /messages/send
-- [x] /sends/id/create
-- [x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send
-
-### Schedule messages
-
-- [x] /campaigns/trigger/schedule/create
-- [x] /campaigns/trigger/schedule/delete
-- [x] /campaigns/trigger/schedule/update
-- [x] /canvas/trigger/schedule/create
-- [x] /canvas/trigger/schedule/delete
-- [x] /canvas/trigger/schedule/update
-- [x] /messages/schedule/create
-- [x] /messages/schedule/delete
-- [x] /messages/schedule/update
-- [x] /messages/scheduled_broadcasts
-
-### Subscription groups
-
-- [x] /subscription/status/set
-- [x] /v2/subscription/status/set
-- [x] /subscription/status/get
-- [x] /subscription/user/status
-
-### Email and email templates
-
-- [x] /email/blacklist
-- [x] /email/bounce/remove
-- [x] /email/spam/remove
-- [ ] /email/status
-- [x] /templates/email/create
-- [x] /templates/email/update
-- [ ] /email/hard_bounces
-- [ ] /email/unsubscribes
-- [x] /templates/email/info
-- [x] /templates/email/list
-
 ### Campaigns
 
 - [ ] /campaigns/data_series
@@ -167,30 +113,55 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 - [ ] /canvas/details
 - [ ] /canvas/list
 
-### Segments
+### Catalogs
 
-- [ ] /segments/data_series
-- [ ] /segments/details
-- [ ] /segments/list
-- [ ] /sessions/data_series
-
-### Custom events
-
-- [ ] /events/data_series
-- [ ] /events/list
+- [ ] DELETE /catalogs/{catalog_name}/items
+- [ ] PATCH /catalogs/{catalog_name}/items
+- [ ] POST /catalogs/{catalog_name}/items
+- [ ] PUT /catalogs/{catalog_name}/items/
+- [ ] DELETE /catalogs/{catalog_name}/items/{item_id}
+- [x] GET /catalogs/{catalog_name}/items/{item_id}
+- [x] GET /catalogs/{catalog_name}/items
+- [ ] PATCH /catalogs/{catalog_name}/items/{item_id}
+- [ ] POST /catalogs/{catalog_name}/items/{item_id}
+- [ ] PUT /catalogs/{catalog_name}/items/{item_id}
+- [ ] DELETE /catalogs/{catalog_name}
+- [x] GET /catalogs
+- [ ] POST /catalogs
 
 ### Content Blocks
 
+- [x] /content_blocks/list
+- [x] /content_blocks/info
 - [ ] /content_blocks/create
 - [ ] /content_blocks/update
-- [x] /content_blocks/info
-- [x] /content_blocks/list
+
+### Custom Events
+
+- [ ] /events/list
+- [ ] /events/data_series
+
+### Email List
+
+- [ ] /email/hard_bounces
+- [ ] /email/unsubscribes
+- [x] /email/blacklist
+- [ ] /email/status
+- [x] /email/bounce/remove
+- [x] /email/spam/remove
+
+### Email Templates
+
+- [x] /templates/email/list
+- [x] /templates/email/info
+- [x] /templates/email/create
+- [x] /templates/email/update
 
 ### KPI
 
+- [ ] /kpi/new_users/data_series
 - [ ] /kpi/dau/data_series
 - [ ] /kpi/mau/data_series
-- [ ] /kpi/new_users/data_series
 - [ ] /kpi/uninstalls/data_series
 
 ### News Feed
@@ -199,28 +170,85 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 - [ ] /feed/details
 - [ ] /feed/list
 
-### SMS
-
-- [ ] /sms/invalid_phone_numbers/remove
-- [ ] /sms/invalid_phone_numbers
-
 ### Purchases
 
 - [ ] /purchases/product_list
+- [ ] /purchases/quantity_series
+- [ ] /purchases/revenue_series
 
-### Catalogs
+### Preference Center
 
-- [ ] /synchronous/catalogs/delete
-- [x] /synchronous/catalogs/get
-- [ ] /synchronous/catalogs/post
-- [ ] /synchronous/catalog-items/delete
-- [x] /synchronous/catalog-items/list
-- [x] /synchronous/catalog-items/get
-- [ ] /synchronous/catalog-items/update
-- [ ] /synchronous/catalog-items/create
-- [ ] /asynchronous/catalog-items/delete-multiple
-- [ ] /asynchronous/catalog-items/update-multiple
-- [ ] /asynchronous/catalog-items/create-multiple
+- [ ] /preference_center/v1/{preferenceCenterExternalId}/url/{userId}
+- [ ] /preference_center/v1/list
+- [ ] /preference_center/v1/{preferenceCenterExternalId}
+- [ ] /preference_center/v1
+- [ ] /preference_center/v1/{preferenceCenterExternalId}
+
+### Schedule Messages
+
+- [x] /messages/scheduled_broadcasts
+- [x] /messages/schedule/delete
+- [x] /canvas/trigger/schedule/delete
+- [x] /campaigns/trigger/schedule/delete
+- [x] /messages/schedule/create
+- [x] /campaigns/trigger/schedule/create
+- [x] /messages/schedule/update
+- [x] /campaigns/trigger/schedule/update
+- [x] /canvas/trigger/schedule/create
+- [x] /canvas/trigger/schedule/update
+
+### SCIM
+
+- [ ] DELETE /scim/v2/Users/{id}
+- [ ] GET /scim/v2/Users?filter={userName@example.com}
+- [ ] GET /scim/v2/Users/{id}
+- [ ] POST /scim/v2/Users
+- [ ] PUT /scim/v2/Users/{id}
+
+### Segments
+
+- [ ] /segments/list
+- [ ] /segments/data_series
+- [ ] /segments/details
+- [ ] /sessions/data_series
+
+### Send Messages
+
+- [x] /sends/id/create
+- [x] /messages/send
+- [x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send
+- [x] /campaigns/trigger/send
+- [x] /canvas/trigger/send
+
+### SMS
+
+- [ ] /sms/invalid_phone_numbers
+- [ ] /sms/invalid_phone_numbers/remove
+
+### Subscription Groups
+
+- [x] /subscription/status/get
+- [x] /subscription/user/status
+- [x] /subscription/status/set
+- [x] /v2/subscription/status/set
+
+### User Data
+
+- [x] /users/export/global_control_group
+- [x] /users/export/ids
+- [x] /users/export/segment
+- [x] /users/external_ids/remove
+- [x] /users/external_ids/rename
+- [x] /users/alias/new
+- [x] /users/delete
+- [x] /users/identify
+- [x] /users/track
+- [ ] /users/alias/update
+- [x] /users/merge
+
+### Live Activity
+
+- [ ] /messages/live_activity/update
 
 ## Contributing
 
