@@ -28,13 +28,19 @@ git clone git@github.com:<USER>/braze-api.git
 cd braze-api
 ```
 
+Use [nvm](https://github.com/nvm-sh/nvm#intro) to set the Node.js version:
+
+```sh
+nvm use
+```
+
 Install the package dependencies:
 
 ```sh
 npm install
 ```
 
-Make your changes. Add tests and/or documentation. Ensure all tests and lint pass:
+Make your changes, add tests/documentation, and ensure tests and lint pass:
 
 ```sh
 npm test
@@ -62,10 +68,10 @@ Push to your fork and [create a pull request][pr].
 
 [pr]: https://github.com/remarkablemark/braze-api/compare/
 
-At this point you're waiting on us. We'll try to review pull requests within
+At this point, wait for us to review your pull request. We'll try to review pull requests within
 1-3 business days. We may suggest changes, improvements, and/or alternatives.
 
-Things that will improve the chance that your pull request will be accepted:
+Here are some things that will improve the chance that your pull request will be accepted:
 
 - [ ] Write tests that pass [CI].
 - [ ] Write good documentation.
@@ -114,7 +120,7 @@ Fix lint errors:
 npm run lint:fix
 ```
 
-Type check:
+Check types:
 
 ```sh
 npm run lint:tsc
