@@ -1,4 +1,4 @@
-import { get as _get } from '../../common/request'
+import { buildParams, get as _get } from '../../common/request'
 import type { SubscriptionStatusGetObject } from './types'
 
 /**
@@ -21,21 +21,11 @@ export function get(apiUrl: string, apiKey: string, body: SubscriptionStatusGetO
     },
   }
 
-  const params = new URLSearchParams()
-
-  if (body.subscription_group_id) {
-    params.append('subscription_group_id', body.subscription_group_id)
-  }
-
-  ;(['external_id', 'email', 'phone'] as const).forEach((key) => {
-    if (Array.isArray(body[key])) {
-      ;(body[key] as string[]).forEach((value) => params.append(key, value))
-    } else if (body[key]) {
-      params.append(key, body[key] as string)
-    }
-  })
-
-  return _get(`${apiUrl}/subscription/status/get?${params}`, undefined, options) as Promise<{
+  return _get(
+    `${apiUrl}/subscription/status/get?${buildParams(body)}`,
+    undefined,
+    options,
+  ) as Promise<{
     status: Record<string, 'Subscribed' | 'Unsubscribed' | 'Unknown'>
     message: 'success' | string
   }>

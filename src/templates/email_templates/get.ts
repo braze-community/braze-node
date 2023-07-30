@@ -1,5 +1,4 @@
-import { get } from '../../common/request'
-import { buildParams } from '../../common/request/params'
+import { buildParams, get } from '../../common/request'
 import { EmailTemplateBody, EmailTemplateResponse } from './types'
 
 /**

@@ -1,4 +1,4 @@
-import { get } from '../../common/request'
+import { buildParams, get } from '../../common/request'
 import type { SubscriptionUserStatusObject } from './types'
 
 /**
@@ -21,23 +21,5 @@ export function status(apiUrl: string, apiKey: string, body: SubscriptionUserSta
     },
   }
 
-  const params = new URLSearchParams()
-
-  ;(['external_id', 'email', 'phone'] as const).forEach((key) => {
-    if (Array.isArray(body[key])) {
-      ;(body[key] as string[]).forEach((value) => params.append(key, value))
-    } else if (body[key]) {
-      params.append(key, body[key] as string)
-    }
-  })
-
-  if (body.limit) {
-    params.append('limit', body.limit.toString())
-  }
-
-  if (body.offset) {
-    params.append('offset', body.offset.toString())
-  }
-
-  return get(`${apiUrl}/subscription/user/status?${params}`, undefined, options)
+  return get(`${apiUrl}/subscription/user/status?${buildParams(body)}`, undefined, options)
 }

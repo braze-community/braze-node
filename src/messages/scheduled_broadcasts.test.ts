@@ -1,7 +1,7 @@
 import { get, ServerResponse } from '../common/request'
 import { scheduled_broadcasts } from '.'
 
-jest.mock('../common/request')
+jest.mock('../common/request/get')
 const mockedGet = jest.mocked(get)
 
 beforeEach(() => {

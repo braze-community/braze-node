@@ -2,7 +2,7 @@ import { get as _get, ServerResponse } from '../../common/request'
 import { get } from '.'
 import type { SubscriptionStatusGetObject } from './types'
 
-jest.mock('../../common/request')
+jest.mock('../../common/request/get')
 const mockedGet = jest.mocked(_get)
 
 beforeEach(() => {
