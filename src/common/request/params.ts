@@ -2,20 +2,26 @@ import { URLSearchParams } from 'url'
 
 import type { RequestBody } from './request'
 
+/**
+ * Build query string params.
+ */
 export function buildParams(body: RequestBody): URLSearchParams {
   return Object.entries(body).reduce((params, [key, value]) => {
-    return appendParams(params, key, value)
+    return appendParam(params, key, value)
   }, new URLSearchParams())
 }
 
-function appendParams(params: URLSearchParams, key: string, value: unknown): URLSearchParams {
+/**
+ * Append query string param.
+ */
+function appendParam(params: URLSearchParams, key: string, value: unknown): URLSearchParams {
   if (value === undefined || value === null) {
     return params
   }
 
   if (Array.isArray(value)) {
     value.forEach((currentValue) => {
-      appendParams(params, key, currentValue)
+      appendParam(params, key, currentValue)
     })
     return params
   }
@@ -24,6 +30,9 @@ function appendParams(params: URLSearchParams, key: string, value: unknown): URL
   return params
 }
 
+/**
+ * Get string value.
+ */
 function getValue(key: string, value: unknown): string {
   switch (typeof value) {
     case 'boolean':

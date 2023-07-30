@@ -1,4 +1,5 @@
 export * from './get'
+export * from './options'
 export * from './params'
 export * from './post'
 export * from './request'
