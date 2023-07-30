@@ -1,7 +1,8 @@
 import { URLSearchParams } from 'url'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function buildParams(body: Record<string, any>): URLSearchParams {
+import type { RequestBody } from './request'
+
+export function buildParams(body: RequestBody): URLSearchParams {
   return Object.entries(body).reduce((params, [key, value]) => {
     return appendParams(params, key, value)
   }, new URLSearchParams())

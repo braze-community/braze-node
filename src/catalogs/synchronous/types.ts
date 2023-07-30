@@ -1,4 +1,4 @@
-import { ServerResponse } from '../../common/request'
+import type { RequestBody, ServerResponse } from '../../common/request'
 
 /**
  * Response body for catalog list.
@@ -25,8 +25,7 @@ export interface CatalogListItemsBody {
   max_pages?: number
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type CatalogListItem<T extends Record<string, any> = Record<string, unknown>> = {
+export type CatalogListItem<T extends RequestBody = Record<string, unknown>> = {
   id: string
 } & T
 
