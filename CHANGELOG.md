@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.1](https://github.com/remarkablemark/braze-api/compare/v2.4.0...v2.4.1) (2023-07-30)
+
+
+### Bug Fixes
+
+* **messages:** fix GET /messages/scheduled_broadcasts ([9ba55b5](https://github.com/remarkablemark/braze-api/commit/9ba55b5af7a866c2e1b7db0eccf893cd52ba5525))
+* **subscription:** fix GET /subscription/user/status ([67cb4c0](https://github.com/remarkablemark/braze-api/commit/67cb4c0b900f87d7938d499bc6276b0c3e307c3e))
+
 ## [2.4.0](https://github.com/remarkablemark/braze-api/compare/v2.3.1...v2.4.0) (2023-07-29)
 
 
