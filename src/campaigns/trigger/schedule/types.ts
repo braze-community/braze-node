@@ -1,4 +1,4 @@
-import { ServerResponse } from '../../../common/request'
+import type { ServerResponse } from '../../../common/request'
 import type { ScheduleObject } from '../../../common/types'
 import type { CampaignsTriggerSendObject } from '../types'
 

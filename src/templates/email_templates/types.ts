@@ -1,4 +1,4 @@
-import { ServerResponse } from '../../common/request'
+import type { ServerResponse } from '../../common/request'
 
 /**
  * Request body for email template list.

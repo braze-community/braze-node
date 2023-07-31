@@ -1,4 +1,4 @@
-import { ServerResponse } from '../../../common/request'
+import type { ServerResponse } from '../../../common/request'
 import type { Attributes, TriggerProperties, UserAlias } from '../../../common/types'
 
 /**

@@ -1,4 +1,4 @@
-import { ServerResponse } from '../common/request'
+import type { ServerResponse } from '../common/request'
 import type { ConnectedAudienceObject, UserAlias } from '../common/types'
 
 export * from './schedule/types'
