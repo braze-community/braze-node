@@ -11,9 +11,10 @@ const config: Config = {
     },
   },
   preset: 'ts-jest',
-  testEnvironment: 'node',
   reporters:
     process.env.CI === 'true' ? [['github-actions', { silent: false }], 'summary'] : undefined,
+  testEnvironment: 'node',
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 }
 
 export default config
