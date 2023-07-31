@@ -40,6 +40,13 @@ export class Braze {
 
   /* eslint-disable tsdoc/syntax */
   campaigns = {
+    /**
+     * GET /campaigns/list
+     */
+    list: (parameters?: campaigns.CampaignsListParameters) => {
+      return campaigns.list(this.apiUrl, this.apiKey, parameters)
+    },
+
     trigger: {
       schedule: {
         /**
