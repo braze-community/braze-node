@@ -4,34 +4,52 @@ import type { RequestBody } from './request'
 
 /**
  * Build query string params.
+ *
+ * @param parameters - Request parameters.
+ * @returns - Query string.
  */
-export function buildParams(body: RequestBody): URLSearchParams {
-  return Object.entries(body).reduce((params, [key, value]) => {
+export function buildParams(parameters?: RequestBody): string {
+  if (!parameters) {
+    return ''
+  }
+
+  const searchParams = Object.entries(parameters).reduce((params, [key, value]) => {
     return appendParam(params, key, value)
   }, new URLSearchParams())
+
+  return searchParams.toString()
 }
 
 /**
  * Append query string param.
+ *
+ * @param searchParams - Search params.
+ * @param key - Key.
+ * @param value - Value.
+ * @returns - URL search params.
  */
-function appendParam(params: URLSearchParams, key: string, value: unknown): URLSearchParams {
+function appendParam(searchParams: URLSearchParams, key: string, value: unknown): URLSearchParams {
   if (value === undefined || value === null) {
-    return params
+    return searchParams
   }
 
   if (Array.isArray(value)) {
     value.forEach((currentValue) => {
-      appendParam(params, key, currentValue)
+      appendParam(searchParams, key, currentValue)
     })
-    return params
+    return searchParams
   }
 
-  params.append(key, getValue(key, value))
-  return params
+  searchParams.append(key, getValue(key, value))
+  return searchParams
 }
 
 /**
  * Get string value.
+ *
+ * @param key - Key.
+ * @param value - Value.
+ * @returns - String value.
  */
 function getValue(key: string, value: unknown): string {
   switch (typeof value) {
