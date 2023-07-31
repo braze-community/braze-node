@@ -103,7 +103,7 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 
 - [ ] /campaigns/data_series
 - [ ] /campaigns/details
-- [ ] /campaigns/list
+- [x] /campaigns/list
 - [ ] /sends/data_series
 
 ### Canvas
