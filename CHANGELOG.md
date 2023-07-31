@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/remarkablemark/braze-api/compare/v2.4.1...v2.5.0) (2023-07-31)
+
+
+### Features
+
+* **campaigns:** add `campaigns.list` (GET /campaigns/list) ([75edaf5](https://github.com/remarkablemark/braze-api/commit/75edaf550f41e2a1a94206785531b1c8498e01de))
+
 ## [2.4.1](https://github.com/remarkablemark/braze-api/compare/v2.4.0...v2.4.1) (2023-07-30)
 
 
