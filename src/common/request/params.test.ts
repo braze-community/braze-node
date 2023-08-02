@@ -47,12 +47,12 @@ describe('buildParams', () => {
 
   describe('array', () => {
     it('handles single', () => {
-      expect(buildParams({ a: [1] })).toBe('a=1')
+      expect(buildParams({ a: [1] })).toBe('a%5B%5D=1')
     })
 
     it('handles multiple', () => {
       expect(buildParams({ a: [1, '2', true, undefined], b: ['foo', 'bar', null] })).toBe(
-        'a=1&a=2&a=true&b=foo&b=bar',
+        'a%5B%5D=1&a%5B%5D=2&a%5B%5D=true&b%5B%5D=foo&b%5B%5D=bar',
       )
     })
   })

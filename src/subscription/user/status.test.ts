@@ -1,6 +1,6 @@
-import { get, ServerResponse } from '../../common/request'
-import { status } from '.'
-import type { SubscriptionUserStatusObject } from './types'
+import { get } from '../../common/request'
+import { status } from './status'
+import type { SubscriptionUserStatusObject, SubscriptionUserStatusResponse } from './types'
 
 jest.mock('../../common/request/get')
 const mockedGet = jest.mocked(get)
@@ -12,65 +12,72 @@ beforeEach(() => {
 describe('subscription.user.status()', () => {
   const apiUrl = 'https://rest.iad-01.braze.com'
   const apiKey = 'apiKey'
-  const data: ServerResponse = { message: 'success' }
-
-  it('calls GET /subscription/user/status for multiple users with url and body', async () => {
-    mockedGet.mockResolvedValueOnce(data)
-    const body: SubscriptionUserStatusObject = {
-      external_id: ['1', '2'],
-    }
-    expect(await status(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedGet).toBeCalledWith(
-      `${apiUrl}/subscription/user/status?external_id=1&external_id=2`,
+  const data: SubscriptionUserStatusResponse = {
+    message: 'success',
+    users: [
       {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-        },
+        external_id: '1',
+        email: null,
+        phone: null,
+        subscription_groups: [
+          {
+            id: '11111111-2222-3333-4444-555555555555',
+            name: 'subscription group',
+            channel: 'email',
+            status: 'Subscribed',
+          },
+        ],
       },
-    )
-    expect(mockedGet).toBeCalledTimes(1)
-  })
+    ],
+    total_count: 1,
+  }
 
-  it('calls GET /subscription/user/status for email with url and body', async () => {
-    mockedGet.mockResolvedValueOnce(data)
-    const body: SubscriptionUserStatusObject = {
-      external_id: 'external_id',
-      email: 'example@braze.com',
-      limit: 100,
-      offset: 1,
-    }
-    expect(await status(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedGet).toBeCalledWith(
-      `${apiUrl}/subscription/user/status?external_id=external_id&email=example%40braze.com&limit=100&offset=1`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-        },
+  const testData: { message: string; body: SubscriptionUserStatusObject; expected: string }[] = [
+    {
+      message: 'multiple `external_id`s',
+      body: { external_id: ['1', '2'] },
+      expected: `${apiUrl}/subscription/user/status?external_id%5B%5D=1&external_id%5B%5D=2`,
+    },
+    {
+      message: 'single `external_id`',
+      body: { external_id: '1' },
+      expected: `${apiUrl}/subscription/user/status?external_id=1`,
+    },
+    {
+      message: 'multiple `email`s',
+      body: {
+        email: ['example@braze.com', 'braze@example.com'],
       },
-    )
-    expect(mockedGet).toBeCalledTimes(1)
-  })
+      expected: `${apiUrl}/subscription/user/status?email%5B%5D=example%40braze.com&email%5B%5D=braze%40example.com`,
+    },
+    {
+      message: 'single `email`',
+      body: { email: 'example@braze.com' },
+      expected: `${apiUrl}/subscription/user/status?email=example%40braze.com`,
+    },
+    {
+      message: 'multiple `phone`s',
+      body: {
+        phone: ['+11112223333', '+12223334444'],
+      },
+      expected: `${apiUrl}/subscription/user/status?phone%5B%5D=%2B11112223333&phone%5B%5D=%2B12223334444`,
+    },
+    {
+      message: 'single `phone`',
+      body: { phone: '+11112223333' },
+      expected: `${apiUrl}/subscription/user/status?phone=%2B11112223333`,
+    },
+  ]
 
-  it('calls GET /subscription/user/status for SMS with url and body', async () => {
+  it.each(testData)('calls request for ($message)', async ({ body, expected }) => {
     mockedGet.mockResolvedValueOnce(data)
-    const body: SubscriptionUserStatusObject = {
-      external_id: 'external_id',
-      phone: '+11112223333',
-      limit: 100,
-      offset: 1,
-    }
     expect(await status(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedGet).toBeCalledWith(
-      `${apiUrl}/subscription/user/status?external_id=external_id&phone=%2B11112223333&limit=100&offset=1`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-        },
+    expect(mockedGet).toBeCalledWith(expected, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
       },
-    )
+    })
     expect(mockedGet).toBeCalledTimes(1)
   })
 })
