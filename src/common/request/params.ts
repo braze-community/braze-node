@@ -14,6 +14,9 @@ export function buildParams(parameters?: RequestBody): string {
   }
 
   const searchParams = Object.entries(parameters).reduce((params, [key, value]) => {
+    if (Array.isArray(value)) {
+      return appendParam(params, `${key}[]`, value)
+    }
     return appendParam(params, key, value)
   }, new URLSearchParams())
 

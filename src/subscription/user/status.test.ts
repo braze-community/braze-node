@@ -21,7 +21,7 @@ describe('subscription.user.status()', () => {
     }
     expect(await status(apiUrl, apiKey, body)).toBe(data)
     expect(mockedGet).toBeCalledWith(
-      `${apiUrl}/subscription/user/status?external_id=1&external_id=2`,
+      `${apiUrl}/subscription/user/status?external_id%5B%5D=1&external_id%5B%5D=2`,
       {
         headers: {
           'Content-Type': 'application/json',
