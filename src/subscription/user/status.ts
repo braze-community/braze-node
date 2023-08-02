@@ -1,5 +1,6 @@
 import { buildOptions, buildParams, get } from '../../common/request'
 import type { SubscriptionUserStatusObject } from './types'
+import { SubscriptionUserStatusResponse } from './types'
 
 /**
  * Get users’ subscription groups.
@@ -14,5 +15,8 @@ import type { SubscriptionUserStatusObject } from './types'
  * @returns - Braze response.
  */
 export function status(apiUrl: string, apiKey: string, body: SubscriptionUserStatusObject) {
-  return get(`${apiUrl}/subscription/user/status?${buildParams(body)}`, buildOptions({ apiKey }))
+  return get<SubscriptionUserStatusResponse>(
+    `${apiUrl}/subscription/user/status?${buildParams(body)}`,
+    buildOptions({ apiKey }),
+  )
 }
