@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.1](https://github.com/remarkablemark/braze-api/compare/v2.5.0...v2.5.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* **buildParams:** use brackets for arrays ([f66d284](https://github.com/remarkablemark/braze-api/commit/f66d2847bfdb09673cfe62564fdfbbcc816cc63d))
+* **subscription/user/status:** set correct return type ([21a88d6](https://github.com/remarkablemark/braze-api/commit/21a88d612d9b56fdaaf1d58c331769cb060904b2))
+
 ## [2.5.0](https://github.com/remarkablemark/braze-api/compare/v2.4.1...v2.5.0) (2023-07-31)
 
 
