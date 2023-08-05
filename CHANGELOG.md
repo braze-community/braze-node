@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/braze-community/braze-node/compare/v2.5.1...v2.5.2) (2023-08-05)
+
+
+### Documentation
+
+* change organization and repository name ([329372d](https://github.com/braze-community/braze-node/commit/329372d40f989a3c11b7bafdbfea5d4b16362c69))
+
 ## [2.5.1](https://github.com/braze-community/braze-node/compare/v2.5.0...v2.5.1) (2023-08-02)
 
 ### Bug Fixes
