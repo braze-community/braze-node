@@ -7,11 +7,11 @@
 [![NPM](https://nodei.co/npm/braze-api.png)](https://nodei.co/npm/braze-api/)
 
 [![NPM version](https://img.shields.io/npm/v/braze-api.svg)](https://www.npmjs.com/package/braze-api)
-[![build](https://github.com/remarkablemark/braze-api/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/braze-api/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/remarkablemark/braze-api/branch/master/graph/badge.svg?token=QHPI1I0XI3)](https://codecov.io/gh/remarkablemark/braze-api)
+[![build](https://github.com/braze-community/braze-node/actions/workflows/build.yml/badge.svg)](https://github.com/braze-community/braze-node/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/braze-community/braze-node/branch/master/graph/badge.svg?token=QHPI1I0XI3)](https://codecov.io/gh/braze-community/braze-node)
 [![NPM downloads](https://badgen.net/npm/dm/braze-api)](https://www.npmjs.com/package/braze-api)
 
-Node.js library for [Braze](https://www.braze.com/). See [docs](https://b.remarkabl.org/braze-api) and [demo](https://replit.com/@remarkablemark/braze-api). The types are from [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
+Node.js library for [Braze](https://www.braze.com/). See [docs](https://braze-community.github.io/braze-node/) and [demo](https://replit.com/@remarkablemark/braze-api). The types are from [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
 
 ## Quick Start
 
@@ -34,7 +34,7 @@ await braze.messages.send({
 
 ## Documentation
 
-- [TypeDoc](https://b.remarkabl.org/braze-api)
+- [TypeDoc](https://braze-community.github.io/braze-node/)
 - [Braze API Guide](https://www.braze.com/docs/api/)
 - [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG)
 
@@ -252,11 +252,11 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 
 ## Contributing
 
-We encourage contributions! See the [guide](https://github.com/remarkablemark/braze-api/blob/master/.github/CONTRIBUTING.md) on how to proceed. :wave:
+We encourage contributions! See the [guide](https://github.com/braze-community/braze-node/blob/master/.github/CONTRIBUTING.md) on how to proceed. :wave:
 
 ## License
 
-[MIT](https://github.com/remarkablemark/braze-api/blob/master/LICENSE)
+[MIT](https://github.com/braze-community/braze-node/blob/master/LICENSE)
 
 <!-- readme-content-end -->
 

@@ -29,15 +29,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/remarkablemark/braze-api"
+    "url": "https://github.com/braze-community/braze-node"
   },
   "bugs": {
-    "url": "https://github.com/remarkablemark/braze-api/issues"
+    "url": "https://github.com/braze-community/braze-node/issues"
   },
   "keywords": [
     "braze",
     "api",
-    "rest"
+    "rest",
+    "node",
+    "appboy"
   ],
   "dependencies": {
     "@types/node-fetch": "2.6.4",
