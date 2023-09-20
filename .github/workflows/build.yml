@@ -36,7 +36,7 @@ jobs:
         run: npm run test:esm
 
       - name: Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v3
 
       - name: Build docs
         run: scripts/docs.sh
