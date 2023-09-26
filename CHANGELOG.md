@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.5](https://github.com/braze-community/braze-node/compare/v2.5.4...v2.5.5) (2023-09-26)
+
+
+### Build System
+
+* **package:** bump @types/node-fetch from 2.6.4 to 2.6.6 ([c9fbf96](https://github.com/braze-community/braze-node/commit/c9fbf968649ab97d3794a44f25dc0bebb1571c63))
+
 ## [2.5.4](https://github.com/braze-community/braze-node/compare/v2.5.3...v2.5.4) (2023-08-26)
 
 
