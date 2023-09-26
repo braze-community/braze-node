@@ -42,7 +42,7 @@
     "appboy"
   ],
   "dependencies": {
-    "@types/node-fetch": "2.6.4",
+    "@types/node-fetch": "2.6.6",
     "node-fetch": "2.7.0"
   },
   "devDependencies": {
