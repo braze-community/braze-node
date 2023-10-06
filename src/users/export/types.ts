@@ -204,6 +204,7 @@ type FieldsToExport =
   | 'devices'
   | 'dob'
   | 'email'
+  | 'email_subscribe'
   | 'external_id'
   | 'first_name'
   | 'gender'
