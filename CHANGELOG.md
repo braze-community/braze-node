@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.6](https://github.com/braze-community/braze-node/compare/v2.5.5...v2.5.6) (2023-10-06)
+
+
+### Bug Fixes
+
+* add missing field in users/export/ids ([db9d43a](https://github.com/braze-community/braze-node/commit/db9d43a2dc1c582458a2cbef2bfeb604781fa781))
+
 ## [2.5.5](https://github.com/braze-community/braze-node/compare/v2.5.4...v2.5.5) (2023-09-26)
 
 
