@@ -19,6 +19,7 @@ import type {
   SubscriptionStatusSetObject,
   SubscriptionUserStatusObject,
   TransactionalV1CampaignsSendObject,
+  UserAliasUpdates,
   UsersAliasObject,
   UsersDeleteObject,
   UsersExportGlobalControlGroupObject,
@@ -264,6 +265,13 @@ it('calls users.alias.new()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.users.alias.new(body as UsersAliasObject)).toBe(response)
   expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/alias/new`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls users.alias.update()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.users.alias.update(body as UserAliasUpdates)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/users/alias/update`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 

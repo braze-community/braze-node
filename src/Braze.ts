@@ -337,6 +337,13 @@ export class Braze {
       new: (body: users.alias.UsersAliasObject) => {
         return users.alias._new(this.apiUrl, this.apiKey, body)
       },
+
+      /**
+       * POST /users/alias/update
+       */
+      update: (body: users.alias.UserAliasUpdates) => {
+        return users.alias._update(this.apiUrl, this.apiKey, body)
+      },
     },
 
     /**
