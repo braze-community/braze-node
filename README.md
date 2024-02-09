@@ -252,7 +252,7 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 
 ## Contributing
 
-Contributions are welcome! Check out our [guide](https://github.com/braze-community/braze-node/blob/master/.github/CONTRIBUTING.md). :wave:
+Contributions are welcome! Check out the [guide](https://github.com/braze-community/braze-node/blob/master/.github/CONTRIBUTING.md). 👋
 
 ## License
 
