@@ -243,7 +243,7 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 - [x] /users/delete
 - [x] /users/identify
 - [x] /users/track
-- [ ] /users/alias/update
+- [x] /users/alias/update
 - [x] /users/merge
 
 ### Live Activity
