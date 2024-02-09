@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/braze-community/braze-node/compare/v2.5.6...v2.6.0) (2024-02-09)
+
+
+### Features
+
+* user data endpoint /users/alias/update implementation ([368e9aa](https://github.com/braze-community/braze-node/commit/368e9aa31dd3d63627d0c2fffb81212360926d76))
+
 ## [2.5.6](https://github.com/braze-community/braze-node/compare/v2.5.5...v2.5.6) (2023-10-06)
 
 
