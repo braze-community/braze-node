@@ -111,7 +111,7 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 - [ ] /canvas/data_series
 - [ ] /canvas/data_summary
 - [ ] /canvas/details
-- [ ] /canvas/list
+- [x] /canvas/list
 
 ### Catalogs
 
