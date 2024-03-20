@@ -81,6 +81,13 @@ export class Braze {
   }
 
   canvas = {
+    /**
+     * GET /canvas/list
+     */
+    list: (parameters?: canvas.CanvasListParameters) => {
+      return canvas.list(this.apiUrl, this.apiKey, parameters)
+    },
+
     trigger: {
       schedule: {
         /**
