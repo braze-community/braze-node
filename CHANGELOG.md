@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/braze-community/braze-node/compare/v2.6.0...v2.7.0) (2024-03-20)
+
+
+### Features
+
+* add canvas.list() ([d72f65b](https://github.com/braze-community/braze-node/commit/d72f65bf05914706f4293324363cfc3e3d09430c))
+
 ## [2.6.0](https://github.com/braze-community/braze-node/compare/v2.5.6...v2.6.0) (2024-02-09)
 
 
