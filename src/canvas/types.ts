@@ -9,10 +9,10 @@ export * from './trigger/types'
  * {@link https://www.braze.com/docs/api/endpoints/export/canvas/get_canvases/#request-parameters}
  */
 export interface CanvasListParameters {
-    page?: number
-    include_archived?: boolean
-    sort_direction?: string
-    'last_edit.time[gt]'?: string
+  page?: number
+  include_archived?: boolean
+  sort_direction?: string
+  'last_edit.time[gt]'?: string
 }
 
 /**
@@ -21,10 +21,10 @@ export interface CanvasListParameters {
  * {@link https://www.braze.com/docs/api/endpoints/export/canvas/get_canvases/#response}
  */
 export interface CanvasListResponse extends ServerResponse {
-    canvases: {
-        id: string
-        last_edited: string
-        name: string
-        tags: string[]
-    }[]
+  canvases: {
+    id: string
+    last_edited: string
+    name: string
+    tags: string[]
+  }[]
 }
