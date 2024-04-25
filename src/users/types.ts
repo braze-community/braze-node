@@ -132,7 +132,7 @@ interface PurchaseObject {
   external_id?: string
   user_alias?: UserAlias
   braze_id?: string
-  app_id: string
+  app_id?: string
   product_id: string
   currency: string
   price: number
