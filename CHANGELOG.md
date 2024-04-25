@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.1](https://github.com/braze-community/braze-node/compare/v2.7.0...v2.7.1) (2024-04-25)
+
+
+### Bug Fixes
+
+* **types:** make `app_id` optional on `PurchaseObject` ([1a07029](https://github.com/braze-community/braze-node/commit/1a07029b436793eea88dd08c07f99337dd9a5917)), closes [#600](https://github.com/braze-community/braze-node/issues/600)
+
 ## [2.7.0](https://github.com/braze-community/braze-node/compare/v2.6.0...v2.7.0) (2024-03-20)
 
 
