@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.0](https://github.com/braze-community/braze-node/compare/v2.7.1...v2.8.0) (2024-05-29)
+
+
+### Features
+
+* add apple and android push object types ([b87d7c5](https://github.com/braze-community/braze-node/commit/b87d7c565bfac37d7fb4a3e9d820e9f5b58db071))
+
 ## [2.7.1](https://github.com/braze-community/braze-node/compare/v2.7.0...v2.7.1) (2024-04-25)
 
 
