@@ -1,37 +1,40 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>braze-api</title><meta name="description" content="Documentation for braze-api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css?cache=1718943271379"/><link rel="stylesheet" href="assets/highlight.css?cache=1718943271379"/><script defer src="assets/main.js?cache=1718943271379"></script><script async src="assets/icons.js?cache=1718943271379" id="tsd-icons-script"></script><script async src="assets/search.js?cache=1718943271379" id="tsd-search-script"></script><script async src="assets/navigation.js?cache=1718943271379" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">braze-api</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>braze-api</h2></div><div class="tsd-panel tsd-typography"><!-- readme-start -->
-
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>braze-api</title><meta name="description" content="Documentation for braze-api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css?cache=1719202937714"/><link rel="stylesheet" href="assets/highlight.css?cache=1719202937714"/><script defer src="assets/main.js?cache=1719202937714"></script><script async src="assets/icons.js?cache=1719202937714" id="tsd-icons-script"></script><script async src="assets/search.js?cache=1719202937714" id="tsd-search-script"></script><script async src="assets/navigation.js?cache=1719202937714" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">braze-api</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>braze-api</h2></div><div class="tsd-panel tsd-typography"><!-- readme-start -->
 <!-- readme-content-start -->
-
-<a id="md:braze-api" class="tsd-anchor"></a><h1><a href="#md:braze-api">braze-api</a></h1><p><a href="https://nodei.co/npm/braze-api/"><img src="https://nodei.co/npm/braze-api.png" alt="NPM"></a></p>
+<a id="md:braze-api" class="tsd-anchor"></a><h1 class="tsd-anchor-link">braze-api<a href="#md:braze-api" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><a href="https://nodei.co/npm/braze-api/"><img src="https://nodei.co/npm/braze-api.png" alt="NPM"></a></p>
 <p><a href="https://www.npmjs.com/package/braze-api"><img src="https://img.shields.io/npm/v/braze-api.svg" alt="NPM version"></a>
 <a href="https://github.com/braze-community/braze-node/actions/workflows/build.yml"><img src="https://github.com/braze-community/braze-node/actions/workflows/build.yml/badge.svg" alt="build"></a>
 <a href="https://codecov.io/gh/braze-community/braze-node"><img src="https://codecov.io/gh/braze-community/braze-node/branch/master/graph/badge.svg?token=QHPI1I0XI3" alt="codecov"></a>
 <a href="https://www.npmjs.com/package/braze-api"><img src="https://badgen.net/npm/dm/braze-api" alt="NPM downloads"></a></p>
-<p>Node.js library for <a href="https://www.braze.com/">Braze</a>. See <a href="https://braze-community.github.io/braze-node/">docs</a> and <a href="https://replit.com/@remarkablemark/braze-api">demo</a>. The types are from <a href="https://documenter.getpostman.com/view/4689407/SVYrsdsG">Braze&#39;s Postman collection</a>.</p>
-<a id="md:quick-start" class="tsd-anchor"></a><h2><a href="#md:quick-start">Quick Start</a></h2><pre><code class="language-ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Braze</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;braze-api&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span><br/><br/><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-2">braze</span><span class="hl-1">.</span><span class="hl-2">messages</span><span class="hl-1">.</span><span class="hl-6">send</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-2">external_user_ids:</span><span class="hl-1"> [</span><span class="hl-3">&#39;your_external_user_id&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-2">messages:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">email:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">app_id:</span><span class="hl-1"> </span><span class="hl-3">&#39;your_app_id&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">from:</span><span class="hl-1"> </span><span class="hl-3">&#39;Company &lt;company@example.com&gt;&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">email_template_id:</span><span class="hl-1"> </span><span class="hl-3">&#39;your_email_template_id&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">})</span>
-</code><button>Copy</button></pre>
-<a id="md:documentation" class="tsd-anchor"></a><h2><a href="#md:documentation">Documentation</a></h2><ul>
+<p>Node.js library for <a href="https://www.braze.com/">Braze</a>. See <a href="https://braze-community.github.io/braze-node/">docs</a> and <a href="https://replit.com/@remarkablemark/braze-api">demo</a>. The types are from <a href="https://documenter.getpostman.com/view/4689407/SVYrsdsG">Braze's Postman collection</a>.</p>
+<a id="md:quick-start" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Quick Start<a href="#md:quick-start" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Braze</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;braze-api&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span><br/><br/><span class="hl-0">await</span><span class="hl-1"> </span><span class="hl-2">braze</span><span class="hl-1">.</span><span class="hl-2">messages</span><span class="hl-1">.</span><span class="hl-6">send</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-2">external_user_ids:</span><span class="hl-1"> [</span><span class="hl-3">&#39;your_external_user_id&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-2">messages:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-2">email:</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">app_id:</span><span class="hl-1"> </span><span class="hl-3">&#39;your_app_id&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">from:</span><span class="hl-1"> </span><span class="hl-3">&#39;Company &lt;company@example.com&gt;&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">email_template_id:</span><span class="hl-1"> </span><span class="hl-3">&#39;your_email_template_id&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    },</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">})</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:documentation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Documentation<a href="#md:documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
 <li><a href="https://braze-community.github.io/braze-node/">TypeDoc</a></li>
 <li><a href="https://www.braze.com/docs/api/">Braze API Guide</a></li>
-<li><a href="https://documenter.getpostman.com/view/4689407/SVYrsdsG">Braze&#39;s Postman collection</a></li>
+<li><a href="https://documenter.getpostman.com/view/4689407/SVYrsdsG">Braze's Postman collection</a></li>
 </ul>
-<a id="md:prerequisites" class="tsd-anchor"></a><h2><a href="#md:prerequisites">Prerequisites</a></h2><ul>
+<a id="md:prerequisites" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Prerequisites<a href="#md:prerequisites" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
 <li><a href="https://nodejs.org/">Node.js</a></li>
 <li><a href="https://www.braze.com/get-started">Braze account</a></li>
 </ul>
-<a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><p><a href="https://www.npmjs.com/package/braze-api">NPM</a>:</p>
-<pre><code class="language-sh"><span class="hl-6">npm</span><span class="hl-1"> </span><span class="hl-3">install</span><span class="hl-1"> </span><span class="hl-3">braze-api</span>
-</code><button>Copy</button></pre>
+<a id="md:installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#md:installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://www.npmjs.com/package/braze-api">NPM</a>:</p>
+<pre><code class="sh"><span class="hl-6">npm</span><span class="hl-1"> </span><span class="hl-3">install</span><span class="hl-1"> </span><span class="hl-3">braze-api</span>
+</code><button type="button">Copy</button></pre>
+
 <p><a href="https://yarnpkg.com/package/braze-api">Yarn</a>:</p>
-<pre><code class="language-sh"><span class="hl-6">yarn</span><span class="hl-1"> </span><span class="hl-3">add</span><span class="hl-1"> </span><span class="hl-3">braze-api</span>
-</code><button>Copy</button></pre>
-<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><p>The package needs to be configured with your account&#39;s REST endpoint and API key:</p>
-<pre><code class="language-ts"><span class="hl-4">const</span><span class="hl-1"> { </span><span class="hl-5">Braze</span><span class="hl-1"> } = </span><span class="hl-6">require</span><span class="hl-1">(</span><span class="hl-3">&#39;braze-api&#39;</span><span class="hl-1">)</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span>
-</code><button>Copy</button></pre>
+<pre><code class="sh"><span class="hl-6">yarn</span><span class="hl-1"> </span><span class="hl-3">add</span><span class="hl-1"> </span><span class="hl-3">braze-api</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#md:usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The package needs to be configured with your account's REST endpoint and API key:</p>
+<pre><code class="ts"><span class="hl-4">const</span><span class="hl-1"> { </span><span class="hl-5">Braze</span><span class="hl-1"> } = </span><span class="hl-6">require</span><span class="hl-1">(</span><span class="hl-3">&#39;braze-api&#39;</span><span class="hl-1">)</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span>
+</code><button type="button">Copy</button></pre>
+
 <p>The same can be done with ES Modules:</p>
-<pre><code class="language-ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Braze</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;braze-api&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span>
-</code><button>Copy</button></pre>
-<a id="md:api-url" class="tsd-anchor"></a><h3><a href="#md:api-url">API URL</a></h3><p>Use the <a href="https://www.braze.com/docs/api/basics#endpoints">REST endpoint</a> provisioned to your account when you log in to the dashboard:</p>
+<pre><code class="ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">Braze</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;braze-api&#39;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">braze</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Braze</span><span class="hl-1">(</span><span class="hl-3">&#39;YOUR_API_URL&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;YOUR_API_KEY&#39;</span><span class="hl-1">)</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:api-url" class="tsd-anchor"></a><h3 class="tsd-anchor-link">API URL<a href="#md:api-url" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Use the <a href="https://www.braze.com/docs/api/basics#endpoints">REST endpoint</a> provisioned to your account when you log in to the dashboard:</p>
 <table>
 <thead>
 <tr>
@@ -39,7 +42,8 @@
 <th>REST Endpoint</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>US-01</td>
 <td><a href="https://rest.iad-01.braze.com">https://rest.iad-01.braze.com</a></td>
 </tr>
@@ -75,145 +79,144 @@
 <td>EU-02</td>
 <td><a href="https://rest.fra-02.braze.eu">https://rest.fra-02.braze.eu</a></td>
 </tr>
-</tbody></table>
-<a id="md:api-key" class="tsd-anchor"></a><h3><a href="#md:api-key">API Key</a></h3><p>The <a href="https://www.braze.com/docs/api/basics#creating-and-managing-rest-api-keys">API key</a> can be created in your Braze dashboard.</p>
-<a id="md:api-methods" class="tsd-anchor"></a><h2><a href="#md:api-methods">API Methods</a></h2><p>The library supports the following <a href="https://www.braze.com/docs/api/home">Braze API endpoints</a>. Pull requests are welcome!</p>
-<a id="md:campaigns" class="tsd-anchor"></a><h3><a href="#md:campaigns">Campaigns</a></h3><ul>
-<li><input disabled="" type="checkbox"> /campaigns/data_series</li>
-<li><input disabled="" type="checkbox"> /campaigns/details</li>
-<li><input checked="" disabled="" type="checkbox"> /campaigns/list</li>
-<li><input disabled="" type="checkbox"> /sends/data_series</li>
+</tbody>
+</table>
+<a id="md:api-key" class="tsd-anchor"></a><h3 class="tsd-anchor-link">API Key<a href="#md:api-key" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>The <a href="https://www.braze.com/docs/api/basics#creating-and-managing-rest-api-keys">API key</a> can be created in your Braze dashboard.</p>
+<a id="md:api-methods" class="tsd-anchor"></a><h2 class="tsd-anchor-link">API Methods<a href="#md:api-methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The library supports the following <a href="https://www.braze.com/docs/api/home">Braze API endpoints</a>. Pull requests are welcome!</p>
+<a id="md:campaigns" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Campaigns<a href="#md:campaigns" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /campaigns/data_series</li>
+<li>[ ] /campaigns/details</li>
+<li>[x] /campaigns/list</li>
+<li>[ ] /sends/data_series</li>
 </ul>
-<a id="md:canvas" class="tsd-anchor"></a><h3><a href="#md:canvas">Canvas</a></h3><ul>
-<li><input disabled="" type="checkbox"> /canvas/data_series</li>
-<li><input disabled="" type="checkbox"> /canvas/data_summary</li>
-<li><input disabled="" type="checkbox"> /canvas/details</li>
-<li><input checked="" disabled="" type="checkbox"> /canvas/list</li>
+<a id="md:canvas" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Canvas<a href="#md:canvas" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /canvas/data_series</li>
+<li>[ ] /canvas/data_summary</li>
+<li>[ ] /canvas/details</li>
+<li>[x] /canvas/list</li>
 </ul>
-<a id="md:catalogs" class="tsd-anchor"></a><h3><a href="#md:catalogs">Catalogs</a></h3><ul>
-<li><input disabled="" type="checkbox"> DELETE /catalogs/{catalog_name}/items</li>
-<li><input disabled="" type="checkbox"> PATCH /catalogs/{catalog_name}/items</li>
-<li><input disabled="" type="checkbox"> POST /catalogs/{catalog_name}/items</li>
-<li><input disabled="" type="checkbox"> PUT /catalogs/{catalog_name}/items/</li>
-<li><input disabled="" type="checkbox"> DELETE /catalogs/{catalog_name}/items/{item_id}</li>
-<li><input checked="" disabled="" type="checkbox"> GET /catalogs/{catalog_name}/items/{item_id}</li>
-<li><input checked="" disabled="" type="checkbox"> GET /catalogs/{catalog_name}/items</li>
-<li><input disabled="" type="checkbox"> PATCH /catalogs/{catalog_name}/items/{item_id}</li>
-<li><input disabled="" type="checkbox"> POST /catalogs/{catalog_name}/items/{item_id}</li>
-<li><input disabled="" type="checkbox"> PUT /catalogs/{catalog_name}/items/{item_id}</li>
-<li><input disabled="" type="checkbox"> DELETE /catalogs/{catalog_name}</li>
-<li><input checked="" disabled="" type="checkbox"> GET /catalogs</li>
-<li><input disabled="" type="checkbox"> POST /catalogs</li>
+<a id="md:catalogs" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Catalogs<a href="#md:catalogs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] DELETE /catalogs/{catalog_name}/items</li>
+<li>[ ] PATCH /catalogs/{catalog_name}/items</li>
+<li>[ ] POST /catalogs/{catalog_name}/items</li>
+<li>[ ] PUT /catalogs/{catalog_name}/items/</li>
+<li>[ ] DELETE /catalogs/{catalog_name}/items/{item_id}</li>
+<li>[x] GET /catalogs/{catalog_name}/items/{item_id}</li>
+<li>[x] GET /catalogs/{catalog_name}/items</li>
+<li>[ ] PATCH /catalogs/{catalog_name}/items/{item_id}</li>
+<li>[ ] POST /catalogs/{catalog_name}/items/{item_id}</li>
+<li>[ ] PUT /catalogs/{catalog_name}/items/{item_id}</li>
+<li>[ ] DELETE /catalogs/{catalog_name}</li>
+<li>[x] GET /catalogs</li>
+<li>[ ] POST /catalogs</li>
 </ul>
-<a id="md:content-blocks" class="tsd-anchor"></a><h3><a href="#md:content-blocks">Content Blocks</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /content_blocks/list</li>
-<li><input checked="" disabled="" type="checkbox"> /content_blocks/info</li>
-<li><input disabled="" type="checkbox"> /content_blocks/create</li>
-<li><input disabled="" type="checkbox"> /content_blocks/update</li>
+<a id="md:content-blocks" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Content Blocks<a href="#md:content-blocks" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /content_blocks/list</li>
+<li>[x] /content_blocks/info</li>
+<li>[ ] /content_blocks/create</li>
+<li>[ ] /content_blocks/update</li>
 </ul>
-<a id="md:custom-events" class="tsd-anchor"></a><h3><a href="#md:custom-events">Custom Events</a></h3><ul>
-<li><input disabled="" type="checkbox"> /events/list</li>
-<li><input disabled="" type="checkbox"> /events/data_series</li>
+<a id="md:custom-events" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Custom Events<a href="#md:custom-events" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /events/list</li>
+<li>[ ] /events/data_series</li>
 </ul>
-<a id="md:email-list" class="tsd-anchor"></a><h3><a href="#md:email-list">Email List</a></h3><ul>
-<li><input disabled="" type="checkbox"> /email/hard_bounces</li>
-<li><input disabled="" type="checkbox"> /email/unsubscribes</li>
-<li><input checked="" disabled="" type="checkbox"> /email/blacklist</li>
-<li><input disabled="" type="checkbox"> /email/status</li>
-<li><input checked="" disabled="" type="checkbox"> /email/bounce/remove</li>
-<li><input checked="" disabled="" type="checkbox"> /email/spam/remove</li>
+<a id="md:email-list" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Email List<a href="#md:email-list" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /email/hard_bounces</li>
+<li>[ ] /email/unsubscribes</li>
+<li>[x] /email/blacklist</li>
+<li>[ ] /email/status</li>
+<li>[x] /email/bounce/remove</li>
+<li>[x] /email/spam/remove</li>
 </ul>
-<a id="md:email-templates" class="tsd-anchor"></a><h3><a href="#md:email-templates">Email Templates</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /templates/email/list</li>
-<li><input checked="" disabled="" type="checkbox"> /templates/email/info</li>
-<li><input checked="" disabled="" type="checkbox"> /templates/email/create</li>
-<li><input checked="" disabled="" type="checkbox"> /templates/email/update</li>
+<a id="md:email-templates" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Email Templates<a href="#md:email-templates" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /templates/email/list</li>
+<li>[x] /templates/email/info</li>
+<li>[x] /templates/email/create</li>
+<li>[x] /templates/email/update</li>
 </ul>
-<a id="md:kpi" class="tsd-anchor"></a><h3><a href="#md:kpi">KPI</a></h3><ul>
-<li><input disabled="" type="checkbox"> /kpi/new_users/data_series</li>
-<li><input disabled="" type="checkbox"> /kpi/dau/data_series</li>
-<li><input disabled="" type="checkbox"> /kpi/mau/data_series</li>
-<li><input disabled="" type="checkbox"> /kpi/uninstalls/data_series</li>
+<a id="md:kpi" class="tsd-anchor"></a><h3 class="tsd-anchor-link">KPI<a href="#md:kpi" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /kpi/new_users/data_series</li>
+<li>[ ] /kpi/dau/data_series</li>
+<li>[ ] /kpi/mau/data_series</li>
+<li>[ ] /kpi/uninstalls/data_series</li>
 </ul>
-<a id="md:news-feed" class="tsd-anchor"></a><h3><a href="#md:news-feed">News Feed</a></h3><ul>
-<li><input disabled="" type="checkbox"> /feed/data_series</li>
-<li><input disabled="" type="checkbox"> /feed/details</li>
-<li><input disabled="" type="checkbox"> /feed/list</li>
+<a id="md:news-feed" class="tsd-anchor"></a><h3 class="tsd-anchor-link">News Feed<a href="#md:news-feed" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /feed/data_series</li>
+<li>[ ] /feed/details</li>
+<li>[ ] /feed/list</li>
 </ul>
-<a id="md:purchases" class="tsd-anchor"></a><h3><a href="#md:purchases">Purchases</a></h3><ul>
-<li><input disabled="" type="checkbox"> /purchases/product_list</li>
-<li><input disabled="" type="checkbox"> /purchases/quantity_series</li>
-<li><input disabled="" type="checkbox"> /purchases/revenue_series</li>
+<a id="md:purchases" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Purchases<a href="#md:purchases" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /purchases/product_list</li>
+<li>[ ] /purchases/quantity_series</li>
+<li>[ ] /purchases/revenue_series</li>
 </ul>
-<a id="md:preference-center" class="tsd-anchor"></a><h3><a href="#md:preference-center">Preference Center</a></h3><ul>
-<li><input disabled="" type="checkbox"> /preference_center/v1/{preferenceCenterExternalId}/url/{userId}</li>
-<li><input disabled="" type="checkbox"> /preference_center/v1/list</li>
-<li><input disabled="" type="checkbox"> /preference_center/v1/{preferenceCenterExternalId}</li>
-<li><input disabled="" type="checkbox"> /preference_center/v1</li>
-<li><input disabled="" type="checkbox"> /preference_center/v1/{preferenceCenterExternalId}</li>
+<a id="md:preference-center" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Preference Center<a href="#md:preference-center" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /preference_center/v1/{preferenceCenterExternalId}/url/{userId}</li>
+<li>[ ] /preference_center/v1/list</li>
+<li>[ ] /preference_center/v1/{preferenceCenterExternalId}</li>
+<li>[ ] /preference_center/v1</li>
+<li>[ ] /preference_center/v1/{preferenceCenterExternalId}</li>
 </ul>
-<a id="md:schedule-messages" class="tsd-anchor"></a><h3><a href="#md:schedule-messages">Schedule Messages</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /messages/scheduled_broadcasts</li>
-<li><input checked="" disabled="" type="checkbox"> /messages/schedule/delete</li>
-<li><input checked="" disabled="" type="checkbox"> /canvas/trigger/schedule/delete</li>
-<li><input checked="" disabled="" type="checkbox"> /campaigns/trigger/schedule/delete</li>
-<li><input checked="" disabled="" type="checkbox"> /messages/schedule/create</li>
-<li><input checked="" disabled="" type="checkbox"> /campaigns/trigger/schedule/create</li>
-<li><input checked="" disabled="" type="checkbox"> /messages/schedule/update</li>
-<li><input checked="" disabled="" type="checkbox"> /campaigns/trigger/schedule/update</li>
-<li><input checked="" disabled="" type="checkbox"> /canvas/trigger/schedule/create</li>
-<li><input checked="" disabled="" type="checkbox"> /canvas/trigger/schedule/update</li>
+<a id="md:schedule-messages" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Schedule Messages<a href="#md:schedule-messages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /messages/scheduled_broadcasts</li>
+<li>[x] /messages/schedule/delete</li>
+<li>[x] /canvas/trigger/schedule/delete</li>
+<li>[x] /campaigns/trigger/schedule/delete</li>
+<li>[x] /messages/schedule/create</li>
+<li>[x] /campaigns/trigger/schedule/create</li>
+<li>[x] /messages/schedule/update</li>
+<li>[x] /campaigns/trigger/schedule/update</li>
+<li>[x] /canvas/trigger/schedule/create</li>
+<li>[x] /canvas/trigger/schedule/update</li>
 </ul>
-<a id="md:scim" class="tsd-anchor"></a><h3><a href="#md:scim">SCIM</a></h3><ul>
-<li><input disabled="" type="checkbox"> DELETE /scim/v2/Users/{id}</li>
-<li><input disabled="" type="checkbox"> GET /scim/v2/Users?filter={<a href="mailto:userName@example.com">userName@example.com</a>}</li>
-<li><input disabled="" type="checkbox"> GET /scim/v2/Users/{id}</li>
-<li><input disabled="" type="checkbox"> POST /scim/v2/Users</li>
-<li><input disabled="" type="checkbox"> PUT /scim/v2/Users/{id}</li>
+<a id="md:scim" class="tsd-anchor"></a><h3 class="tsd-anchor-link">SCIM<a href="#md:scim" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] DELETE /scim/v2/Users/{id}</li>
+<li>[ ] GET /scim/v2/Users?filter={userName@example.com}</li>
+<li>[ ] GET /scim/v2/Users/{id}</li>
+<li>[ ] POST /scim/v2/Users</li>
+<li>[ ] PUT /scim/v2/Users/{id}</li>
 </ul>
-<a id="md:segments" class="tsd-anchor"></a><h3><a href="#md:segments">Segments</a></h3><ul>
-<li><input disabled="" type="checkbox"> /segments/list</li>
-<li><input disabled="" type="checkbox"> /segments/data_series</li>
-<li><input disabled="" type="checkbox"> /segments/details</li>
-<li><input disabled="" type="checkbox"> /sessions/data_series</li>
+<a id="md:segments" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Segments<a href="#md:segments" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /segments/list</li>
+<li>[ ] /segments/data_series</li>
+<li>[ ] /segments/details</li>
+<li>[ ] /sessions/data_series</li>
 </ul>
-<a id="md:send-messages" class="tsd-anchor"></a><h3><a href="#md:send-messages">Send Messages</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /sends/id/create</li>
-<li><input checked="" disabled="" type="checkbox"> /messages/send</li>
-<li><input checked="" disabled="" type="checkbox"> /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send</li>
-<li><input checked="" disabled="" type="checkbox"> /campaigns/trigger/send</li>
-<li><input checked="" disabled="" type="checkbox"> /canvas/trigger/send</li>
+<a id="md:send-messages" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Send Messages<a href="#md:send-messages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /sends/id/create</li>
+<li>[x] /messages/send</li>
+<li>[x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send</li>
+<li>[x] /campaigns/trigger/send</li>
+<li>[x] /canvas/trigger/send</li>
 </ul>
-<a id="md:sms" class="tsd-anchor"></a><h3><a href="#md:sms">SMS</a></h3><ul>
-<li><input disabled="" type="checkbox"> /sms/invalid_phone_numbers</li>
-<li><input disabled="" type="checkbox"> /sms/invalid_phone_numbers/remove</li>
+<a id="md:sms" class="tsd-anchor"></a><h3 class="tsd-anchor-link">SMS<a href="#md:sms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /sms/invalid_phone_numbers</li>
+<li>[ ] /sms/invalid_phone_numbers/remove</li>
 </ul>
-<a id="md:subscription-groups" class="tsd-anchor"></a><h3><a href="#md:subscription-groups">Subscription Groups</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /subscription/status/get</li>
-<li><input checked="" disabled="" type="checkbox"> /subscription/user/status</li>
-<li><input checked="" disabled="" type="checkbox"> /subscription/status/set</li>
-<li><input checked="" disabled="" type="checkbox"> /v2/subscription/status/set</li>
+<a id="md:subscription-groups" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Subscription Groups<a href="#md:subscription-groups" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /subscription/status/get</li>
+<li>[x] /subscription/user/status</li>
+<li>[x] /subscription/status/set</li>
+<li>[x] /v2/subscription/status/set</li>
 </ul>
-<a id="md:user-data" class="tsd-anchor"></a><h3><a href="#md:user-data">User Data</a></h3><ul>
-<li><input checked="" disabled="" type="checkbox"> /users/export/global_control_group</li>
-<li><input checked="" disabled="" type="checkbox"> /users/export/ids</li>
-<li><input checked="" disabled="" type="checkbox"> /users/export/segment</li>
-<li><input checked="" disabled="" type="checkbox"> /users/external_ids/remove</li>
-<li><input checked="" disabled="" type="checkbox"> /users/external_ids/rename</li>
-<li><input checked="" disabled="" type="checkbox"> /users/alias/new</li>
-<li><input checked="" disabled="" type="checkbox"> /users/delete</li>
-<li><input checked="" disabled="" type="checkbox"> /users/identify</li>
-<li><input checked="" disabled="" type="checkbox"> /users/track</li>
-<li><input checked="" disabled="" type="checkbox"> /users/alias/update</li>
-<li><input checked="" disabled="" type="checkbox"> /users/merge</li>
+<a id="md:user-data" class="tsd-anchor"></a><h3 class="tsd-anchor-link">User Data<a href="#md:user-data" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[x] /users/export/global_control_group</li>
+<li>[x] /users/export/ids</li>
+<li>[x] /users/export/segment</li>
+<li>[x] /users/external_ids/remove</li>
+<li>[x] /users/external_ids/rename</li>
+<li>[x] /users/alias/new</li>
+<li>[x] /users/delete</li>
+<li>[x] /users/identify</li>
+<li>[x] /users/track</li>
+<li>[x] /users/alias/update</li>
+<li>[x] /users/merge</li>
 </ul>
-<a id="md:live-activity" class="tsd-anchor"></a><h3><a href="#md:live-activity">Live Activity</a></h3><ul>
-<li><input disabled="" type="checkbox"> /messages/live_activity/update</li>
+<a id="md:live-activity" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Live Activity<a href="#md:live-activity" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>[ ] /messages/live_activity/update</li>
 </ul>
-<a id="md:contributing" class="tsd-anchor"></a><h2><a href="#md:contributing">Contributing</a></h2><p>Contributions are welcome! Check out the <a href="https://github.com/braze-community/braze-node/blob/master/.github/CONTRIBUTING.md">guide</a>. 👋</p>
-<a id="md:license" class="tsd-anchor"></a><h2><a href="#md:license">License</a></h2><p><a href="https://github.com/braze-community/braze-node/blob/master/LICENSE">MIT</a></p>
+<a id="md:contributing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributing<a href="#md:contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Contributions are welcome! Check out the <a href="https://github.com/braze-community/braze-node/blob/master/.github/CONTRIBUTING.md">guide</a>. 👋</p>
+<a id="md:license" class="tsd-anchor"></a><h2 class="tsd-anchor-link">License<a href="#md:license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://github.com/braze-community/braze-node/blob/master/LICENSE">MIT</a></p>
 <!-- readme-content-end -->
-
 <!-- readme-content-placeholder -->
-
-<!-- readme-end --></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:braze-api"><span>braze-<wbr/>api</span></a><ul><li><a href="#md:quick-start"><span>Quick <wbr/>Start</span></a></li><li><a href="#md:documentation"><span>Documentation</span></a></li><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li><li><a href="#md:installation"><span>Installation</span></a></li><li><a href="#md:usage"><span>Usage</span></a></li><li><ul><li><a href="#md:api-url"><span>API URL</span></a></li><li><a href="#md:api-key"><span>API <wbr/>Key</span></a></li></ul></li><li><a href="#md:api-methods"><span>API <wbr/>Methods</span></a></li><li><ul><li><a href="#md:campaigns"><span>Campaigns</span></a></li><li><a href="#md:canvas"><span>Canvas</span></a></li><li><a href="#md:catalogs"><span>Catalogs</span></a></li><li><a href="#md:content-blocks"><span>Content <wbr/>Blocks</span></a></li><li><a href="#md:custom-events"><span>Custom <wbr/>Events</span></a></li><li><a href="#md:email-list"><span>Email <wbr/>List</span></a></li><li><a href="#md:email-templates"><span>Email <wbr/>Templates</span></a></li><li><a href="#md:kpi"><span>KPI</span></a></li><li><a href="#md:news-feed"><span>News <wbr/>Feed</span></a></li><li><a href="#md:purchases"><span>Purchases</span></a></li><li><a href="#md:preference-center"><span>Preference <wbr/>Center</span></a></li><li><a href="#md:schedule-messages"><span>Schedule <wbr/>Messages</span></a></li><li><a href="#md:scim"><span>SCIM</span></a></li><li><a href="#md:segments"><span>Segments</span></a></li><li><a href="#md:send-messages"><span>Send <wbr/>Messages</span></a></li><li><a href="#md:sms"><span>SMS</span></a></li><li><a href="#md:subscription-groups"><span>Subscription <wbr/>Groups</span></a></li><li><a href="#md:user-data"><span>User <wbr/>Data</span></a></li><li><a href="#md:live-activity"><span>Live <wbr/>Activity</span></a></li></ul></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:license"><span>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>braze-api</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
+<!-- readme-end --></div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:braze-api"><span>braze-<wbr/>api</span></a><ul><li><a href="#md:quick-start"><span>Quick <wbr/>Start</span></a></li><li><a href="#md:documentation"><span>Documentation</span></a></li><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li><li><a href="#md:installation"><span>Installation</span></a></li><li><a href="#md:usage"><span>Usage</span></a></li><li><ul><li><a href="#md:api-url"><span>API URL</span></a></li><li><a href="#md:api-key"><span>API <wbr/>Key</span></a></li></ul></li><li><a href="#md:api-methods"><span>API <wbr/>Methods</span></a></li><li><ul><li><a href="#md:campaigns"><span>Campaigns</span></a></li><li><a href="#md:canvas"><span>Canvas</span></a></li><li><a href="#md:catalogs"><span>Catalogs</span></a></li><li><a href="#md:content-blocks"><span>Content <wbr/>Blocks</span></a></li><li><a href="#md:custom-events"><span>Custom <wbr/>Events</span></a></li><li><a href="#md:email-list"><span>Email <wbr/>List</span></a></li><li><a href="#md:email-templates"><span>Email <wbr/>Templates</span></a></li><li><a href="#md:kpi"><span>KPI</span></a></li><li><a href="#md:news-feed"><span>News <wbr/>Feed</span></a></li><li><a href="#md:purchases"><span>Purchases</span></a></li><li><a href="#md:preference-center"><span>Preference <wbr/>Center</span></a></li><li><a href="#md:schedule-messages"><span>Schedule <wbr/>Messages</span></a></li><li><a href="#md:scim"><span>SCIM</span></a></li><li><a href="#md:segments"><span>Segments</span></a></li><li><a href="#md:send-messages"><span>Send <wbr/>Messages</span></a></li><li><a href="#md:sms"><span>SMS</span></a></li><li><a href="#md:subscription-groups"><span>Subscription <wbr/>Groups</span></a></li><li><a href="#md:user-data"><span>User <wbr/>Data</span></a></li><li><a href="#md:live-activity"><span>Live <wbr/>Activity</span></a></li></ul></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:license"><span>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>braze-api</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
