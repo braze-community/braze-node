@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.1](https://github.com/braze-community/braze-node/compare/v2.9.0...v2.9.1) (2024-07-11)
+
+
+### Documentation
+
+* add content blocks endpoints to the readme checklist ([#652](https://github.com/braze-community/braze-node/issues/652)) ([fab0513](https://github.com/braze-community/braze-node/commit/fab0513e14851c49b1d2f9c1754d2ea59a2ac52e))
+
 ## [2.9.0](https://github.com/braze-community/braze-node/compare/v2.8.0...v2.9.0) (2024-07-11)
 
 
