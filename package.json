@@ -1,6 +1,6 @@
 {
   "name": "braze-api",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "Track users, send messages, export data, and more with Braze API.",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "cjs/index.js",
