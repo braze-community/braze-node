@@ -1,6 +1,6 @@
 import { Braze } from '../../Braze'
 import { request } from '../../common/request'
-import { ContentBlockListResponse, ContentBlockResponse } from './types'
+import { ContentBlockListResponse, ContentBlockResponse, PostContentBlockResponse } from './types'
 
 jest.mock('../../common/request/request')
 const mockedRequest = jest.mocked(request)
@@ -99,6 +99,55 @@ describe('Content Blocks', () => {
         undefined,
         options,
       )
+      expect(mockedRequest).toBeCalledTimes(1)
+    })
+  })
+
+  describe('templates.content_blocks.create()', () => {
+    const response: PostContentBlockResponse = {
+      content_block_id: '',
+      liquid_tag: '',
+      created_at: '',
+      message: 'success',
+    }
+    const requestBody = {
+      name: '',
+      description: '',
+      content: '',
+    }
+
+    it('calls POST /content_blocks/create with body', async () => {
+      mockedRequest.mockResolvedValueOnce(response)
+      expect(await braze.templates.content_blocks.create(requestBody)).toBe(response)
+      expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/create`, requestBody, {
+        ...options,
+        method: 'POST',
+      })
+      expect(mockedRequest).toBeCalledTimes(1)
+    })
+  })
+
+  describe('templates.content_blocks.update()', () => {
+    const response: PostContentBlockResponse = {
+      content_block_id: '5',
+      liquid_tag: '',
+      created_at: '',
+      message: 'success',
+    }
+    const requestBody = {
+      name: '',
+      description: '',
+      content: '',
+      content_block_id: '5',
+    }
+
+    it('calls POST /templates/email/update with body', async () => {
+      mockedRequest.mockResolvedValueOnce(response)
+      expect(await braze.templates.content_blocks.update(requestBody)).toBe(response)
+      expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/update`, requestBody, {
+        ...options,
+        method: 'POST',
+      })
       expect(mockedRequest).toBeCalledTimes(1)
     })
   })

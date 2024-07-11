@@ -284,6 +284,20 @@ export class Braze {
       list: (body: templates.content_blocks.ContentBlockListBody) => {
         return templates.content_blocks.listContentBlocks(this.apiUrl, this.apiKey, body)
       },
+
+      /**
+       * POST /content_blocks/create
+       */
+      create: (body: templates.content_blocks.CreateContentBlockBody) => {
+        return templates.content_blocks.createContentBlock(this.apiUrl, this.apiKey, body)
+      },
+
+      /**
+       * POST /content_blocks/update
+       */
+      update: (body: templates.content_blocks.UpdateContentBlockBody) => {
+        return templates.content_blocks.updateContentBlock(this.apiUrl, this.apiKey, body)
+      },
     },
 
     email_templates: {
