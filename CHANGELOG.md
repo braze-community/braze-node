@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/braze-community/braze-node/compare/v2.8.0...v2.9.0) (2024-07-11)
+
+
+### Features
+
+* add support for content block post methods (create/update) ([f9e4a69](https://github.com/braze-community/braze-node/commit/f9e4a69dab00ed9d8e79e977e96a7a53eb6d984b))
+
 ## [2.8.0](https://github.com/braze-community/braze-node/compare/v2.7.1...v2.8.0) (2024-05-29)
 
 
