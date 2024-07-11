@@ -133,8 +133,8 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 
 - [x] /content_blocks/list
 - [x] /content_blocks/info
-- [ ] /content_blocks/create
-- [ ] /content_blocks/update
+- [x] /content_blocks/create
+- [x] /content_blocks/update
 
 ### Custom Events
 
