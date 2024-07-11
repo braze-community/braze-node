@@ -58,3 +58,38 @@ export interface ContentBlockResponse extends ServerResponse {
   inclusion_count: number
   inclusion_data: string[]
 }
+
+/**
+ * Request body for create content block.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/templates/content_blocks_templates/post_create_email_content_block/}
+ */
+export interface CreateContentBlockBody {
+  name: string
+  description?: string
+  content: string
+  state?: 'active' | 'draft'
+  tags?: string[]
+}
+
+/**
+ * Request body for update content block.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/templates/content_blocks_templates/post_update_content_block/}
+ */
+export interface UpdateContentBlockBody extends Partial<CreateContentBlockBody> {
+  content_block_id: string
+}
+
+/**
+ * Response body for create/update content block.
+ *
+ * {@link https://www.braze.com/docs/api/endpoints/templates/content_blocks_templates/post_create_email_content_block/}
+ * {@link https://www.braze.com/docs/api/endpoints/templates/content_blocks_templates/post_update_content_block/}
+ */
+export interface PostContentBlockResponse extends ServerResponse {
+  content_block_id: string
+  liquid_tag: string
+  created_at: string
+  message: 'success'
+}

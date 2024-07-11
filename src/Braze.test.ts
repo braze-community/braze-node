@@ -7,6 +7,7 @@ import type {
   CanvasTriggerScheduleDeleteObject,
   CanvasTriggerScheduleUpdateObject,
   CanvasTriggerSendObject,
+  CreateContentBlockBody,
   EmailBlacklistObject,
   EmailBounceRemoveObject,
   EmailSpamRemoveObject,
@@ -19,6 +20,7 @@ import type {
   SubscriptionStatusSetObject,
   SubscriptionUserStatusObject,
   TransactionalV1CampaignsSendObject,
+  UpdateContentBlockBody,
   UserAliasUpdates,
   UsersAliasObject,
   UsersDeleteObject,
@@ -350,6 +352,20 @@ it('calls users.track() with bulk', async () => {
       'X-Braze-Bulk': 'true',
     },
   })
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls templates.content_blocks.create()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.templates.content_blocks.create(body as CreateContentBlockBody)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/create`, body, options)
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls templates.content_blocks.update()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.templates.content_blocks.update(body as UpdateContentBlockBody)).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/update`, body, options)
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
