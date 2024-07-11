@@ -2,7 +2,7 @@ import { buildOptions, post } from '../../common/request'
 import { CreateContentBlockBody, PostContentBlockResponse } from './types'
 
 /**
- * Create email template.
+ * Create content block.
  *
  * {@link https://www.braze.com/docs/api/endpoints/templates/content_blocks_templates/post_create_email_content_block/}
  */
