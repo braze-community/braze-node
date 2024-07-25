@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.0](https://github.com/braze-community/braze-node/compare/v2.9.1...v2.10.0) (2024-07-25)
+
+
+### Features
+
+* add segments (list/details/analytics) ([79692e0](https://github.com/braze-community/braze-node/commit/79692e0eb379a088006220a2957452fbd91ee777))
+
 ## [2.9.1](https://github.com/braze-community/braze-node/compare/v2.9.0...v2.9.1) (2024-07-11)
 
 
