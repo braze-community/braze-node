@@ -207,10 +207,9 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 
 ### Segments
 
-- [ ] /segments/list
-- [ ] /segments/data_series
-- [ ] /segments/details
-- [ ] /sessions/data_series
+- [x] /segments/list
+- [x] /segments/data_series
+- [x] /segments/details
 
 ### Send Messages
 
@@ -219,6 +218,10 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 - [x] /transactional/v1/campaigns/{{CAMPAIGN_ID}}/send
 - [x] /campaigns/trigger/send
 - [x] /canvas/trigger/send
+
+### Sessions
+
+- [ ] /sessions/data_series
 
 ### SMS
 

@@ -3,6 +3,7 @@ import * as canvas from './canvas'
 import * as catalogs from './catalogs'
 import * as email from './email'
 import * as messages from './messages'
+import * as segments from './segments'
 import * as sends from './sends'
 import * as subscription from './subscription'
 import * as templates from './templates'
@@ -222,6 +223,29 @@ export class Braze {
      */
     send: (body: messages.MessagesSendObject) => {
       return messages.send(this.apiUrl, this.apiKey, body)
+    },
+  }
+
+  segments = {
+    /**
+     * GET /segments/data_series
+     */
+    analytics: (parameters: segments.SegmentsAnalyticsParameters) => {
+      return segments.analytics(this.apiUrl, this.apiKey, parameters)
+    },
+
+    /**
+     * GET /segments/details
+     */
+    details: (parameters: segments.SegmentsDetailsParameters) => {
+      return segments.details(this.apiUrl, this.apiKey, parameters)
+    },
+
+    /**
+     * GET /segments/list
+     */
+    list: (parameters?: segments.SegmentsListParameters) => {
+      return segments.list(this.apiUrl, this.apiKey, parameters)
     },
   }
 

@@ -206,6 +206,39 @@ it('calls messages.send()', async () => {
   expect(mockedRequest).toBeCalledTimes(1)
 })
 
+it('calls segments.analytics()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.segments.analytics({ segment_id: 'segment_api_identifier', length: 10 })).toBe(
+    response,
+  )
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/segments/data_series?segment_id=segment_api_identifier&length=10`,
+    undefined,
+    { headers: options.headers },
+  )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls segments.details()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.segments.details({ segment_id: 'segment_api_identifier' })).toBe(response)
+  expect(mockedRequest).toBeCalledWith(
+    `${apiUrl}/segments/details?segment_id=segment_api_identifier`,
+    undefined,
+    { headers: options.headers },
+  )
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
+it('calls segments.list()', async () => {
+  mockedRequest.mockResolvedValueOnce(response)
+  expect(await braze.segments.list({ page: 100 })).toBe(response)
+  expect(mockedRequest).toBeCalledWith(`${apiUrl}/segments/list?page=100`, undefined, {
+    headers: options.headers,
+  })
+  expect(mockedRequest).toBeCalledTimes(1)
+})
+
 it('calls sends.id.create()', async () => {
   mockedRequest.mockResolvedValueOnce(response)
   expect(await braze.sends.id.create(body as SendsIdCreateObject)).toBe(response)
