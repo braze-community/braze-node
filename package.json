@@ -62,7 +62,7 @@
     "lint-staged": "15.2.9",
     "prettier": "3.3.3",
     "ts-jest": "29.2.4",
-    "typedoc": "0.26.5",
+    "typedoc": "0.26.6",
     "typescript": "5.5.4"
   },
   "files": [
