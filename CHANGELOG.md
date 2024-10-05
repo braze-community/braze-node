@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/braze-community/braze-node/compare/v2.10.0...v2.10.1) (2024-10-05)
+
+
+### Continuous Integration
+
+* **github:** publish package to npm registry with provenance ([de0f0be](https://github.com/braze-community/braze-node/commit/de0f0be4981a09b25f407277726d10c0a494c254))
+
 ## [2.10.0](https://github.com/braze-community/braze-node/compare/v2.9.1...v2.10.0) (2024-07-25)
 
 
