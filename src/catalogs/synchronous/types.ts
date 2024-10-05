@@ -54,7 +54,6 @@ export interface CatalogListItemBody {
  *
  * {@link https://www.braze.com/docs/api/endpoints/catalogs/catalog_items/synchronous/get_catalog_item_details/}
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface CatalogListItemResponse<T extends CatalogListItem = CatalogListItem>
   extends ServerResponse {
   items: [T]
