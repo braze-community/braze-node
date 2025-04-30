@@ -42,6 +42,13 @@ export class Braze {
   /* eslint-disable tsdoc/syntax */
   campaigns = {
     /**
+     * GET /campaigns/details
+     */
+    details: (parameters: campaigns.CampaignsDetailsParameters) => {
+      return campaigns.details(this.apiUrl, this.apiKey, parameters)
+    },
+
+    /**
      * GET /campaigns/list
      */
     list: (parameters?: campaigns.CampaignsListParameters) => {
