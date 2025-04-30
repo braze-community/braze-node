@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.0](https://github.com/braze-community/braze-node/compare/v2.10.1...v2.11.0) (2025-04-30)
+
+
+### Features
+
+* **campaigns:** add `campaigns.details` (GET /campaigns/details) ([030dd5e](https://github.com/braze-community/braze-node/commit/030dd5e6c5e1b9b0049dfa61de2178886be168f8)), closes [#888](https://github.com/braze-community/braze-node/issues/888)
+
 ## [2.10.1](https://github.com/braze-community/braze-node/compare/v2.10.0...v2.10.1) (2024-10-05)
 
 
