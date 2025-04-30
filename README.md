@@ -102,7 +102,7 @@ The library supports the following [Braze API endpoints](https://www.braze.com/d
 ### Campaigns
 
 - [ ] /campaigns/data_series
-- [ ] /campaigns/details
+- [x] /campaigns/details
 - [x] /campaigns/list
 - [ ] /sends/data_series
 
