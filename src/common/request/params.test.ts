@@ -59,7 +59,7 @@ describe('buildParams', () => {
 
   describe('error', () => {
     it.each([new Date(), {}, Symbol('symbol'), () => {}])('throws when value is %p', (value) => {
-      expect(() => buildParams({ value })).toThrowError('Unhandled param type for key "value"')
+      expect(() => buildParams({ value })).toThrow('Unhandled param type for key "value"')
     })
   })
 })

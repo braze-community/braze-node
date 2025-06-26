@@ -38,10 +38,10 @@ describe('segments.list()', () => {
       length: 10,
     }
     expect(await braze.segments.analytics(params)).toBe(response)
-    expect(mockedGet).toBeCalledWith(
+    expect(mockedGet).toHaveBeenCalledWith(
       `${apiUrl}/segments/data_series?segment_id=segment_api_identifier&length=10`,
       options,
     )
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })

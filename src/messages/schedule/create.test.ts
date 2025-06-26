@@ -87,12 +87,12 @@ describe('/messages/schedule/create', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await create(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/messages/schedule/create`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/messages/schedule/create`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

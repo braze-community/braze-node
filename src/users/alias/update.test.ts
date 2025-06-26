@@ -27,12 +27,12 @@ describe('/users/alias/update', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await _update(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/users/alias/update`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/users/alias/update`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

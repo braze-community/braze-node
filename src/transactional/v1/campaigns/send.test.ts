@@ -30,7 +30,7 @@ describe('/transactional/v1/campaigns/YOUR_CAMPAIGN_ID_HERE/send', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await send(apiUrl, apiKey, campaignId, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(
+    expect(mockedPost).toHaveBeenCalledWith(
       `${apiUrl}/transactional/v1/campaigns/${campaignId}/send`,
       body,
       {
@@ -40,6 +40,6 @@ describe('/transactional/v1/campaigns/YOUR_CAMPAIGN_ID_HERE/send', () => {
         },
       },
     )
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

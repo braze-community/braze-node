@@ -43,7 +43,7 @@ describe('Catalogs - Synchronous', () => {
     it('is called with no params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.catalogs.synchronous.list()).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/catalogs`, undefined, options)
+      expect(mockedRequest).toHaveBeenCalledWith(`${apiUrl}/catalogs`, undefined, options)
     })
   })
 
@@ -270,7 +270,7 @@ describe('Catalogs - Synchronous', () => {
       expect(await braze.catalogs.synchronous.item<ResponseType>({ catalog_name, item_id })).toBe(
         response,
       )
-      expect(mockedRequest).toBeCalledWith(
+      expect(mockedRequest).toHaveBeenCalledWith(
         `${apiUrl}/catalogs/${catalog_name}/items/${item_id}`,
         undefined,
         options,

@@ -37,8 +37,8 @@ describe('campaigns.list()', () => {
   it('calls GET /campaigns/list with no params', async () => {
     mockedGet.mockResolvedValueOnce(response)
     expect(await braze.campaigns.list()).toBe(response)
-    expect(mockedGet).toBeCalledWith(`${apiUrl}/campaigns/list?`, options)
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledWith(`${apiUrl}/campaigns/list?`, options)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 
   it('calls GET /campaigns/list with all params', async () => {
@@ -50,10 +50,10 @@ describe('campaigns.list()', () => {
       'last_edit.time[gt]': '2023-04-20T04:20:00',
     }
     expect(await braze.campaigns.list(params)).toBe(response)
-    expect(mockedGet).toBeCalledWith(
+    expect(mockedGet).toHaveBeenCalledWith(
       `${apiUrl}/campaigns/list?page=100&include_archived=true&sort_direction=desc&last_edit.time%5Bgt%5D=2023-04-20T04%3A20%3A00`,
       options,
     )
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })

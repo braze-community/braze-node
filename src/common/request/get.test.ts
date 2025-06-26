@@ -18,13 +18,13 @@ describe('get', () => {
 
   it('calls request with url', async () => {
     expect(await get(url, {})).toBe(data)
-    expect(mockedRequest).toBeCalledWith(url, undefined, {})
-    expect(mockedRequest).toBeCalledTimes(1)
+    expect(mockedRequest).toHaveBeenCalledWith(url, undefined, {})
+    expect(mockedRequest).toHaveBeenCalledTimes(1)
   })
 
   it('calls request with url and options', async () => {
     expect(await get(url, options)).toBe(data)
-    expect(mockedRequest).toBeCalledWith(url, undefined, options)
-    expect(mockedRequest).toBeCalledTimes(1)
+    expect(mockedRequest).toHaveBeenCalledWith(url, undefined, options)
+    expect(mockedRequest).toHaveBeenCalledTimes(1)
   })
 })

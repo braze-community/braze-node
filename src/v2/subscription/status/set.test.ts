@@ -31,13 +31,13 @@ describe('/v2/subscription/status/set', () => {
       ],
     }
     expect(await set(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 
   it('calls request for email with url and body', async () => {
@@ -52,13 +52,13 @@ describe('/v2/subscription/status/set', () => {
       ],
     }
     expect(await set(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 
   it('calls request for SMS with url and body', async () => {
@@ -73,12 +73,12 @@ describe('/v2/subscription/status/set', () => {
       ],
     }
     expect(await set(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/v2/subscription/status/set`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

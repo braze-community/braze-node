@@ -25,12 +25,12 @@ describe('/users/external_ids/rename', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await rename(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/users/external_ids/rename`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/users/external_ids/rename`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

@@ -25,12 +25,12 @@ describe('/canvas/trigger/schedule/update', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await update(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/canvas/trigger/schedule/update`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/canvas/trigger/schedule/update`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

@@ -35,8 +35,12 @@ describe('Email Templates', () => {
     it('calls GET /templates/email/list with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.list({})).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/list?`, undefined, options)
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledWith(
+        `${apiUrl}/templates/email/list?`,
+        undefined,
+        options,
+      )
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -64,12 +68,12 @@ describe('Email Templates', () => {
           email_template_id: emailTemplateId,
         }),
       ).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
+      expect(mockedRequest).toHaveBeenCalledWith(
         `${apiUrl}/templates/email/info?email_template_id=${emailTemplateId}`,
         undefined,
         options,
       )
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -90,11 +94,11 @@ describe('Email Templates', () => {
     it('calls POST /templates/email/create with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.create(requestBody)).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/create`, requestBody, {
+      expect(mockedRequest).toHaveBeenCalledWith(`${apiUrl}/templates/email/create`, requestBody, {
         ...options,
         method: 'POST',
       })
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -113,11 +117,11 @@ describe('Email Templates', () => {
     it('calls POST /templates/email/update with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.email_templates.update(requestBody)).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/templates/email/update`, requestBody, {
+      expect(mockedRequest).toHaveBeenCalledWith(`${apiUrl}/templates/email/update`, requestBody, {
         ...options,
         method: 'POST',
       })
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 })

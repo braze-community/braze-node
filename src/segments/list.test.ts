@@ -36,8 +36,8 @@ describe('segments.list()', () => {
   it('calls GET /segments/list with no params', async () => {
     mockedGet.mockResolvedValueOnce(response)
     expect(await braze.segments.list()).toBe(response)
-    expect(mockedGet).toBeCalledWith(`${apiUrl}/segments/list?`, options)
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledWith(`${apiUrl}/segments/list?`, options)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 
   it('calls GET /segments/list with all params', async () => {
@@ -47,10 +47,10 @@ describe('segments.list()', () => {
       sort_direction: 'desc',
     }
     expect(await braze.segments.list(params)).toBe(response)
-    expect(mockedGet).toBeCalledWith(
+    expect(mockedGet).toHaveBeenCalledWith(
       `${apiUrl}/segments/list?page=100&sort_direction=desc`,
       options,
     )
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })
