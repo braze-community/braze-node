@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.11.1](https://github.com/braze-community/braze-node/compare/v2.11.0...v2.11.1) (2025-06-26)
+
+
+### Bug Fixes
+
+* added missing android_priority type on messages ([4d057dd](https://github.com/braze-community/braze-node/commit/4d057dd7e7239b252375e71fb668b760bf880b94))
+* added missing apns_priority type on messages ([#950](https://github.com/braze-community/braze-node/issues/950)) ([5aec854](https://github.com/braze-community/braze-node/commit/5aec854376a11d2ea1a0b5f39d8df5668d2d0838))
+
 ## [2.11.0](https://github.com/braze-community/braze-node/compare/v2.10.1...v2.11.0) (2025-04-30)
 
 
