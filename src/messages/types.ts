@@ -104,6 +104,7 @@ export interface AndroidPushObject {
   extra?: Record<string, string>
   message_variation_id?: string
   notification_channel_id?: string
+  android_priority?: string
   priority?: number
   send_to_sync?: boolean
   collapse_key?: string
