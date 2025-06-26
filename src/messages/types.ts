@@ -63,6 +63,7 @@ export interface ApplePushObject {
   send_to_most_recent_device_only?: boolean
   category?: string
   buttons?: ApplePushActionButtonObject[]
+  apns_priority?: number
 }
 
 /**
