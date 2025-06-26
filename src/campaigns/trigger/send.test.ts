@@ -32,12 +32,12 @@ describe('/campaigns/trigger/send', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await send(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/campaigns/trigger/send`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/campaigns/trigger/send`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

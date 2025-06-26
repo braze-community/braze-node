@@ -84,7 +84,7 @@ describe('campaigns.details()', () => {
       campaign_id: '1',
     }
     expect(await braze.campaigns.details(params)).toBe(response)
-    expect(mockedGet).toBeCalledWith(`${apiUrl}/campaigns/details?campaign_id=1`, options)
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledWith(`${apiUrl}/campaigns/details?campaign_id=1`, options)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })

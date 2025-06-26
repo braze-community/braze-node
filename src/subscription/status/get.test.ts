@@ -57,12 +57,12 @@ describe('/subscription/status/get', () => {
     mockedGet.mockResolvedValueOnce(data)
 
     expect(await get(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedGet).toBeCalledWith(expected, {
+    expect(mockedGet).toHaveBeenCalledWith(expected, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })

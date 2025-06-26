@@ -53,25 +53,25 @@ describe('/users/track', () => {
   it('calls request with url and body', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await track(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/users/track`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/users/track`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 
   it('makes bulk update', async () => {
     mockedPost.mockResolvedValueOnce(data)
     expect(await track(apiUrl, apiKey, body, true)).toBe(data)
-    expect(mockedPost).toBeCalledWith(`${apiUrl}/users/track`, body, {
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/users/track`, body, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
         'X-Braze-Bulk': 'true',
       },
     })
-    expect(mockedPost).toBeCalledTimes(1)
+    expect(mockedPost).toHaveBeenCalledTimes(1)
   })
 })

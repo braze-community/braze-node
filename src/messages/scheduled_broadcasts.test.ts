@@ -19,7 +19,7 @@ describe('messages.scheduled_broadcasts()', () => {
   it('calls GET /messages/scheduled_broadcasts with url and body', async () => {
     mockedGet.mockResolvedValueOnce(data)
     expect(await scheduled_broadcasts(apiUrl, apiKey, body)).toBe(data)
-    expect(mockedGet).toBeCalledWith(
+    expect(mockedGet).toHaveBeenCalledWith(
       `${apiUrl}/messages/scheduled_broadcasts?end_time=2018-09-01T00%3A00%3A00-04%3A00`,
       {
         headers: {
@@ -28,6 +28,6 @@ describe('messages.scheduled_broadcasts()', () => {
         },
       },
     )
-    expect(mockedGet).toBeCalledTimes(1)
+    expect(mockedGet).toHaveBeenCalledTimes(1)
   })
 })

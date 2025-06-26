@@ -23,31 +23,31 @@ describe('request', () => {
 
   it('calls fetch with url', async () => {
     expect(await request(url)).toBe(data)
-    expect(mockedFetch).toBeCalledWith(url, {
+    expect(mockedFetch).toHaveBeenCalledWith(url, {
       body: undefined,
     })
-    expect(mockedFetch).toBeCalledTimes(1)
-    expect(response.json).toBeCalledTimes(1)
+    expect(mockedFetch).toHaveBeenCalledTimes(1)
+    expect(response.json).toHaveBeenCalledTimes(1)
   })
 
   it('calls fetch with url and body', async () => {
     expect(await request(url, body)).toBe(data)
-    expect(mockedFetch).toBeCalledWith(url, {
+    expect(mockedFetch).toHaveBeenCalledWith(url, {
       body: JSON.stringify(body),
     })
-    expect(mockedFetch).toBeCalledTimes(1)
-    expect(response.json).toBeCalledTimes(1)
+    expect(mockedFetch).toHaveBeenCalledTimes(1)
+    expect(response.json).toHaveBeenCalledTimes(1)
   })
 
   it('calls fetch with url, body, and options', async () => {
     const method = RequestMethod.POST
     expect(await request(url, body, { method })).toBe(data)
-    expect(mockedFetch).toBeCalledWith(url, {
+    expect(mockedFetch).toHaveBeenCalledWith(url, {
       body: JSON.stringify(body),
       method,
     })
-    expect(mockedFetch).toBeCalledTimes(1)
-    expect(response.json).toBeCalledTimes(1)
+    expect(mockedFetch).toHaveBeenCalledTimes(1)
+    expect(response.json).toHaveBeenCalledTimes(1)
   })
 
   describe('error', () => {
@@ -70,10 +70,10 @@ describe('request', () => {
       const response = request(url, body)
       await expect(response).rejects.toBeInstanceOf(Error)
       await expect(response).rejects.toMatchObject(dataError)
-      expect(mockedFetch).toBeCalledWith(url, {
+      expect(mockedFetch).toHaveBeenCalledWith(url, {
         body: JSON.stringify(body),
       })
-      expect(responseError.json).toBeCalledTimes(1)
+      expect(responseError.json).toHaveBeenCalledTimes(1)
     })
   })
 })

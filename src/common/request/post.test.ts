@@ -19,18 +19,18 @@ describe('post', () => {
 
   it('calls request with url and body', async () => {
     expect(await post(url, body, {})).toBe(data)
-    expect(mockedRequest).toBeCalledWith(url, body, {
+    expect(mockedRequest).toHaveBeenCalledWith(url, body, {
       method: RequestMethod.POST,
     })
-    expect(mockedRequest).toBeCalledTimes(1)
+    expect(mockedRequest).toHaveBeenCalledTimes(1)
   })
 
   it('calls request with url, body, and options', async () => {
     expect(await post(url, body, options)).toBe(data)
-    expect(mockedRequest).toBeCalledWith(url, body, {
+    expect(mockedRequest).toHaveBeenCalledWith(url, body, {
       ...options,
       method: RequestMethod.POST,
     })
-    expect(mockedRequest).toBeCalledTimes(1)
+    expect(mockedRequest).toHaveBeenCalledTimes(1)
   })
 })

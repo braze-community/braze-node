@@ -44,12 +44,12 @@ describe('Content Blocks', () => {
           content_block_id: contentBlockId,
         }),
       ).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
+      expect(mockedRequest).toHaveBeenCalledWith(
         `${apiUrl}/content_blocks/info?content_block_id=${contentBlockId}`,
         undefined,
         options,
       )
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
 
     it('calls GET /content_blocks/info with all params', async () => {
@@ -61,12 +61,12 @@ describe('Content Blocks', () => {
           include_inclusion_data: true,
         }),
       ).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
+      expect(mockedRequest).toHaveBeenCalledWith(
         `${apiUrl}/content_blocks/info?content_block_id=${contentBlockId}&include_inclusion_data=true`,
         undefined,
         options,
       )
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -80,8 +80,12 @@ describe('Content Blocks', () => {
     it('calls GET /content_blocks/list with required params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.content_blocks.list({})).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/list?`, undefined, options)
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledWith(
+        `${apiUrl}/content_blocks/list?`,
+        undefined,
+        options,
+      )
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
 
     it('calls GET /content_blocks/list with all params', async () => {
@@ -94,12 +98,12 @@ describe('Content Blocks', () => {
           offset: 0,
         }),
       ).toBe(response)
-      expect(mockedRequest).toBeCalledWith(
+      expect(mockedRequest).toHaveBeenCalledWith(
         `${apiUrl}/content_blocks/list?modified_after=2023-03-01&modified_before=2023-03-23&limit=10&offset=0`,
         undefined,
         options,
       )
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -119,11 +123,11 @@ describe('Content Blocks', () => {
     it('calls POST /content_blocks/create with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.content_blocks.create(requestBody)).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/create`, requestBody, {
+      expect(mockedRequest).toHaveBeenCalledWith(`${apiUrl}/content_blocks/create`, requestBody, {
         ...options,
         method: 'POST',
       })
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -144,11 +148,11 @@ describe('Content Blocks', () => {
     it('calls POST /templates/email/update with body', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.templates.content_blocks.update(requestBody)).toBe(response)
-      expect(mockedRequest).toBeCalledWith(`${apiUrl}/content_blocks/update`, requestBody, {
+      expect(mockedRequest).toHaveBeenCalledWith(`${apiUrl}/content_blocks/update`, requestBody, {
         ...options,
         method: 'POST',
       })
-      expect(mockedRequest).toBeCalledTimes(1)
+      expect(mockedRequest).toHaveBeenCalledTimes(1)
     })
   })
 })
