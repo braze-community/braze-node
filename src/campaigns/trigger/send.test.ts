@@ -16,7 +16,12 @@ describe('/campaigns/trigger/send', () => {
     campaign_id: 'abcdef12-3456-7890-abcd-ef1234567890',
     recipients: [
       {
-        external_user_id: '1234567890',
+        user_alias: {
+          alias_name: 'example_name',
+          alias_label: 'example_label',
+        },
+        external_user_id: 'external_user_identifier',
+        email: 'example@braze.com',
         trigger_properties: {
           example_string_property: 'YOUR_EXAMPLE_STRING',
           example_integer_property: 1234567890,
