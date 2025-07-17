@@ -16,13 +16,18 @@ export interface CampaignsTriggerSendObject {
   trigger_properties?: TriggerProperties
   broadcast?: boolean
   audience?: ConnectedAudienceObject
-  recipients?: (RecipientWithExternalUserId | RecipientWithUserAlias)[]
+  recipients?: (RecipientWithEmail | RecipientWithExternalUserId | RecipientWithUserAlias)[]
+  attachments?: { file_name: string; url: string }[]
 }
 
 interface Recipient {
   trigger_properties?: TriggerProperties
   send_to_existing_only?: boolean
   attributes?: Attributes
+}
+
+interface RecipientWithEmail extends Recipient {
+  email: string
 }
 
 interface RecipientWithExternalUserId extends Recipient {
