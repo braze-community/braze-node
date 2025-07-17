@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.0](https://github.com/braze-community/braze-node/compare/v2.11.1...v2.12.0) (2025-07-17)
+
+
+### Features
+
+* **send:** support email in POST /campaigns/trigger/send ([d9f847f](https://github.com/braze-community/braze-node/commit/d9f847f52967d4142c409258d1d9ed46d4a8eee5)), closes [#972](https://github.com/braze-community/braze-node/issues/972)
+
 ## [2.11.1](https://github.com/braze-community/braze-node/compare/v2.11.0...v2.11.1) (2025-06-26)
 
 
