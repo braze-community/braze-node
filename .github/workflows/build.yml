@@ -2,9 +2,7 @@ name: build
 on: [push, pull_request]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   build:
@@ -46,8 +44,7 @@ jobs:
           BASE_URL: /${{ github.event.repository.name }}/
 
       - name: Deploy
-        if: github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@v4
+        if: github.ref_name == 'master'
+        uses: remarkablemark/gitploy-action@v1
         with:
-          branch: gh-pages
-          folder: docs
+          directory: docs
