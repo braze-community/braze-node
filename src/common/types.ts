@@ -65,7 +65,7 @@ export interface UserAlias {
  * This is an ordered array - if more than one user matches from a prioritization, merging will not occur.
  * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify#identifying-users-by-email}
  */
-export type PrioritizationOption =
+export type Prioritization =
   | 'identified'
   | 'unidentified'
   | 'most_recently_updated'

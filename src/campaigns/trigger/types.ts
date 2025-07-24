@@ -2,7 +2,7 @@ import { CanvasEntryProperties } from '../../canvas'
 import type {
   Attributes,
   ConnectedAudienceObject,
-  PrioritizationOption,
+  Prioritization,
   TriggerProperties,
   UserAlias,
 } from '../../common/types'
@@ -31,15 +31,15 @@ interface Recipient {
 
 interface RecipientWithEmail extends Recipient {
   email: string
-  prioritization: PrioritizationOption[]
+  prioritization: Prioritization[]
 }
 
 interface RecipientWithExternalUserId extends Recipient {
   external_user_id: string
-  prioritization?: PrioritizationOption[]
+  prioritization?: Prioritization[]
 }
 
 interface RecipientWithUserAlias extends Recipient {
-  prioritization?: PrioritizationOption[]
+  prioritization?: Prioritization[]
   user_alias: UserAlias
 }
