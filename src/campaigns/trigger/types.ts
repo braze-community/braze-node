@@ -31,7 +31,7 @@ interface Recipient {
 
 interface RecipientWithEmail extends Recipient {
   email: string
-  prioritization?: PrioritizationOption[]
+  prioritization: PrioritizationOption[]
 }
 
 interface RecipientWithExternalUserId extends Recipient {
