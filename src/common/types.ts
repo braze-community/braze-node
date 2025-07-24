@@ -71,7 +71,6 @@ export type PrioritizationOption =
   | 'most_recently_updated'
   | 'least_recently_updated'
 
-
 /**
  * Schedule object specification.
  *
