@@ -61,6 +61,18 @@ export interface UserAlias {
 }
 
 /**
+ * Prioritization options for user merging when multiple users are found.
+ * This is an ordered array - if more than one user matches from a prioritization, merging will not occur.
+ * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify#identifying-users-by-email}
+ */
+export type PrioritizationOption =
+  | 'identified'
+  | 'unidentified'
+  | 'most_recently_updated'
+  | 'least_recently_updated'
+
+
+/**
  * Schedule object specification.
  *
  * {@link https://www.braze.com/docs/api/objects_filters/schedule_object/}

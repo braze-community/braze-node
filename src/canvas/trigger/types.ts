@@ -18,7 +18,7 @@ export interface CanvasTriggerSendObject {
   recipients?: (RecipientWithExternalUserId | RecipientWithUserAlias)[]
 }
 
-type CanvasEntryProperties = object
+export type CanvasEntryProperties = object
 
 interface Recipient {
   canvas_entry_properties?: CanvasEntryProperties
