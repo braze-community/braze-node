@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.0](https://github.com/braze-community/braze-node/compare/v2.12.0...v2.13.0) (2025-07-24)
+
+
+### Features
+
+* added prioritization types on campaigns/trigger/send ([#981](https://github.com/braze-community/braze-node/issues/981)) ([0fb7a16](https://github.com/braze-community/braze-node/commit/0fb7a1630bc73f733b3300f0317ed14e7b0df7a7))
+
 ## [2.12.0](https://github.com/braze-community/braze-node/compare/v2.11.1...v2.12.0) (2025-07-17)
 
 
