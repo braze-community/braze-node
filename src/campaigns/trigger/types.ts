@@ -1,3 +1,4 @@
+import { CanvasEntryProperties } from '../../canvas'
 import type {
   Attributes,
   ConnectedAudienceObject,
@@ -5,7 +6,6 @@ import type {
   TriggerProperties,
   UserAlias,
 } from '../../common/types'
-import { CanvasEntryProperties } from '../../canvas'
 
 /**
  * Request body for sending campaign messages via API-triggered delivery.
