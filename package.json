@@ -65,7 +65,7 @@
     "jest-watch-typeahead": "3.0.1",
     "lint-staged": "16.1.6",
     "prettier": "3.6.2",
-    "ts-jest": "29.4.2",
+    "ts-jest": "29.4.3",
     "ts-node": "10.9.2",
     "typedoc": "0.28.13",
     "typescript": "5.9.2"
