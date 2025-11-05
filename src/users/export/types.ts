@@ -214,6 +214,8 @@ type FieldsToExport =
   | 'last_name'
   | 'phone'
   | 'purchases'
+  | 'push_subscribe'
+  | 'push_tokens'
   | 'random_bucket'
   | 'time_zone'
   | 'total_revenue'
