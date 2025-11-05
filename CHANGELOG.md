@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.1](https://github.com/braze-community/braze-node/compare/v2.13.0...v2.13.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* add missing push_subscribe and push_tokens fields to FieldsToExport ([a8d2f7c](https://github.com/braze-community/braze-node/commit/a8d2f7cd291e15053fa935c15c744708241addcb))
+
 ## [2.13.0](https://github.com/braze-community/braze-node/compare/v2.12.0...v2.13.0) (2025-07-24)
 
 
