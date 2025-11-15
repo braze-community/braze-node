@@ -9,9 +9,12 @@
 [![NPM version](https://img.shields.io/npm/v/braze-api.svg)](https://www.npmjs.com/package/braze-api)
 [![build](https://github.com/braze-community/braze-node/actions/workflows/build.yml/badge.svg)](https://github.com/braze-community/braze-node/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/braze-community/braze-node/branch/master/graph/badge.svg?token=QHPI1I0XI3)](https://codecov.io/gh/braze-community/braze-node)
-[![NPM downloads](https://badgen.net/npm/dm/braze-api)](https://www.npmjs.com/package/braze-api)
+![NPM Downloads](https://img.shields.io/npm/dm/braze-api)
 
 Node.js library for [Braze](https://www.braze.com/). See [docs](https://braze-community.github.io/braze-node/) and [demo](https://replit.com/@remarkablemark/braze-api). The types are from [Braze's Postman collection](https://documenter.getpostman.com/view/4689407/SVYrsdsG).
+
+> [!NOTE]
+> _Disclaimer:_ This is a community-maintained project and is not officially endorsed by or affiliated with Braze, Inc.
 
 ## Quick Start
 
@@ -260,6 +263,8 @@ Contributions are welcome! Check out the [guide](https://github.com/braze-commun
 ## License
 
 [MIT](https://github.com/braze-community/braze-node/blob/master/LICENSE)
+
+Braze is a registered trademark of Braze, Inc. This project is not managed by Braze, Inc.
 
 <!-- readme-content-end -->
 
