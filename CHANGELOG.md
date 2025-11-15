@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.2](https://github.com/braze-community/braze-node/compare/v2.13.1...v2.13.2) (2025-11-15)
+
+
+### Documentation
+
+* **readme:** fix status badge and add disclaimer ([db98696](https://github.com/braze-community/braze-node/commit/db9869688c607b8e13130af424b29849754e2a6d))
+
 ## [2.13.1](https://github.com/braze-community/braze-node/compare/v2.13.0...v2.13.1) (2025-11-05)
 
 
