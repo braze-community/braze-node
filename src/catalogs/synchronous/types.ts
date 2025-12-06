@@ -34,8 +34,9 @@ export type CatalogListItem<T extends RequestBody = Record<string, unknown>> = {
  *
  * {@link https://www.braze.com/docs/api/endpoints/catalogs/catalog_items/synchronous/get_catalog_items_details_bulk/}
  */
-export interface CatalogListItemsResponse<T extends CatalogListItem = CatalogListItem>
-  extends ServerResponse {
+export interface CatalogListItemsResponse<
+  T extends CatalogListItem = CatalogListItem,
+> extends ServerResponse {
   items: T[]
 }
 
@@ -54,7 +55,8 @@ export interface CatalogListItemBody {
  *
  * {@link https://www.braze.com/docs/api/endpoints/catalogs/catalog_items/synchronous/get_catalog_item_details/}
  */
-export interface CatalogListItemResponse<T extends CatalogListItem = CatalogListItem>
-  extends ServerResponse {
+export interface CatalogListItemResponse<
+  T extends CatalogListItem = CatalogListItem,
+> extends ServerResponse {
   items: [T]
 }
