@@ -56,7 +56,7 @@
     "@typescript-eslint/parser": "8.58.0",
     "eslint": "10.2.0",
     "eslint-plugin-prettier": "5.5.5",
-    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-tsdoc": "0.5.2",
     "fetch-mock-jest": "1.5.1",
     "globals": "17.4.0",
