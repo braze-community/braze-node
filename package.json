@@ -67,7 +67,7 @@
     "prettier": "3.8.2",
     "ts-jest": "29.4.9",
     "ts-node": "10.9.2",
-    "typedoc": "0.28.18",
+    "typedoc": "0.28.19",
     "typescript": "5.9.3"
   },
   "files": [
