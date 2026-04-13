@@ -59,7 +59,7 @@
     "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-tsdoc": "0.5.2",
     "fetch-mock-jest": "1.5.1",
-    "globals": "17.4.0",
+    "globals": "17.5.0",
     "husky": "9.1.7",
     "jest": "30.3.0",
     "jest-watch-typeahead": "3.0.1",
