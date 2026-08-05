@@ -66,10 +66,7 @@ export interface UserAlias {
  * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify#identifying-users-by-email}
  */
 export type Prioritization =
-  | 'identified'
-  | 'unidentified'
-  | 'most_recently_updated'
-  | 'least_recently_updated'
+  'identified' | 'unidentified' | 'most_recently_updated' | 'least_recently_updated'
 
 /**
  * Schedule object specification.
