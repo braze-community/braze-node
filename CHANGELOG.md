@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.4](https://github.com/braze-community/braze-node/compare/v2.13.3...v2.13.4) (2026-08-05)
+
+
+### Continuous Integration
+
+* **package:** fix script prepublishOnly ([693c6b3](https://github.com/braze-community/braze-node/commit/693c6b37dd64b4e4441cefdd65f80c61d4805523))
+
 ## [2.13.3](https://github.com/braze-community/braze-node/compare/v2.13.2...v2.13.3) (2026-08-05)
 
 ### Bug Fixes
