@@ -1,4 +1,5 @@
-import * as fetchMockJest from 'fetch-mock-jest'
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+import fetchMockJest = require('fetch-mock-jest')
 import fetch from 'node-fetch'
 
 import { Braze } from '../../Braze'

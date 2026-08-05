@@ -8,6 +8,7 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "types": ["node", "jest"],
     "outDir": "cjs"
   },
   "include": ["src"]
