@@ -1,138 +1,125 @@
 # Changelog
 
-## [2.13.2](https://github.com/braze-community/braze-node/compare/v2.13.1...v2.13.2) (2025-11-15)
+## [2.13.3](https://github.com/braze-community/braze-node/compare/v2.13.2...v2.13.3) (2026-08-05)
 
+### Bug Fixes
+
+- **users:** add missing `emails_to_identify` and `phone_numbers_to_identify` fields ([#1258](https://github.com/braze-community/braze-node/issues/1258)) ([72900b7](https://github.com/braze-community/braze-node/commit/72900b78222d2249487fcf33872eb9874d5d5058))
+
+## [2.13.2](https://github.com/braze-community/braze-node/compare/v2.13.1...v2.13.2) (2025-11-15)
 
 ### Documentation
 
-* **readme:** fix status badge and add disclaimer ([db98696](https://github.com/braze-community/braze-node/commit/db9869688c607b8e13130af424b29849754e2a6d))
+- **readme:** fix status badge and add disclaimer ([db98696](https://github.com/braze-community/braze-node/commit/db9869688c607b8e13130af424b29849754e2a6d))
 
 ## [2.13.1](https://github.com/braze-community/braze-node/compare/v2.13.0...v2.13.1) (2025-11-05)
 
-
 ### Bug Fixes
 
-* add missing push_subscribe and push_tokens fields to FieldsToExport ([a8d2f7c](https://github.com/braze-community/braze-node/commit/a8d2f7cd291e15053fa935c15c744708241addcb))
+- add missing push_subscribe and push_tokens fields to FieldsToExport ([a8d2f7c](https://github.com/braze-community/braze-node/commit/a8d2f7cd291e15053fa935c15c744708241addcb))
 
 ## [2.13.0](https://github.com/braze-community/braze-node/compare/v2.12.0...v2.13.0) (2025-07-24)
 
-
 ### Features
 
-* added prioritization types on campaigns/trigger/send ([#981](https://github.com/braze-community/braze-node/issues/981)) ([0fb7a16](https://github.com/braze-community/braze-node/commit/0fb7a1630bc73f733b3300f0317ed14e7b0df7a7))
+- added prioritization types on campaigns/trigger/send ([#981](https://github.com/braze-community/braze-node/issues/981)) ([0fb7a16](https://github.com/braze-community/braze-node/commit/0fb7a1630bc73f733b3300f0317ed14e7b0df7a7))
 
 ## [2.12.0](https://github.com/braze-community/braze-node/compare/v2.11.1...v2.12.0) (2025-07-17)
 
-
 ### Features
 
-* **send:** support email in POST /campaigns/trigger/send ([d9f847f](https://github.com/braze-community/braze-node/commit/d9f847f52967d4142c409258d1d9ed46d4a8eee5)), closes [#972](https://github.com/braze-community/braze-node/issues/972)
+- **send:** support email in POST /campaigns/trigger/send ([d9f847f](https://github.com/braze-community/braze-node/commit/d9f847f52967d4142c409258d1d9ed46d4a8eee5)), closes [#972](https://github.com/braze-community/braze-node/issues/972)
 
 ## [2.11.1](https://github.com/braze-community/braze-node/compare/v2.11.0...v2.11.1) (2025-06-26)
 
-
 ### Bug Fixes
 
-* added missing android_priority type on messages ([4d057dd](https://github.com/braze-community/braze-node/commit/4d057dd7e7239b252375e71fb668b760bf880b94))
-* added missing apns_priority type on messages ([#950](https://github.com/braze-community/braze-node/issues/950)) ([5aec854](https://github.com/braze-community/braze-node/commit/5aec854376a11d2ea1a0b5f39d8df5668d2d0838))
+- added missing android_priority type on messages ([4d057dd](https://github.com/braze-community/braze-node/commit/4d057dd7e7239b252375e71fb668b760bf880b94))
+- added missing apns_priority type on messages ([#950](https://github.com/braze-community/braze-node/issues/950)) ([5aec854](https://github.com/braze-community/braze-node/commit/5aec854376a11d2ea1a0b5f39d8df5668d2d0838))
 
 ## [2.11.0](https://github.com/braze-community/braze-node/compare/v2.10.1...v2.11.0) (2025-04-30)
 
-
 ### Features
 
-* **campaigns:** add `campaigns.details` (GET /campaigns/details) ([030dd5e](https://github.com/braze-community/braze-node/commit/030dd5e6c5e1b9b0049dfa61de2178886be168f8)), closes [#888](https://github.com/braze-community/braze-node/issues/888)
+- **campaigns:** add `campaigns.details` (GET /campaigns/details) ([030dd5e](https://github.com/braze-community/braze-node/commit/030dd5e6c5e1b9b0049dfa61de2178886be168f8)), closes [#888](https://github.com/braze-community/braze-node/issues/888)
 
 ## [2.10.1](https://github.com/braze-community/braze-node/compare/v2.10.0...v2.10.1) (2024-10-05)
 
-
 ### Continuous Integration
 
-* **github:** publish package to npm registry with provenance ([de0f0be](https://github.com/braze-community/braze-node/commit/de0f0be4981a09b25f407277726d10c0a494c254))
+- **github:** publish package to npm registry with provenance ([de0f0be](https://github.com/braze-community/braze-node/commit/de0f0be4981a09b25f407277726d10c0a494c254))
 
 ## [2.10.0](https://github.com/braze-community/braze-node/compare/v2.9.1...v2.10.0) (2024-07-25)
 
-
 ### Features
 
-* add segments (list/details/analytics) ([79692e0](https://github.com/braze-community/braze-node/commit/79692e0eb379a088006220a2957452fbd91ee777))
+- add segments (list/details/analytics) ([79692e0](https://github.com/braze-community/braze-node/commit/79692e0eb379a088006220a2957452fbd91ee777))
 
 ## [2.9.1](https://github.com/braze-community/braze-node/compare/v2.9.0...v2.9.1) (2024-07-11)
 
-
 ### Documentation
 
-* add content blocks endpoints to the readme checklist ([#652](https://github.com/braze-community/braze-node/issues/652)) ([fab0513](https://github.com/braze-community/braze-node/commit/fab0513e14851c49b1d2f9c1754d2ea59a2ac52e))
+- add content blocks endpoints to the readme checklist ([#652](https://github.com/braze-community/braze-node/issues/652)) ([fab0513](https://github.com/braze-community/braze-node/commit/fab0513e14851c49b1d2f9c1754d2ea59a2ac52e))
 
 ## [2.9.0](https://github.com/braze-community/braze-node/compare/v2.8.0...v2.9.0) (2024-07-11)
 
-
 ### Features
 
-* add support for content block post methods (create/update) ([f9e4a69](https://github.com/braze-community/braze-node/commit/f9e4a69dab00ed9d8e79e977e96a7a53eb6d984b))
+- add support for content block post methods (create/update) ([f9e4a69](https://github.com/braze-community/braze-node/commit/f9e4a69dab00ed9d8e79e977e96a7a53eb6d984b))
 
 ## [2.8.0](https://github.com/braze-community/braze-node/compare/v2.7.1...v2.8.0) (2024-05-29)
 
-
 ### Features
 
-* add apple and android push object types ([b87d7c5](https://github.com/braze-community/braze-node/commit/b87d7c565bfac37d7fb4a3e9d820e9f5b58db071))
+- add apple and android push object types ([b87d7c5](https://github.com/braze-community/braze-node/commit/b87d7c565bfac37d7fb4a3e9d820e9f5b58db071))
 
 ## [2.7.1](https://github.com/braze-community/braze-node/compare/v2.7.0...v2.7.1) (2024-04-25)
 
-
 ### Bug Fixes
 
-* **types:** make `app_id` optional on `PurchaseObject` ([1a07029](https://github.com/braze-community/braze-node/commit/1a07029b436793eea88dd08c07f99337dd9a5917)), closes [#600](https://github.com/braze-community/braze-node/issues/600)
+- **types:** make `app_id` optional on `PurchaseObject` ([1a07029](https://github.com/braze-community/braze-node/commit/1a07029b436793eea88dd08c07f99337dd9a5917)), closes [#600](https://github.com/braze-community/braze-node/issues/600)
 
 ## [2.7.0](https://github.com/braze-community/braze-node/compare/v2.6.0...v2.7.0) (2024-03-20)
 
-
 ### Features
 
-* add canvas.list() ([d72f65b](https://github.com/braze-community/braze-node/commit/d72f65bf05914706f4293324363cfc3e3d09430c))
+- add canvas.list() ([d72f65b](https://github.com/braze-community/braze-node/commit/d72f65bf05914706f4293324363cfc3e3d09430c))
 
 ## [2.6.0](https://github.com/braze-community/braze-node/compare/v2.5.6...v2.6.0) (2024-02-09)
 
-
 ### Features
 
-* user data endpoint /users/alias/update implementation ([368e9aa](https://github.com/braze-community/braze-node/commit/368e9aa31dd3d63627d0c2fffb81212360926d76))
+- user data endpoint /users/alias/update implementation ([368e9aa](https://github.com/braze-community/braze-node/commit/368e9aa31dd3d63627d0c2fffb81212360926d76))
 
 ## [2.5.6](https://github.com/braze-community/braze-node/compare/v2.5.5...v2.5.6) (2023-10-06)
 
-
 ### Bug Fixes
 
-* add missing field in users/export/ids ([db9d43a](https://github.com/braze-community/braze-node/commit/db9d43a2dc1c582458a2cbef2bfeb604781fa781))
+- add missing field in users/export/ids ([db9d43a](https://github.com/braze-community/braze-node/commit/db9d43a2dc1c582458a2cbef2bfeb604781fa781))
 
 ## [2.5.5](https://github.com/braze-community/braze-node/compare/v2.5.4...v2.5.5) (2023-09-26)
 
-
 ### Build System
 
-* **package:** bump @types/node-fetch from 2.6.4 to 2.6.6 ([c9fbf96](https://github.com/braze-community/braze-node/commit/c9fbf968649ab97d3794a44f25dc0bebb1571c63))
+- **package:** bump @types/node-fetch from 2.6.4 to 2.6.6 ([c9fbf96](https://github.com/braze-community/braze-node/commit/c9fbf968649ab97d3794a44f25dc0bebb1571c63))
 
 ## [2.5.4](https://github.com/braze-community/braze-node/compare/v2.5.3...v2.5.4) (2023-08-26)
 
-
 ### Build System
 
-* **deps:** bump node-fetch from 2.6.13 to 2.7.0 ([#359](https://github.com/braze-community/braze-node/issues/359)) ([7fcd106](https://github.com/braze-community/braze-node/commit/7fcd1064d318d76da7a07e4ca14f68fe4e49213d))
+- **deps:** bump node-fetch from 2.6.13 to 2.7.0 ([#359](https://github.com/braze-community/braze-node/issues/359)) ([7fcd106](https://github.com/braze-community/braze-node/commit/7fcd1064d318d76da7a07e4ca14f68fe4e49213d))
 
 ## [2.5.3](https://github.com/braze-community/braze-node/compare/v2.5.2...v2.5.3) (2023-08-22)
 
-
 ### Build System
 
-* **deps:** bump node-fetch from 2.6.12 to 2.6.13 ([#351](https://github.com/braze-community/braze-node/issues/351)) ([66a910f](https://github.com/braze-community/braze-node/commit/66a910f6df5fc2b506a3f23b2d2856ce18bcb5a6))
+- **deps:** bump node-fetch from 2.6.12 to 2.6.13 ([#351](https://github.com/braze-community/braze-node/issues/351)) ([66a910f](https://github.com/braze-community/braze-node/commit/66a910f6df5fc2b506a3f23b2d2856ce18bcb5a6))
 
 ## [2.5.2](https://github.com/braze-community/braze-node/compare/v2.5.1...v2.5.2) (2023-08-05)
 
-
 ### Documentation
 
-* change organization and repository name ([329372d](https://github.com/braze-community/braze-node/commit/329372d40f989a3c11b7bafdbfea5d4b16362c69))
+- change organization and repository name ([329372d](https://github.com/braze-community/braze-node/commit/329372d40f989a3c11b7bafdbfea5d4b16362c69))
 
 ## [2.5.1](https://github.com/braze-community/braze-node/compare/v2.5.0...v2.5.1) (2023-08-02)
 
