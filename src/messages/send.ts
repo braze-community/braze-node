@@ -14,8 +14,9 @@ import type { MessagesSendObject } from './types'
  * @returns - Braze response.
  */
 export function send(apiUrl: string, apiKey: string, body: MessagesSendObject) {
-  return post(`${apiUrl}/messages/send`, body, buildOptions({ apiKey })) as Promise<{
-    dispatch_id: string
-    message: string
-  }>
+  return post<{ dispatch_id: string; message: string }>(
+    `${apiUrl}/messages/send`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

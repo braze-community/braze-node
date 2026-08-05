@@ -14,7 +14,9 @@ import type { SubscriptionStatusSetObject } from './types'
  * @returns - Braze response.
  */
 export function set(apiUrl: string, apiKey: string, body: SubscriptionStatusSetObject) {
-  return post(`${apiUrl}/subscription/status/set`, body, buildOptions({ apiKey })) as Promise<{
-    message: 'success' | string
-  }>
+  return post<{ message: string }>(
+    `${apiUrl}/subscription/status/set`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

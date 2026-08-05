@@ -14,8 +14,8 @@ import type { SegmentsDetailsParameters, SegmentsDetailsResponse } from './types
  * @returns - Braze response.
  */
 export function details(apiUrl: string, apiKey: string, parameters: SegmentsDetailsParameters) {
-  return get(
+  return get<SegmentsDetailsResponse>(
     `${apiUrl}/segments/details?${buildParams(parameters)}`,
     buildOptions({ apiKey }),
-  ) as Promise<SegmentsDetailsResponse>
+  )
 }

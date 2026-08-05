@@ -12,17 +12,17 @@ export interface SubscriptionUserStatusObject {
 }
 
 export interface SubscriptionUserStatusResponse {
-  users: Array<{
+  users: {
     email: string | null
     phone: string | null
     external_id: string | null
-    subscription_groups: Array<{
+    subscription_groups: {
       id: string
       name: string
       channel: string
       status: 'Subscribed' | 'Unsubscribed'
-    }>
-  }>
+    }[]
+  }[]
   total_count: number
   message: string
   errors?: string[]

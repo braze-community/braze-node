@@ -14,9 +14,5 @@ import type { UsersExportIdsObject, UsersExportIdsResponse } from './types'
  * @returns - Braze response.
  */
 export function ids(apiUrl: string, apiKey: string, body: UsersExportIdsObject) {
-  return post(
-    `${apiUrl}/users/export/ids`,
-    body,
-    buildOptions({ apiKey }),
-  ) as Promise<UsersExportIdsResponse>
+  return post<UsersExportIdsResponse>(`${apiUrl}/users/export/ids`, body, buildOptions({ apiKey }))
 }

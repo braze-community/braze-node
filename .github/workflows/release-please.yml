@@ -4,14 +4,16 @@ on:
     branches:
       - master
 
+permissions: read-all
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     permissions:
       contents: write
       pull-requests: write
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
 
     steps:
       - name: Release Please
@@ -25,7 +27,6 @@ jobs:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created }}
     permissions:
-      contents: read
       id-token: write
 
     steps:
@@ -39,9 +40,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: npm ci --prefer-offline
+        run: npm ci --prefer-offline --ignore-scripts
 
       - name: Publish
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

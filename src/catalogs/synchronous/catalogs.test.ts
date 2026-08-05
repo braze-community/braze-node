@@ -12,6 +12,7 @@ import {
   CatalogListResponse,
 } from './types'
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 jest.mock('../../common/request/request', () => ({
   ...jest.requireActual('../../common/request/request'),
   request: jest.fn(),
@@ -41,6 +42,7 @@ describe('Catalogs - Synchronous', () => {
       catalogs: [],
       message: 'success',
     }
+
     it('is called with no params', async () => {
       mockedRequest.mockResolvedValueOnce(response)
       expect(await braze.catalogs.synchronous.list()).toBe(response)
@@ -92,6 +94,7 @@ describe('Catalogs - Synchronous', () => {
 
     it('is called with required params', async () => {
       fetchMock.getOnce(`${apiUrl}/catalogs/${catalog_name}/items`, response)
+      // eslint-disable-next-line @typescript-eslint/await-thenable
       const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
       await expect(itemIterator.next()).resolves.toEqual({ done: false, value: response.items[0] })
       await expect(itemIterator.next()).resolves.toEqual({ done: false, value: response.items[1] })
@@ -107,6 +110,8 @@ describe('Catalogs - Synchronous', () => {
         },
         status: 500,
       })
+
+      // eslint-disable-next-line @typescript-eslint/await-thenable
       const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
       await expect(itemIterator.next()).rejects.toThrow(
         new ResponseError('error', 500, ['there was a problem']),
@@ -169,6 +174,7 @@ describe('Catalogs - Synchronous', () => {
           },
         })
 
+      // eslint-disable-next-line @typescript-eslint/await-thenable
       const itemIterator = await braze.catalogs.synchronous.items<ResponseType>({ catalog_name })
       await expect(itemIterator.next()).resolves.toEqual({
         done: false,

@@ -206,6 +206,7 @@ export interface ScheduledBroadcastsResponse extends ServerResponse {
     type: 'Canvas' | 'Campaign'
     tags: string[]
     next_send_time: string
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     schedule_type: 'local_time_zones' | 'intelligent_delivery' | string
   }[]
 }

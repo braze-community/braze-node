@@ -17,6 +17,7 @@ export interface UsersExportGlobalControlGroupObject {
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_global_control_group/#response}
  */
 export interface UsersExportGlobalControlGroupResponse {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   message: 'success' | string
   object_prefix: string
   url?: string
@@ -43,6 +44,7 @@ export interface UsersExportIdsObject {
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/#response}
  */
 export interface UsersExportIdsResponse {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   message: 'success' | string
   users: Partial<UserExportObject>[]
   invalid_user_ids?: string[]
@@ -66,6 +68,7 @@ export interface UsersExportSegmentObject {
  * {@link https://www.braze.com/docs/api/endpoints/export/user_data/post_users_segment/#response}
  */
 export interface UsersExportSegmentResponse {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   message: 'success' | string
   object_prefix: string
   url?: string

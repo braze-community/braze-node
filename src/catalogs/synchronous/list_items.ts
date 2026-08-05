@@ -1,7 +1,7 @@
 import fetch, { Response } from 'node-fetch'
 
 import { buildOptions, ResponseError } from '../../common/request'
-import { CatalogListItem, CatalogListItemsBody } from './types'
+import { CatalogListItem, CatalogListItemsBody, CatalogListItemsResponse } from './types'
 
 function getNextPageLink(linkHeader: string | null): string | undefined {
   const linkMatches = linkHeader?.matchAll(/<([^>]+)>; rel="(prev|next)"/g)
@@ -39,7 +39,7 @@ class CatalogListItems<T extends CatalogListItem> {
     url: string,
   ): Promise<CatalogListItems<T>> {
     const response: Response = await fetch(apiUrl + url, buildOptions({ apiKey }))
-    const data = await response.json()
+    const data = (await response.json()) as CatalogListItemsResponse<T>
 
     if (!response.ok) {
       throw new ResponseError(data.message, response.status, data.errors)
@@ -78,13 +78,15 @@ export async function* getListCatalogItemsIterator<T extends CatalogListItem>(
   body: CatalogListItemsBody,
 ): AsyncGenerator<T> {
   let result = await getListCatalogItems<T>(apiUrl, apiKey, body)
-  do {
+  let hasNextPage = result.hasNextPage()
+  while (hasNextPage || result.items.length > 0) {
     for (const item of result.items) {
       yield item
     }
-    if (!result.hasNextPage()) {
+    if (!hasNextPage) {
       break
     }
     result = await result.next()
-  } while (true)
+    hasNextPage = result.hasNextPage()
+  }
 }

@@ -58,7 +58,13 @@ describe('buildParams', () => {
   })
 
   describe('error', () => {
-    it.each([new Date(), {}, Symbol('symbol'), () => {}])('throws when value is %p', (value) => {
+    it.each([
+      new Date(),
+      {},
+      Symbol('symbol'),
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      () => {},
+    ])('throws when value is %p', (value) => {
       expect(() => buildParams({ value })).toThrow('Unhandled param type for key "value"')
     })
   })
