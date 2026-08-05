@@ -47,13 +47,9 @@
   "devDependencies": {
     "@commitlint/cli": "21.2.1",
     "@commitlint/config-conventional": "21.2.0",
-    "@eslint/compat": "2.1.0",
-    "@eslint/eslintrc": "3.3.6",
     "@eslint/js": "10.0.1",
     "@types/jest": "30.0.0",
     "@types/node": "26.1.2",
-    "@typescript-eslint/eslint-plugin": "8.65.0",
-    "@typescript-eslint/parser": "8.65.0",
     "eslint": "10.8.0",
     "eslint-plugin-prettier": "5.5.6",
     "eslint-plugin-simple-import-sort": "14.0.0",
@@ -68,7 +64,8 @@
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
     "typedoc": "0.28.20",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0"
   },
   "files": [
     "cjs/",
