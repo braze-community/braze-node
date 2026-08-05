@@ -1,8 +1,12 @@
 {
   "extends": ".",
   "compilerOptions": {
-    "lib": ["es2020"],
-    "rootDir": "src"
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo",
+    "target": "es2020",
+    "rootDir": "src",
+    "outDir": "cjs",
+    "noEmit": false
   },
+  "include": ["src"],
   "exclude": ["node_modules", "**/*.test.*"]
 }

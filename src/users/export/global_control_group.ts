@@ -21,9 +21,9 @@ export function global_control_group(
   apiKey: string,
   body: UsersExportGlobalControlGroupObject,
 ) {
-  return post(
+  return post<UsersExportGlobalControlGroupResponse>(
     `${apiUrl}/users/export/global_control_group`,
     body,
     buildOptions({ apiKey }),
-  ) as Promise<UsersExportGlobalControlGroupResponse>
+  )
 }

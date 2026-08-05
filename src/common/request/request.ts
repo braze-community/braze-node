@@ -47,7 +47,7 @@ export async function request<Response extends ServerResponse>(
     ...options,
   })
 
-  const data: Response = await response.json()
+  const data = (await response.json()) as Response
 
   if (response.ok) {
     return data

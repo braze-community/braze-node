@@ -16,9 +16,9 @@ import type { UsersExternalIdsRemoveObject } from './types'
  * @returns - Braze response.
  */
 export function remove(apiUrl: string, apiKey: string, body: UsersExternalIdsRemoveObject) {
-  return post(`${apiUrl}/users/external_ids/remove`, body, buildOptions({ apiKey })) as Promise<{
-    message: string
-    removed_ids: string[]
-    removal_errors: string[]
-  }>
+  return post<{ message: string; removed_ids: string[]; removal_errors: string[] }>(
+    `${apiUrl}/users/external_ids/remove`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

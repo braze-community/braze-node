@@ -14,9 +14,9 @@ import type { UsersExportSegmentObject, UsersExportSegmentResponse } from './typ
  * @returns - Braze response.
  */
 export function segment(apiUrl: string, apiKey: string, body: UsersExportSegmentObject) {
-  return post(
+  return post<UsersExportSegmentResponse>(
     `${apiUrl}/users/export/segment`,
     body,
     buildOptions({ apiKey }),
-  ) as Promise<UsersExportSegmentResponse>
+  )
 }

@@ -14,11 +14,8 @@ import type { SubscriptionStatusGetObject } from './types'
  * @returns - Braze response.
  */
 export function get(apiUrl: string, apiKey: string, body: SubscriptionStatusGetObject) {
-  return _get(
-    `${apiUrl}/subscription/status/get?${buildParams(body)}`,
-    buildOptions({ apiKey }),
-  ) as Promise<{
+  return _get<{
     status: Record<string, 'Subscribed' | 'Unsubscribed' | 'Unknown'>
-    message: 'success' | string
-  }>
+    message: string
+  }>(`${apiUrl}/subscription/status/get?${buildParams(body)}`, buildOptions({ apiKey }))
 }

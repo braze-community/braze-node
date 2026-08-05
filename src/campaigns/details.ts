@@ -14,8 +14,8 @@ import type { CampaignsDetailsParameters, CampaignsDetailsResponse } from './typ
  * @returns - Braze response.
  */
 export function details(apiUrl: string, apiKey: string, parameters?: CampaignsDetailsParameters) {
-  return get(
+  return get<CampaignsDetailsResponse>(
     `${apiUrl}/campaigns/details?${buildParams(parameters)}`,
     buildOptions({ apiKey }),
-  ) as Promise<CampaignsDetailsResponse>
+  )
 }

@@ -14,8 +14,9 @@ import type { SendsIdCreateObject } from './types'
  * @returns - Braze response.
  */
 export function create(apiUrl: string, apiKey: string, body: SendsIdCreateObject) {
-  return post(`${apiUrl}/sends/id/create`, body, buildOptions({ apiKey })) as Promise<{
-    message: string
-    send_id: string
-  }>
+  return post<{ message: string; send_id: string }>(
+    `${apiUrl}/sends/id/create`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

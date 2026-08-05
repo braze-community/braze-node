@@ -14,8 +14,8 @@ import type { CanvasListParameters, CanvasListResponse } from './types'
  * @returns - Braze response.
  */
 export function list(apiUrl: string, apiKey: string, parameters?: CanvasListParameters) {
-  return get(
+  return get<CanvasListResponse>(
     `${apiUrl}/canvas/list?${buildParams(parameters)}`,
     buildOptions({ apiKey }),
-  ) as Promise<CanvasListResponse>
+  )
 }

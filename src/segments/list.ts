@@ -14,8 +14,8 @@ import type { SegmentsListParameters, SegmentsListResponse } from './types'
  * @returns - Braze response.
  */
 export function list(apiUrl: string, apiKey: string, parameters?: SegmentsListParameters) {
-  return get(
+  return get<SegmentsListResponse>(
     `${apiUrl}/segments/list?${buildParams(parameters)}`,
     buildOptions({ apiKey }),
-  ) as Promise<SegmentsListResponse>
+  )
 }

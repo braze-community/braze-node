@@ -14,8 +14,9 @@ import type { CampaignsTriggerSendObject } from './types'
  * @returns - Braze response.
  */
 export function send(apiUrl: string, apiKey: string, body: CampaignsTriggerSendObject) {
-  return post(`${apiUrl}/campaigns/trigger/send`, body, buildOptions({ apiKey })) as Promise<{
-    dispatch_id: string
-    message: string
-  }>
+  return post<{ dispatch_id: string; message: string }>(
+    `${apiUrl}/campaigns/trigger/send`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

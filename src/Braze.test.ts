@@ -54,15 +54,16 @@ describe('Braze', () => {
 
   it.each([undefined, null, 0, 1, ''])('throws if first argument is %p', (apiUrl) => {
     expect(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error Testing invalid argument type
       new Braze(apiUrl)
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     }).toThrow(`Invalid Braze API URL: ${apiUrl}`)
   })
 
   it.each([undefined, null, 0, 1, ''])('throws if second argument is %p', (apiKey) => {
     expect(() => {
       new Braze(apiUrl, apiKey as string)
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     }).toThrow(`Invalid Braze API key: ${apiKey}`)
   })
 })
@@ -74,6 +75,7 @@ const options = {
     Authorization: `Bearer ${apiKey}`,
     'Content-Type': 'application/json',
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   method: expect.stringMatching(/^GET|POST$/),
 }
 const response: ServerResponse = { message: 'success' }

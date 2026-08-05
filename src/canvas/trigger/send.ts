@@ -14,8 +14,9 @@ import type { CanvasTriggerSendObject } from './types'
  * @returns - Braze response.
  */
 export function send(apiUrl: string, apiKey: string, body: CanvasTriggerSendObject) {
-  return post(`${apiUrl}/canvas/trigger/send`, body, buildOptions({ apiKey })) as Promise<{
-    dispatch_id: string
-    message: string
-  }>
+  return post<{ dispatch_id: string; message: string }>(
+    `${apiUrl}/canvas/trigger/send`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }

@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "lib": ["es2020", "dom"],
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["es2020"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "types": ["node", "jest"],
-    "outDir": "cjs"
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowJs": true
   },
-  "include": ["src"]
+  "include": ["src", "*.mjs", "*.mts", "*.ts"]
 }

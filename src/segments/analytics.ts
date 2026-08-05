@@ -14,8 +14,8 @@ import type { SegmentsAnalyticsParameters, SegmentsAnalyticsResponse } from './t
  * @returns - Braze response.
  */
 export function analytics(apiUrl: string, apiKey: string, parameters: SegmentsAnalyticsParameters) {
-  return get(
+  return get<SegmentsAnalyticsResponse>(
     `${apiUrl}/segments/data_series?${buildParams(parameters)}`,
     buildOptions({ apiKey }),
-  ) as Promise<SegmentsAnalyticsResponse>
+  )
 }

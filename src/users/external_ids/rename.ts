@@ -14,9 +14,9 @@ import type { UsersExternalIdsRenameObject } from './types'
  * @returns - Braze response.
  */
 export function rename(apiUrl: string, apiKey: string, body: UsersExternalIdsRenameObject) {
-  return post(`${apiUrl}/users/external_ids/rename`, body, buildOptions({ apiKey })) as Promise<{
-    message: string
-    external_ids: string[]
-    rename_errors: string[]
-  }>
+  return post<{ message: string; external_ids: string[]; rename_errors: string[] }>(
+    `${apiUrl}/users/external_ids/rename`,
+    body,
+    buildOptions({ apiKey }),
+  )
 }
