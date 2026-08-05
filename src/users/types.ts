@@ -1,5 +1,5 @@
 import type { ServerResponse } from '../common/request'
-import type { Properties, UserAlias } from '../common/types'
+import type { Prioritization, Properties, UserAlias } from '../common/types'
 
 export * from './alias/types'
 export * from './export/types'
@@ -16,17 +16,39 @@ export interface UsersTrackObject {
   purchases?: PurchaseObject[]
 }
 
+interface AliasToIdentify {
+  external_id: string
+  user_alias: UserAlias
+}
+
+interface EmailToIdentify {
+  external_id: string
+  email: string
+  prioritization: Prioritization[]
+}
+
+interface PhoneNumberToIdentify {
+  external_id: string
+  phone: string
+  prioritization: Prioritization[]
+}
+
 /**
  * Request body for user identify.
  *
+ * One of `aliases_to_identify`, `emails_to_identify`, or `phone_numbers_to_identify` is required.
+ *
  * {@link https://www.braze.com/docs/api/endpoints/user_data/post_user_identify/#request-body}
  */
-export interface UsersIdentifyObject {
-  aliases_to_identify: {
-    external_id: string
-    user_alias: UserAlias
-  }[]
-}
+export type UsersIdentifyObject = {
+  aliases_to_identify?: AliasToIdentify[]
+  emails_to_identify?: EmailToIdentify[]
+  phone_numbers_to_identify?: PhoneNumberToIdentify[]
+} & (
+  | { aliases_to_identify: AliasToIdentify[] }
+  | { emails_to_identify: EmailToIdentify[] }
+  | { phone_numbers_to_identify: PhoneNumberToIdentify[] }
+)
 
 /**
  * Request body for user merge.

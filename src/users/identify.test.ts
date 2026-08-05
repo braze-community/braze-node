@@ -37,4 +37,26 @@ describe('/users/identify', () => {
     })
     expect(mockedPost).toHaveBeenCalledTimes(1)
   })
+
+  it('calls request with url and body when identifying by email', async () => {
+    const emailBody: UsersIdentifyObject = {
+      emails_to_identify: [
+        {
+          external_id: 'external_identifier',
+          email: 'example@example.com',
+          prioritization: ['identified', 'unidentified'],
+        },
+      ],
+    }
+
+    mockedPost.mockResolvedValueOnce(data)
+    expect(await identify(apiUrl, apiKey, emailBody)).toBe(data)
+    expect(mockedPost).toHaveBeenCalledWith(`${apiUrl}/users/identify`, emailBody, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+    expect(mockedPost).toHaveBeenCalledTimes(1)
+  })
 })
