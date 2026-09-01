@@ -57,7 +57,7 @@
     "fetch-mock-jest": "1.5.1",
     "globals": "17.11.0",
     "husky": "9.1.7",
-    "jest": "30.4.2",
+    "jest": "30.5.0",
     "jest-watch-typeahead": "3.0.1",
     "lint-staged": "17.4.1",
     "prettier": "3.9.6",
