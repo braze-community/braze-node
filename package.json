@@ -60,7 +60,7 @@
     "jest": "30.5.1",
     "jest-watch-typeahead": "3.0.1",
     "lint-staged": "17.5.1",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
     "typedoc": "0.28.20",
